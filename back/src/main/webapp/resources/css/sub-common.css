@@ -1,0 +1,169 @@
+/* main */
+main {
+  width: 100%;
+  min-width: 1200px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  /* 패딩탑 제거 */
+  position: relative; /* main_text_wrap을 앱솔루트 주기 위해 처리*/
+}
+/* 이미지 관련 CSS 추가 */
+main .main_img{
+	width: 100%; height: 400px;
+	object-fit: cover;
+}
+/* 이미지 관련 CSS 추가 */
+.main_text_wrap{
+	position: absolute; top: 0;
+	left: 0; right: 0; margin: 0 auto;
+	width: 1200px;  
+	padding-top: 170px;
+}
+
+.main-banner01 {
+  background-image: url(../images/sub/main_banner01.jpg);
+}
+
+.main-banner02 {
+  background-image: url(../images/sub/main_banner02.jpg);
+}
+
+.main-banner03 {
+  background-image: url(../images/sub/main_banner03.jpg);
+}
+
+.main-banner04 {
+  background-image: url(../images/sub/main_banner04.jpg);
+}
+
+.main-banner06 {
+  background-image: url(../images/sub/main_banner06.jpg);
+}
+
+.main-banner07 {
+  background-image: url(../images/sub/main_banner07.jpg);
+}
+
+.main-banner08 {
+  background-image: url(../images/sub/main_banner08.jpg);
+}
+
+.main-banner09 {
+  background-image: url(../images/sub/main_banner09.jpg);
+}
+/* 검색페이지 때문에 추가 */
+.main-banner10 {
+  background-image: url(../images/sub/main_banner10.jpg);
+}
+/* product1~product11 CSS삭제 - 이미지 태그로 대체 - jsp로 처리 */
+
+main h2 {
+  color: #FFF;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.indicator ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.indicator li {
+  margin-right: 56px;
+  height: 24px;
+  line-height: 24px;
+  position: relative;
+}
+.indicator li:last-child {
+  margin-right: 0;
+}
+.indicator li:last-child::after {
+  display: none;
+}
+.indicator li::after {
+  content: url(../images/sub/next.svg);
+  position: absolute;
+  right: -40px;
+  top: 0;
+}
+.indicator a {
+  color: #FFF;
+  font-size: 18px;
+}
+
+.title-box {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 100px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.title-box h2 {
+  font-size: 48px;
+  font-weight: 700;
+}
+.title-box p {
+  color: #666;
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 800px;
+}
+
+.main-contents {
+  width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+}
+
+.nav-select {
+  width: 100%;
+  min-width: 1200px;
+  height: 70px;
+  background-color: #1C1C1C;
+  padding: 15px 0;
+}
+.nav-select select {
+  width: 220px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #666;
+  padding: 0 10px;
+  appearance: none;
+  color: #fff;
+  background-image: url(../images/sub/down.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  margin-right: 20px;
+}
+
+.pagination {
+  /* 페이지네이션 안나올때 무너지는 현상있어서 변경*/
+  display: flex; height: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.pagination li {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+.pagination li:last-child {
+  margin-right: 0;
+}
+.pagination a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+}
+.pagination a.active {
+  background-color: #1C1C1C;
+  color: #fff;
+  border-radius: 50%;
+}

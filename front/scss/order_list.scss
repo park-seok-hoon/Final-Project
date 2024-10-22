@@ -1,0 +1,108 @@
+@charset "utf-8";
+.right_contents{
+    .sub_contents{
+        padding: 0 20px;
+        margin: 38px auto; //블록요소가 부모영역에서 가로가운데 오게 처리
+        
+        p{
+            margin-bottom: 10px;
+            .orderlist{
+                color: #1C1C1C;
+                font-size: 20px;
+                line-height: 150%;
+                &::after{
+                    content: '|';
+                    position: relative; left: 8px;
+                }
+            }
+            .orderlist-amount{
+                color: #1C1C1C;
+                font-size: 20px;
+                line-height: 150%;
+                padding-left: 16px;
+            }
+        }
+       
+        table{
+            width: 860px;
+            margin-bottom: 30px;
+            th{
+                border-top: 1px solid #1C1C1C;
+                height: 70px;
+            } 
+            th:nth-child(1){ 
+                width:100px;
+            }
+            th:nth-child(2){
+                width:120px;
+            }
+            th:nth-child(3){
+                width: 250px;
+            }
+            th:nth-child(4){
+                width:70px;
+            }
+            th:nth-child(5){
+                width:80px;
+            }
+            th:nth-child(6){
+                width:120px;
+            }
+            th:nth-child(6){
+                width:120px;
+            }
+            thead{
+                border-top: 1px solid #1C1C1C;
+                background: #FAFAFA;
+                width: 150px;
+                height: 70px;
+                color: #1C1C1C;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 150%; 
+								
+            }
+            td{
+                height:70px;
+                text-align: center;
+            }
+            td:nth-child(3){
+                display: flex; // 무조건 수평처리
+                line-height: 70px; 
+            }
+            .merge td:nth-child(1){
+                display: flex; // 무조건 수평처리
+                line-height: 70px; 
+            }
+            tbody{
+                tr{
+                    border-bottom: 1px solid #DFDFDF;
+    
+                    &:last-child{ //마지막 tr만 색상 검게 처리
+                        border-bottom: 1px solid #1C1C1C;
+                    }
+                }
+            }
+            img{
+                width: 50px;
+                height: 50px;
+                margin: 10px;
+            }
+        }
+        
+    }
+    form{
+        margin-top: 30px;
+        text-align: center;
+        #search-announce{
+            width: 360px;
+            height: 50px;
+            padding: 0 20px;
+            background-image: url(../images/common/search_black.svg);
+            background-repeat: no-repeat;	
+            background-size: 24px 24px;	
+            background-position: calc(100% - 20px) center;
+            border: 1px solid #1C1C1C;
+        }
+    }
+}

@@ -1,0 +1,428 @@
+@charset "utf-8";
+
+//변수선언
+$min-width: 1200px;
+$main-color: #1C1C1C;
+
+/* popup */
+.popup{
+    position: fixed; left: 0; top: 0; z-index: 10000;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.3);
+
+    .popup-wrap{
+        position: absolute;
+        left: 0; right: 0; top: 0; bottom: 0;
+        margin: auto;
+        width: 440px; height: 700px;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .popup-text{
+        padding: 30px 50px;
+
+        h3{
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 14px; color: #666;
+            line-height: 1.5; text-align: justify;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+
+            &.first-text{
+                border-bottom: 1px solid #ccc;
+            }
+        }
+        strong{
+            font-size: 14px; color: $main-color;
+            font-weight: 500;
+        }
+    }
+    .qr-code{
+        position: absolute;
+        right: 35px; bottom: 85px;
+    }
+    .btn{
+        position: absolute;
+        left: 0; bottom: 0;
+        width: 100%; height: 60px;
+        border-top: 1px solid #ccc;
+
+        display: flex;
+
+        li{
+            flex: 1; 
+            height: 100%;
+
+            &:first-child{
+                border-right: 1px solid #ccc;
+            }
+
+            a{
+                display: block;
+                width: 100%; height: 100%;
+                text-align: center; line-height: 59px;
+            }
+        }
+    }
+}
+
+
+/* main slider */
+main{
+    width: 100%; min-width: $min-width;
+    .main-text-wrap{ //최소사이즈 내부에 들어와야 함
+        width: $min-width;
+        position: absolute; //이미지 위에 떠야 함
+        left: 0; right: 0; margin: 0 auto; //앱솔루트 받은 요소가 가로가운데 오는 공식
+        top: 50%; transform: translateY(-50%); //세로 가운데 처리
+        z-index: 100;
+
+        p{
+            color: #FFF;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+        h3{
+            color: #FFF;
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 120px;
+        }
+        a{
+            display: block; //인라인이여서 영역이 안들어가서 블록으로 변경
+            width: 160px; height: 50px;
+            text-align: center; line-height: 48px;
+            color: #fff;
+            border-radius: 25px;
+            border: 1px solid #fff;
+        }
+    }
+
+    img{ //해상도에 맞게 처리
+        width: 100%; height: 900px;
+        object-fit: cover; //해상도 커지거나 작아져도 비율에 맞게 꽉차게 처리
+    }
+
+    .swiper-button-next{
+        width: 27px; height: 48px;
+        right: 100px; //위치이동
+        opacity: 0.5; //투명도 조절
+    }
+    .swiper-button-prev{
+        width: 27px; height: 48px;
+        left: 100px; //위치이동
+        opacity: 0.5; //투명도 조절
+    }
+    .swiper-button-next:hover, .swiper-button-prev:hover{ //버튼에 마우스 올리면
+        opacity: 1;
+    }
+    .swiper-button-next::after{
+        content: url(../images/main/next_btn.svg);
+    }
+    .swiper-button-prev::after{
+        content: url(../images/main/prev_btn.svg);
+    }
+}
+
+
+/* smeg-intro */
+.smeg-intro{
+    width: 100%; min-width: $min-width;
+    padding: 100px 0 180px; //상 좌우 하
+    //배경이미지 처리
+    background-image: url(../images/main/bottom_img.jpg);
+    background-repeat: no-repeat; //배경이미지 반복안함
+    background-position: left calc(100% - 100px); //왼쪽 하단 처리
+
+    .inner-wrap{
+        height: 600px;
+        padding: 170px 0 50px 580px; //상 우 하 좌
+        background-image: url(../images/main/top_img.jpg);
+        background-repeat: no-repeat;
+    }
+
+    h2{
+        color: $main-color;
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    p{
+        color: #666;
+        text-align: justify; //문단 양쪽 정렬
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 150%; 
+        margin-bottom: 40px;
+    }
+    a{
+        display: block; //a태그가 인라인이여서 영역안들어가는 것을 들어가게 처리
+        width: 300px; height: 60px;
+        line-height: 58px; color: #666;
+        border: 1px solid #666;
+        padding-left: 30px; //테두리 안쪽 여백
+        position: relative; //선의 앱솔루트 기준을 현재 요소로 변경
+        transition: 0.3s;
+
+        &::after{ //글자 옆 선
+            content: ''; //이미지나 글자가 아니라 영역 주기
+            position: absolute; right: 0;
+            top: 50%; transform: translateY(-50%); //앱솔루트가 세로 가운데 오게 처리
+            width: 150px; height: 1px;
+            background-color: #666;
+        }
+        &::before{
+            content: '';
+            position: absolute; right: 0;
+            top: 50%; transform: translateY(-50%);
+            z-index: 10; //after보다 앞에 보이게 처리
+            width: 150px; height: 1px;
+            background-color: #fff;
+            transform: scaleX(0); //x축크기 0%으로 처리
+            transition: 0.3s; //css변화에 시간차 처리
+            transform-origin: right center; //변형의 중심점을 오른쪽으로 변경
+        }
+
+        &:hover{ //a태그에 마우스를 올리면
+            background-color: $main-color; color: #fff;
+            border: 1px solid $main-color;
+
+            //마우스를 올렸을 때 나의 before가
+            &::before{
+                transform: scaleX(1); //x축크기 100%로 처리
+            }
+        }
+    }
+}
+
+
+/* smeg-special */
+.smeg-special{
+    width: 100%; min-width: $min-width;
+    position: relative; //탭버튼의 앱솔루트 기준을 현재 요소로 변경
+    width: 100%; padding-bottom: 250px;
+
+    .tab-contents{
+        width: 100%; height: 700px;
+        position: relative; //자손인 div태그에 앱솔루트 기준을 현재 요소로 변경
+
+        > div{ //자손인 div태그 전부 안보이게 처리
+            display: none;
+            position: absolute; //모든 div태그 겹치게 처리
+            left: 0; top: 0;
+            width: 100%;
+            
+            &:first-child{ //첫번째 div는 보이게 처리
+                display: block;
+            }
+        }
+
+        img{
+            width: 100%; height: 700px;
+            object-fit: cover; //비율고정 꽉차게 처리
+        }
+    }
+
+    .tab-btn{
+        position: absolute; //앱솔루트 기본 기준은 body라서
+        left: 0; right: 0; margin: 0 auto; //앱솔루트 받은 요소가 가로 가운데 오는 공식
+        bottom: 100px;
+        width: $min-width; height: 240px;
+        background-color: #fff;
+        border-top: 1px solid $main-color;
+        border-bottom: 1px solid $main-color;
+
+        display: flex; //자손인 li태그들을 수평나열 처리
+
+        li{
+            width: 300px; height: 100%; //부모영역상속
+            padding: 50px;
+        }
+        .btn{
+            width: 100%; height: 100%; //부모영역상속
+            position: relative; //arrow의 앱솔루트 기준을 현재 요소로 변경
+            opacity: 0.5; //요소의 투명도 처리
+            cursor: pointer;
+
+            &.active{ //active클래스를 주면 투명도 처리
+                opacity: 1;
+            }
+        }
+        h3{
+            font-size: 24px;
+            margin-bottom: 10px;
+            line-height: 24px;
+        }
+        p{
+            text-align: justify;
+            line-height: 1.5;
+        }
+        .arrow{
+            position: absolute; //p태그 줄수가 달라서 여백으로 맞추기 어려움
+            left: 0; bottom: 0;
+            width: 100%; //부모영역상속
+
+            &::after{
+                content: url(../images/main/arrow.svg);
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+}
+
+/* best-product */
+.best-product{
+    width: 100%; min-width: $min-width;
+    margin-bottom: 100px; //아래 공지사항과의 여백 설정
+
+    h2{
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .swiper-slide{
+        width: 1560px; height: 600px;
+        display: flex; //자손요소를 수평나열 처리
+
+        .img-wrap{
+            width: 960px; height: 600px;
+            margin-right: 50px;
+        }
+        .text-wrap{
+            width: 550px; height: 600px;
+            padding: 50px 0;
+        }
+        h3{
+            color: #999;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        h4{
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        p{
+            color: #666;
+            text-align: justify;
+            font-size: 24px;
+            line-height: 150%; /* 36px */
+            margin-bottom: 125px;
+        }
+        a{
+            display: block; //a태그가 인라인이여서 영역안들어가는 것을 들어가게 처리
+            width: 300px; height: 60px;
+            line-height: 58px; color: #666;
+            border: 1px solid #666;
+            padding-left: 30px; //테두리 안쪽 여백
+            position: relative; //선의 앱솔루트 기준을 현재 요소로 변경
+            transition: 0.3s;
+
+            &::after{ //글자 옆 선
+                content: ''; //이미지나 글자가 아니라 영역 주기
+                position: absolute; right: 0;
+                top: 50%; transform: translateY(-50%); //앱솔루트가 세로 가운데 오게 처리
+                width: 150px; height: 1px;
+                background-color: #666;
+            }
+            &::before{
+                content: '';
+                position: absolute; right: 0;
+                top: 50%; transform: translateY(-50%);
+                z-index: 10; //after보다 앞에 보이게 처리
+                width: 150px; height: 1px;
+                background-color: #fff;
+                transform: scaleX(0); //x축크기 0%으로 처리
+                transition: 0.3s; //css변화에 시간차 처리
+                transform-origin: right center; //변형의 중심점을 오른쪽으로 변경
+            }
+
+            &:hover{ //a태그에 마우스를 올리면
+                background-color: $main-color; color: #fff;
+                border: 1px solid $main-color;
+
+                //마우스를 올렸을 때 나의 before가
+                &::before{
+                    transform: scaleX(1); //x축크기 100%로 처리
+                }
+            }
+        }
+    }
+
+    .swiper-button-prev{
+        width: 36px; height: 36px;
+        left: 1010px; top: 520px;
+    }
+    .swiper-button-next{
+        width: 36px; height: 36px;
+        left: 1070px; top: 520px;
+    }
+    .swiper-button-prev::after{
+        content: url(../images/main/best_prev_btn.svg);
+    }
+    .swiper-button-next::after{
+        content: url(../images/main/best_next_btn.svg);
+    }
+}
+
+/* smeg-notice */
+.smeg-notice{
+    width: $min-width; margin: 0 auto 200px; //상 좌우 하
+    position: relative;
+
+    h2{
+        font-size: 48px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .more{
+        position: absolute; right: 0; top: 14px;
+
+        &::after{
+            content: url(../images/main/arrow.svg);
+            margin-left: 10px;
+        }
+    }
+    ul{
+        display: flex; //자손요소를 수평나열 처리
+        justify-content: space-between; //첫번째와 마지막을 양쪽 끝에 붙이고 균등 배분
+
+        li{
+            width: 285px;
+
+            img{
+                margin-bottom: 10px;
+            }
+            h3{
+                width: 100%; height: 30px;
+                font-size: 24px;
+                margin-bottom: 10px;
+
+                white-space: nowrap; //부모크기 작아도 글자 줄바꿈 안하게 처리
+                overflow: hidden; //넘어가는 글자 안보이게 처리
+                text-overflow: ellipsis; //잘리는 글자 있을 때 ...처리
+            }
+            p{
+                width: 100%; height: 48px; //줄간격 x 2
+                text-align: justify;
+                color: #666; line-height: 1.5;
+                margin-bottom: 10px;
+
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; //몇번째 줄에 ...처리할지 지정
+                -webkit-box-orient: vertical;
+            }
+            .date{
+                color: #666; font-size: 14px;
+            }
+        }
+    }
+}

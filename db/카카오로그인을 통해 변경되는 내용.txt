@@ -1,0 +1,16 @@
+** 카카오 로그인하면서 변경된 내용
+1. 모든 마이페이지에 왼쪽 개인정보 표시 다시 처리
+2. 카카오 로그인이 id가 길게 들어가서 모든 테이블의 아이디관련 varchar(50)으로 변경
+3. 개인정보수정비밀번호페이지 : personal_info.jsp
+   => 카카오로 로그인하면 비밀번호를 0000으로 처리했다는 문구 띄움
+4. 개인정보수정페이지-personal_info_update.jsp
+   - 이메일 쪽 에러라 수정해야함
+<input type="text" id="signup-email01" name="first_email" value="${member.firstEmail != null ? member.firstEmail : ''}">
+                            <span class="at">@</span>
+                            <input type="text" id="signup-email02" name="second_email" value="${member.firstEmail != null ? member.firstEmail : ''}">
+   - 이름관련 수정가능하게 처리해야 함
+5. 제품디테일페이지에서 바로구매 안되게 처리 : detail.jsp - 스크립트 수정
+6. 장바구니페이지 : shopping_list - 스크립트 수정
+   - 바로구매와 선택구매안되게 처리 후 개인정보수정페이지이로 이동권장
+
+  

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMEG - 개인정보수정 - 3차프로젝트</title>
+    <!--파비콘: 홈페이지 title옆에 붙는 아이콘-->
+    <link rel="icon" type="image/x-icon" href="/images/common/favicon.ico" />
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/sub-common.css">
+    <link rel="stylesheet" href="/css/myadmin-common.css">
+    <link rel="stylesheet" href="/css/personal_info.css">
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/index.html">
+                <img src="/images/common/logo.svg" alt="스메그로고" class="white">
+                <img src="/images/common/logo_black.svg" alt="스메그로고" class="black">
+            </a>
+        </h1>
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="/smeg/history.html">SMEG</a>
+                    <ul class="sub-nav">
+                        <li><a href="/smeg/history.html">연혁</a></li>
+                        <li><a href="/smeg/story.html">스토리</a></li>
+                        <li><a href="/smeg/award.html">수상내역</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/special/dng.html">SPECIAL</a>
+                    <ul class="sub-nav">
+                        <li><a href="/special/dng.html">D&G</a></li>
+                        <li><a href="/special/fiat.html">FIAT</a></li>
+                        <li><a href="/special/disney.html">DISNEY</a></li>
+                        <li><a href="/special/cocacola.html">COCACOLA</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/big/refrigerator.html">BIG PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/big/refrigerator.html">냉장고</a></li>
+                        <li><a href="/big/wineseller.html">와인셀러</a></li>
+                        <li><a href="/big/dishwasher.html">식기세척기</a></li>
+                        <li><a href="/big/oven.html">오븐/인덕션</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/small/electricpot.html">SMALL PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/small/electricpot.html">전기포트</a></li>
+                        <li><a href="/small/toaster.html">토스트기</a></li>
+                        <li><a href="/small/mixer.html">믹서기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/service/notice.html">SERVICE</a>
+                    <ul class="sub-nav">
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/store.html">매장 안내</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- 하위메뉴 뒤에 깔릴 배경 -->
+        <div class="gnb-bg"></div>
+        <div class="top-nav">
+            <ul>
+                <li>
+                    <a href="#" class="search-btn">
+                        <img src="/images/common/search.svg" alt="검색아이콘" class="white">
+                        <img src="/images/common/search_black.svg" alt="검색아이콘" class="black">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/common/shop.svg" alt="장바구니아이콘" class="white">
+                        <img src="/images/common/shop_black.svg" alt="장바구니아이콘" class="black">
+                    </a>
+                </li>
+                <li><a href="/topnav/login.html">로그인</a></li>
+                <li><a href="/topnav/signup.html">회원가입</a></li>
+                <li><a href="/mypage/personal_info.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="search-box">
+        <form action="#">
+            <!-- label의 for와 id의 속성값이 같아야 스크린리더기가 읽어줌 -->
+            <!-- 앞으로 label에 class를 away로 붙이면 이건 화면에서 안보이게 하겠다는 뜻! -->
+            <label for="search-input" class="away">검색입력창</label>
+            <input type="text" id="search-input" placeholder="검색어를 입력해주세요." />
+        </form>
+        <!-- 닫기버튼 : a 혹은 button 중 선택가능 -->
+        <!-- a태그로 쓸 경우는 임시링크 #을 쓰면 클릭시 자꾸 상단이동하므로 뒤에 의미없는 영문 붙이기(id로 안쓰는)-->
+        <a href="#close"><img src="/images/common/close_icon.svg" alt="닫기버튼"></a>
+    </div>
+    <main class="main-banner08">
+        <h2>개인정보수정</h2>
+        <div class="indicator">
+            <ul>
+                <li><a href="/index.html"><img src="/images/sub/home.svg" alt="홈 아이콘"></a></li>
+                <li><a href="/mypage/personal_info.html">마이페이지</a></li>
+                <li><a href="/mypage/personal_info.html">개인정보수정</a></li>
+            </ul>
+        </div>
+    </main>
+    <div class="myadmin-contents">
+        <div class="left_contents">
+            <div class="profile">
+                <div class="first-name">홍</div>
+                <div class="profile_text">
+                    <p class="user-name">홍길동님</p>
+                    <p class="user-id">testid@naver.com</p>
+                    <p class="user-phone">010-0000-0000</p>
+                </div>
+            </div>
+            <div class="sub-gnb">
+                <ul>
+                    <li><a href="/mypage/personal_info.html" class="active">개인정보수정</a></li>
+                    <li><a href="/mypage/order.html">나의 주문내역</a></li>
+                    <li><a href="/mypage/shopping_list.html">장바구니</a></li>
+                    <li><a href="/mypage/user_drop.html">회원탈퇴</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_contents">
+            <h2>개인정보수정</h2>
+            <div class="sub_contents">
+                <!--jsp로 넘길 시 form의 id 속성은 지워주세요 -->
+                <form action="#" id="personal_id">
+                    <fieldset class="insert-pw-box">
+                        <p class="insert-pw-p">비밀번호를 입력해주세요.</p>
+                        <input type="password" id="insert-pw-input" placeholder="비밀번호 입력">
+                        <label for="insert-pw-input" class="away">비밀번호 입력칸</label>
+                    </fieldset>
+                    <button type="submit" id="personal_btn" class="btn-hover">개인정보수정</button>
+                    <!--jsp로 넘길 시 script태그 자체를 지워주세요 -->
+                    <script>
+                        let personal_id = document.getElementById('personal_id');
+
+                        personal_id.onclick = function(e){
+                            e.preventDefault();
+                            location.href = '/mypage/personal_info_update.html';
+                        }
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="inner-wrap">
+            <div class="footer-top">
+                <div class="sns-box">
+                    <h3>SMEG SNS</h3>
+                    <ul>
+                        <!--
+                            a태그의 target속성 : 열릴 페이지가 어디에 뜰지 지정해주는 속성
+                            기본값(작성안한다는 뜻)은 _self로 현재 창에서 변경
+                            새창이나 새탭에서 처리하려면 _blank로 처리
+                        -->
+                        <li><a href="https://www.facebook.com/smegkorea" target="_blank"><img src="/images/common/sns01.svg" alt="페이스북아이콘"></a></li>
+                        <li><a href="https://www.instagram.com/smegkorea/" target="_blank"><img src="/images/common/sns02.svg" alt="인스타그램아이콘"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCCwqSNH1-AN1C-AwWhZnKHw?reload=9" target="_blank"><img src="/images/common/sns03.svg" alt="유튜브아이콘"></a></li>
+                        <li><a href="https://cafe.naver.com/smegcafe" target="_blank"><img src="/images/common/sns04.svg" alt="네이버카페아이콘"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/smeg/history.html">스메그소개</a></li>
+                        <li><a href="/service/store.html">매장안내</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/admin/user_list.html">관리자</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright Ⓒ SMEGKOREA Co., Ltd. All Right Reserved.</p>
+                <h1><img src="/images/common/logo.svg" alt="스메그로고"></h1>
+            </div>
+        </div>
+    </footer>
+    <!--스크롤탑버튼-->
+    <a href="#top" class="scroll-btn">
+        <img src="/images/common/top_anchor.png" alt="상단으로 가기">
+    </a>
+</body>
+</html>

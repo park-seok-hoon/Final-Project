@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMEG - 상품등록 - 3차프로젝트</title>
+    <!--파비콘: 홈페이지 title옆에 붙는 아이콘-->
+    <link rel="icon" type="image/x-icon" href="/images/common/favicon.ico" />
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/sub-common.css">
+    <link rel="stylesheet" href="/css/myadmin-common.css">
+    <link rel="stylesheet" href="/css/product_insert.css">
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/product_insert.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/index.html">
+                <img src="/images/common/logo.svg" alt="스메그로고" class="white">
+                <img src="/images/common/logo_black.svg" alt="스메그로고" class="black">
+            </a>
+        </h1>
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="/smeg/history.html">SMEG</a>
+                    <ul class="sub-nav">
+                        <li><a href="/smeg/history.html">연혁</a></li>
+                        <li><a href="/smeg/story.html">스토리</a></li>
+                        <li><a href="/smeg/award.html">수상내역</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/special/dng.html">SPECIAL</a>
+                    <ul class="sub-nav">
+                        <li><a href="/special/dng.html">D&G</a></li>
+                        <li><a href="/special/fiat.html">FIAT</a></li>
+                        <li><a href="/special/disney.html">DISNEY</a></li>
+                        <li><a href="/special/cocacola.html">COCACOLA</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/big/refrigerator.html">BIG PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/big/refrigerator.html">냉장고</a></li>
+                        <li><a href="/big/wineseller.html">와인셀러</a></li>
+                        <li><a href="/big/dishwasher.html">식기세척기</a></li>
+                        <li><a href="/big/oven.html">오븐/인덕션</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/small/electricpot.html">SMALL PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/small/electricpot.html">전기포트</a></li>
+                        <li><a href="/small/toaster.html">토스트기</a></li>
+                        <li><a href="/small/mixer.html">믹서기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/service/notice.html">SERVICE</a>
+                    <ul class="sub-nav">
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/store.html">매장 안내</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- 하위메뉴 뒤에 깔릴 배경 -->
+        <div class="gnb-bg"></div>
+        <div class="top-nav">
+            <ul>
+                <li>
+                    <a href="#" class="search-btn">
+                        <img src="/images/common/search.svg" alt="검색아이콘" class="white">
+                        <img src="/images/common/search_black.svg" alt="검색아이콘" class="black">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/common/shop.svg" alt="장바구니아이콘" class="white">
+                        <img src="/images/common/shop_black.svg" alt="장바구니아이콘" class="black">
+                    </a>
+                </li>
+                <li><a href="/topnav/login.html">로그인</a></li>
+                <li><a href="/topnav/signup.html">회원가입</a></li>
+                <li><a href="/mypage/personal_info.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="search-box">
+        <form action="#">
+            <!-- label의 for와 id의 속성값이 같아야 스크린리더기가 읽어줌 -->
+            <!-- 앞으로 label에 class를 away로 붙이면 이건 화면에서 안보이게 하겠다는 뜻! -->
+            <label for="search-input" class="away">검색입력창</label>
+            <input type="text" id="search-input" placeholder="검색어를 입력해주세요." />
+        </form>
+        <!-- 닫기버튼 : a 혹은 button 중 선택가능 -->
+        <!-- a태그로 쓸 경우는 임시링크 #을 쓰면 클릭시 자꾸 상단이동하므로 뒤에 의미없는 영문 붙이기(id로 안쓰는)-->
+        <a href="#close"><img src="/images/common/close_icon.svg" alt="닫기버튼"></a>
+    </div>
+    <main class="main-banner09">
+        <h2>상품수정</h2>
+        <div class="indicator">
+            <ul>
+                <li><a href="/index.html"><img src="/images/sub/home.svg" alt="홈 아이콘"></a></li>
+                <li><a href="/admin/user_list.html">관리자</a></li>
+                <li><a href="/admin/product_update_list.html">상품수정</a></li>
+            </ul>
+        </div>
+    </main>
+    <div class="myadmin-contents">
+        <div class="left_contents">
+            <div class="profile">
+                <div class="first-name">관리자</div>
+                <div class="profile_text">
+                    <p class="user-name">관리자님</p>
+                </div>
+            </div>
+            <div class="sub-gnb02">
+                <ul>
+                    <li><a href="/admin/user_list.html">회원리스트 보기/강퇴</a></li>
+                    <li><a href="/admin/category.html" >카테고리 관리</a></li>
+                    <li><a href="/admin/product_insert.html">상품등록</a></li>
+                    <li><a href="/admin/product_update_list.html"  class="active">상품수정</a></li>
+                    <li><a href="/admin/product_delete.html">상품삭제</a></li>
+                    <li><a href="/admin/order_list.html">고객주문내역</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_contents">
+            <h2>상품수정</h2>
+            <div class="sub_contents">
+                <form action="#">
+                    <div class="title-wrap">
+                        <h3>■ 기본 상품 정보</h3>
+                        <p>모든항목은 필수 입력입니다.</p>
+                    </div>
+                    <fieldset>
+                        <!--legend는 fieldset의 자손으로만 써야해서 css날릴 예정-->
+                        <legend>기본 상품 정보</legend>
+                        <div class="form-row form-top">
+                            <div class="title">상태</div>
+                            <div class="chk-box">
+                                <input type="checkbox" id="state-chk">
+                                <label for="state-chk">품절</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <label for="product-code" class="title">상품코드</label>
+                            <input type="text" id="product-code" value="TSF01WHMEU" readonly>
+                            <p class="error-text">상품코드는 중복될 수 없습니다.</p>
+                        </div>
+                        <div class="form-row form-row4">
+                            <div class="input-box">
+                                <label for="product-name" class="title">상품명</label>
+                                <input type="text" id="product-name" value="토스터 매트화이트">
+                            </div>
+                            <div class="input-box">
+                                <label for="product-price" class="title2">가격</label>
+                                <input type="text" id="product-price" value="233000" class="right">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="title">분류</div>
+                            <select id="category-box">
+                                <option value="#">카테고리분류</option>
+                                <option value="SPECIAL">SPECIAL</option>
+                                <option value="BIG PRODUCT">BIG PRODUCT</option>
+                                <option value="SMALL PRODUCT" selected>SMALL PRODUCT</option>
+                            </select>
+                            <label for="category-box" class="away">카테고리분류 선택</label>
+                            <select id="product-box">
+                                <!--백단에서 가져와야 함-->
+                                <option value="#">제품분류</option>
+                                <option value="SPECIAL">전기포트</option>
+                                <option value="BIG PRODUCT" selected>토스트기</option>
+                                <option value="SMALL PRODUCT">믹서기</option>
+                            </select>
+                            <label for="product-box" class="away">제품분류 선택</label>
+                        </div>
+                        <div class="form-row form-bottom">
+                            <label for="product-content" class="title">제품설명</label>
+                            <textarea id="product-content" rows="5">스메그 토스터는 공간 인테리어의 가치를 높이고 멋을 더해 주기 위해 설계되었습니다. 부드러운 곡선의 레트로 라인 FAB 냉장고를 모티브로 디자인되어 제품의 컬러와 소재가 다양하고, 고객이 사용하고자 하는 모든 공간에서 다른 제품들과 완벽한 어우러짐을 자랑할 뿐만 아니라 제품 자체의 독특한 개성을 부각시켜 인테리어에 포인트가 될 수 있도록 제작되었습니다.
+                            </textarea>
+                        </div>
+                    </fieldset>
+                    <div class="title-wrap">
+                        <h3>■ 상품이미지 정보</h3>
+                        <p>모든항목은 필수 입력입니다.</p>
+                    </div>
+                    <fieldset>
+                        <!--legend는 fieldset의 자손으로만 써야해서 css날릴 예정-->
+                        <legend>상품이미지 정보</legend>
+                        <div class="form-row form-top">
+                            <div class="title">상세 이미지(1장)</div>
+                            <input type="text" id="product-detail-file" value="detail01.jpg" readonly>
+                            <label for="product-detail-file" class="away">첨부파일 주소입력</label>
+                            <input type="file" id="product-detail">
+                            <label for="product-detail">첨부파일</label>
+                        </div>
+                        <div class="form-row form-none">
+                            <div class="title">슬라이드(3장)</div>
+                            <input type="text" id="product-slide01-file" value="slide01.jpg" readonly>
+                            <label for="product-slide01-file" class="away">첨부파일 주소입력</label>
+                            <input type="file" id="product-slide01">
+                            <label for="product-slide01">첨부파일</label>
+                        </div>
+                        <div class="form-row form-none">
+                            <div class="title"></div>
+                            <input type="text" id="product-slide02-file" value="slide02.jpg" readonly>
+                            <label for="product-slide02-file" class="away">첨부파일 주소입력</label>
+                            <input type="file" id="product-slide02">
+                            <label for="product-slide02">첨부파일</label>
+                        </div>
+                        <div class="form-row form-bottom">
+                            <div class="title"></div>
+                            <input type="text" id="product-slide03-file" value="slide03.jpg" readonly>
+                            <label for="product-slide03-file" class="away">첨부파일 주소입력</label>
+                            <input type="file" id="product-slide03">
+                            <label for="product-slide03">첨부파일</label>
+                        </div>
+                    </fieldset>
+                    <div class="title-wrap">
+                        <h3>■ 상품고시내용</h3>
+                        <p>모든항목은 필수 입력입니다.</p>
+                    </div>
+                    <fieldset>
+                        <!--legend는 fieldset의 자손으로만 써야해서 css날릴 예정-->
+                        <legend>상품고시내용</legend>
+                        <div class="form-row form-top">
+                            <label for="notification01" class="title">KC인증필 유무</label>
+                            <input type="text" id="notification01" class="notification" value="유 / KTL HW07063-19008B">
+                        </div>
+                        <div class="form-row">
+                            <label for="notification02" class="title">소비전력</label>
+                            <input type="text" id="notification02" class="notification" value="AC 220V, 60Hz / 870W">
+                        </div>
+                        <div class="form-row">
+                            <label for="notification03" class="title">에너지소비효율등급</label>
+                            <input type="text" id="notification03" class="notification" value="해당없음">
+                        </div>
+                        <div class="form-row">
+                            <label for="notification04" class="title">출시년월</label>
+                            <input type="text" id="notification04" class="notification" value="2020년 12월">
+                        </div>
+                        <div class="form-row">
+                            <label for="notification05" class="title">수입자 표기</label>
+                            <input type="text" id="notification05" class="notification" value="Dongguan Hengli Yorkwell manufactory,SMEG S.p.A. ｜(주)제이컬렉션">
+                        </div>
+                        <div class="form-row">
+                            <label for="notification06" class="title">제조국</label>
+                            <input type="text" id="notification06" class="notification" value="Assembled in China, Designed by SMEG ITALY">
+                        </div>
+                        <div class="form-row">
+                            <label for="notification07" class="title">크기, 용량, 형태</label>
+                            <input type="text" id="notification07" class="notification" value="(가로x세로x높이)310x195x195mm, 2슬라이스, 팝업형">
+                        </div>
+                        <div class="form-row">
+                            <label for="notification08" class="title">품질보증기준</label>
+                            <input type="text" id="notification08" class="notification" value="1년">
+                        </div>
+                        <div class="form-row">
+                            <label for="notification09" class="title">A/S책임자전화번호</label>
+                            <input type="text" id="notification09" class="notification" value="(주)제이컬렉션/스메그코리아 고객센터 1588-2644">
+                        </div>
+                        <div class="form-row form-bottom">
+                            <label for="notification10" class="title">추가설치비용</label>
+                            <input type="text" id="notification10" class="notification" value="해당사항 없음">
+                        </div>
+                    </fieldset>
+                    <button type="submit" id="product-update-btn" class="btn-hover">상품수정</button>
+                </form>
+            </div>
+        </div>
+    </div>
+            
+    <footer>
+        <div class="inner-wrap">
+            <div class="footer-top">
+                <div class="sns-box">
+                    <h3>SMEG SNS</h3>
+                    <ul>
+                        <!--
+                            a태그의 target속성 : 열릴 페이지가 어디에 뜰지 지정해주는 속성
+                            기본값(작성안한다는 뜻)은 _self로 현재 창에서 변경
+                            새창이나 새탭에서 처리하려면 _blank로 처리
+                        -->
+                        <li><a href="https://www.facebook.com/smegkorea" target="_blank"><img src="/images/common/sns01.svg" alt="페이스북아이콘"></a></li>
+                        <li><a href="https://www.instagram.com/smegkorea/" target="_blank"><img src="/images/common/sns02.svg" alt="인스타그램아이콘"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCCwqSNH1-AN1C-AwWhZnKHw?reload=9" target="_blank"><img src="/images/common/sns03.svg" alt="유튜브아이콘"></a></li>
+                        <li><a href="https://cafe.naver.com/smegcafe" target="_blank"><img src="/images/common/sns04.svg" alt="네이버카페아이콘"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/smeg/history.html">스메그소개</a></li>
+                        <li><a href="/service/store.html">매장안내</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/admin/user_list.html">관리자</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright Ⓒ SMEGKOREA Co., Ltd. All Right Reserved.</p>
+                <h1><img src="/images/common/logo.svg" alt="스메그로고"></h1>
+            </div>
+        </div>
+    </footer>
+    <!--스크롤탑버튼-->
+    <a href="#top" class="scroll-btn">
+        <img src="/images/common/top_anchor.png" alt="상단으로 가기">
+    </a>
+</body>
+</html>

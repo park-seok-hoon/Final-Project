@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+//변수선언
+$min-width: 1200px;
+$main-color: #1C1C1C;
+
+.sub_contents{
+	
+	h3{
+			color: #000;
+			font-size: 24px;
+			font-weight: 700;
+			margin-bottom: 20PX;
+			}
+
+}
+
+.category-wrap{
+	display: flex;
+	margin-bottom: 20px;
+
+}
+#category_special,#category_small,#category_big{
+	margin-left: 30px;
+}
+.label-title{
+	color: #000;
+	font-size: 18px;
+	font-weight: 500;
+
+}
+.btn-update{
+		height: 33px;
+		padding: 16px;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		background-color: #FFF;
+		border: 1px solid #1C1C1C;
+		margin-left: 10px;
+}
+.sub_contents{
+  position: relative;
+	padding: 0 20px;
+	
+	[type=radio]{
+		margin-right: 10px;
+	}
+	table{
+		width: 100%;
+		margin-bottom: 30px;
+		
+		input{
+			border: #1C1C1C;
+			margin-left: 40px;
+			width: 150px;
+			height: 34px;
+			outline: none;
+			padding: 5px 10px;
+
+			&.active{
+				outline: auto;
+				outline-color: #ccc;
+				color:$main-color;
+			
+			}
+		}
+	}
+	th{
+		border-top: 1px solid #1C1C1C;
+		height: 70px;
+	} 
+	th:nth-child(1){ 
+		width:100px;
+	}
+	th:nth-child(2){
+		width:540px;
+	}
+	th:nth-child(3){
+		width:220px;
+	}
+
+	thead{
+		border-top: 1px solid black;
+		background: #FAFAFA;
+		width: 150px;
+		height: 70px;
+	}
+	td{
+		text-align: center;
+		height:70px;
+	}
+	td:nth-child(2){
+		text-align: left;
+	}
+
+	tbody{
+		tr{
+			border-bottom: 1px solid #DFDFDF;
+
+			&:last-child{ //마지막 tr만 색상 검게 처리
+				border-bottom: 1px solid #1C1C1C;
+			}
+		}
+	}
+	.update-btn{
+		width: 80px;
+		height: 33px;
+		margin: 0 10px;
+		background-color: #FFF;
+		border: 1px solid #1C1C1C;
+		
+	
+}
+.delete-btn{
+		width: 80px;
+		height: 33px;
+		background-color: #FFF;
+		border: 1px solid #999;
+		color: #666;
+
+}
+}
+.insert{
+	display: flex;
+	h4{
+		margin-right: 20px;
+		font-size: 18px;
+		font-weight: 500;
+		line-height:50px;
+
+	}
+	#category-insert{
+		border: 1px solid #999;
+		background: #FFF;
+		font-size: 14px;
+		font-weight: 400;
+		width: 717px;
+		height: 50px;
+		background-image: url('/images/admin/nav02.svg');
+		background-repeat: no-repeat;
+		background-position: 10px center; //x축 y축
+		line-height: 50px;
+		padding-left: 45px;
+
+	}
+	
+}
+
+#category-btn{
+			width: 200px;
+			height: 50px;
+			border: 1px solid #1C1C1C;
+			background: #FFF;
+			margin: 0 auto;
+			margin-top: 30px;
+			display: block;
+			justify-items: center;
+}

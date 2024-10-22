@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+//변수선언
+$main-color: #1C1C1C;
+$min-width: 1200px;
+
+
+.myadmin-contents{
+    width: $min-width; padding: 50px 0 200px; //상 좌우 하
+    margin: 0 auto; //블록요소가 부모영역에서 가로가운데 오게 처리
+    display: flex; //자손요소를 수평나열 처리
+
+    .left_contents{
+        width: 300px;
+        padding-right: 40px;
+    }
+    .right_contents{
+        width: 900px;
+
+        h2{
+            width: 100%; height: 70px;
+            border-bottom: 2px solid $main-color;
+            margin-bottom: 40px;
+            line-height: 68px;
+            font-size: 36px;
+        }
+    }
+    .profile{
+        width: 260px; height: 260px;
+        border-top: 1px solid #CCC;
+        border-bottom: 1px solid #CCC;
+        padding: 30px;
+
+        .first-name{
+            width: 100px; height: 100px;
+            margin: 0 auto 20px; //상 좌우 하
+            background-color: $main-color;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            color: #fff;
+            font-size: 36px;
+        }
+
+        .profile_text{
+            text-align: center;
+
+            p{
+                color: #666;
+                font-size: 18px;
+                margin-bottom: 8px;
+                &.user-name{
+                    color: $main-color;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .sub-gnb{
+        width: 260px; height: 420px;
+        border-bottom: 1px solid #CCC;
+        padding-top: 20px;
+
+        li{
+            position: relative; //아이콘 위치 컨트롤
+            width: 100%; height: 50px;
+
+            a::before{
+                position: absolute;
+                left: 16px; top: 5px;
+            }
+            
+            &:nth-child(1) a::before{ content: url(../images/mypage/nav01.svg); }
+            &:nth-child(2) a::before{ content: url(../images/mypage/nav02.svg); }
+            &:nth-child(3) a::before{ content: url(../images/mypage/nav03.svg); }
+            &:nth-child(4) a::before{ content: url(../images/mypage/nav04.svg); }
+
+            //활성화시 진한 아이콘 처리
+            &:nth-child(1) a.active::before{ content: url(../images/mypage/nav01_active.svg); }
+            &:nth-child(2) a.active::before{ content: url(../images/mypage/nav02_active.svg); }
+            &:nth-child(3) a.active::before{ content: url(../images/mypage/nav03_active.svg); }
+            &:nth-child(4) a.active::before{ content: url(../images/mypage/nav04_active.svg); }
+        }
+        a{
+            display: block;
+            width: 100%; height: 50px;
+            line-height: 50px;
+            padding: 0 10px 0 40px;
+            background-image: url(../images/mypage/next.svg);
+            background-repeat: no-repeat;
+            background-position: calc(100% - 10px) center;
+            color: #666;
+
+            &.active{ //활성화 메뉴 글자 진하게 처리
+                color: $main-color;
+                font-weight: 500;
+            }
+        }
+    }
+    .sub-gnb02{
+        width: 260px; height: 420px;
+        border-bottom: 1px solid #CCC;
+        padding-top: 20px;
+
+        li{
+            position: relative; //아이콘 위치 컨트롤
+            width: 100%; height: 50px;
+
+            a::before{
+                position: absolute;
+                left: 16px; top: 5px;
+            }
+            &:nth-child(1) a::before{ content: url(../images/admin/nav01.svg); }
+            &:nth-child(2) a::before{ content: url(../images/admin/nav02.svg); }
+            &:nth-child(3) a::before{ content: url(../images/admin/nav03.png); }
+            &:nth-child(4) a::before{ content: url(../images/admin/nav04.svg); }
+            &:nth-child(5) a::before{ content: url(../images/admin/nav05.png); }
+            &:nth-child(6) a::before{ content: url(../images/admin/nav06.svg); }
+        
+
+            //활성화시 진한 아이콘 처리
+            &:nth-child(1) a.active::before{ content: url(../images/admin/nav01_active.svg); }
+            &:nth-child(2) a.active::before{ content: url(../images/admin/nav02_active.svg); }
+            &:nth-child(3) a.active::before{ content: url(../images/admin/nav03_active.png); }
+            &:nth-child(4) a.active::before{ content: url(../images/admin/nav04_active.svg); }
+            &:nth-child(5) a.active::before{ content: url(../images/admin/nav05_active.png); }
+            &:nth-child(6) a.active::before{ content: url(../images/admin/nav06_active.svg); }
+        }
+        a{
+            display: block;
+            width: 100%; height: 50px;
+            line-height: 50px;
+            padding: 0 10px 0 40px;
+            background-image: url(../images/mypage/next.svg);
+            background-repeat: no-repeat;
+            background-position: calc(100% - 10px) center;
+            color: #666;
+
+            &.active{ //활성화 메뉴 글자 진하게 처리
+                color: $main-color;
+                font-weight: 500;
+            }
+        }
+    }
+    .pagination{
+        ul{
+            display: flex;
+        }
+    }
+ 
+}

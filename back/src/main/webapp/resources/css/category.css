@@ -1,0 +1,218 @@
+.sub_contents h3 {
+  color: #000;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20PX;
+}
+
+.category-wrap {
+  display: flex;
+  margin-bottom: 20px;
+}
+.sub_contents .form-row{
+  display: flex; width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub_contents table .title-label{
+  display: none;
+  width: 140px;
+}
+.sub_contents table td.active .title-label{
+  display: block;
+}
+.label-title {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+.btn-update {
+  height: 40px;
+  padding: 0 16px;
+  background-color: #FFF;
+  border: 1px solid #1C1C1C;
+  margin: 0 auto;
+}
+
+.sub_contents {
+  position: relative;
+  padding: 0 20px;
+}
+.sub_contents [type=radio] {
+  margin-right: 10px;
+  margin-left: 30px;
+}
+.sub_contents table {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.sub_contents table .form-row{
+  display: none;
+  padding: 8px 0;
+}
+.sub_contents table .form-row:first-child{
+  display: flex;
+}
+.sub_contents table td.active .form-row{
+  display: flex;
+}
+
+.sub_contents table input{
+  width: 330px;
+  height: 40px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+.sub_contents table input.category-file-text{
+  width: 220px; 
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+.sub_contents table td.active .category-name{
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  outline: auto;
+  outline-color: #ccc;
+  color: #1C1C1C;
+}
+.sub_contents table textarea{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 330px;
+  height: 120px;
+  padding: 10px;
+}
+.sub_contents table input[type=file] {
+  position: absolute;
+  left: -999em;
+}
+.sub_contents table input[type=file] + label {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  line-height: 38px;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  cursor: pointer;
+}
+.sub_contents th {
+  border-top: 1px solid #1C1C1C;
+  height: 70px;
+}
+.sub_contents th:nth-child(1) {
+  width: 100px;
+}
+.sub_contents th:nth-child(2) {
+  width: 540px; 
+}
+.sub_contents th:nth-child(3) {
+  width: 220px;
+}
+.sub_contents thead {
+  border-top: 1px solid black;
+  background: #FAFAFA;
+  width: 150px;
+  height: 70px;
+}
+.sub_contents td {
+  text-align: center;
+}
+.sub_contents td:nth-child(2) {
+  text-align: left;
+  padding: 16px 30px;
+}
+.sub_contents tbody tr {
+  border-bottom: 1px solid #DFDFDF;
+}
+.sub_contents tbody tr:last-child {
+  border-bottom: 1px solid #1C1C1C;
+}
+.sub_contents .update-btn {
+  width: 80px;
+  height: 40px;
+  margin: 0 10px;
+  background-color: #FFF;
+  border: 1px solid #1C1C1C;
+  position: relative; top: 1px;
+}
+.sub_contents .delete-btn {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  line-height: 38px;
+  background-color: #FFF;
+  border: 1px solid #999;
+  color: #666;
+}
+
+.insert .form-row{
+  margin-bottom: 20px;
+}
+.insert .form-row:first-child{
+	justify-content: flex-start;
+}
+.insert .title-label{
+  width: 190px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.insert #category-name-insert{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  width: 650px;
+  height: 50px;
+  background-image: url("../images/admin/nav02.svg");
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  padding-left: 55px;
+}
+.insert #category-explain-insert{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  width: 650px;
+  height: 150px;
+  background-image: url("../images/admin/nav02.svg");
+  background-repeat: no-repeat;
+  background-position: 20px 13px;
+  padding: 20px 55px; 
+}
+.insert #category-file-text-insert{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 530px;
+  height: 50px;
+  
+  padding: 5px 10px;
+}
+.insert input[type=file]{
+  position: absolute;
+  left: -999em;
+}
+.insert input[type=file] + label{
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  line-height: 48px;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  cursor: pointer;
+}
+
+#category-btn {
+  width: 200px;
+  height: 50px;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  margin: 0 auto;
+  margin-top: 10px;
+  display: block;
+  justify-items: center;
+}

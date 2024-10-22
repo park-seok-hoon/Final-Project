@@ -1,0 +1,14 @@
+<svg id="그룹_7459" data-name="그룹 7459" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_3514" data-name="사각형 3514" width="60" height="60" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_7458" data-name="그룹 7458" clip-path="url(#clip-path)">
+    <ellipse id="타원_795" data-name="타원 795" cx="27.392" cy="12.808" rx="27.392" ry="12.808" transform="translate(6.127 48.56) rotate(-62.923)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="패스_1248" data-name="패스 1248" d="M30,42.808C14.872,42.808,2.608,37.074,2.608,30S14.872,17.191,30,17.191,57.392,22.926,57.392,30,45.128,42.808,30,42.808Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="패스_1249" data-name="패스 1249" d="M20.389,38.467C10.538,27.286,6.855,14.431,12.163,9.754s17.6.6,27.448,11.779,13.534,24.036,8.225,28.713S30.24,49.648,20.389,38.467Z" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="패스_1250" data-name="패스 1250" d="M30,23.717A6.283,6.283,0,1,1,23.717,30,6.283,6.283,0,0,1,30,23.717"/>
+    <path id="패스_1251" data-name="패스 1251" d="M30,26.308A3.691,3.691,0,1,1,26.308,30,3.691,3.691,0,0,1,30,26.308" fill="#fc1a1a"/>
+  </g>
+</svg>

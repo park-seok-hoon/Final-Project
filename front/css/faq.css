@@ -1,0 +1,95 @@
+.main-contents .faq-q {
+  cursor: pointer;
+  display: flex;
+  border-bottom: 1px solid #999;
+  background: #FFF;
+}
+.main-contents .faq-q.active {
+  background-color: #FAFAFA;
+}
+.main-contents .faq-q.active a {
+  transform: rotate(180deg);
+}
+.main-contents .faq-q:nth-child(1) {
+  border-top: 1px solid #1C1C1C;
+}
+.main-contents .faq-q:nth-child(19) {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #1C1C1C;
+}
+.main-contents .faq-q:nth-child(19).active {
+  margin-bottom: 0;
+  border-bottom: 1px solid #666;
+}
+.main-contents .faq-q .q-check {
+  display: flex;
+  width: 100px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+}
+.main-contents .faq-q .q {
+  display: flex;
+  width: 100px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.main-contents .faq-q .q-title {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  flex: 1 0 0;
+  font-size: 16px;
+  line-height: 150%; /* 24px */
+}
+.main-contents .faq-q a {
+  display: flex;
+  width: 100px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  display: block;
+  background-image: url(../images/service/faq_down.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #666;
+  transition: 0.3s;
+}
+.main-contents .faq-a {
+  display: flex;
+  border-bottom: 1px solid #999;
+}
+.main-contents .faq-a:nth-child(20) {
+  border-bottom: 1px solid #1C1C1C;
+  margin-bottom: 30px;
+}
+.main-contents .faq-a .blank1, .main-contents .faq-a .blank2 {
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+.main-contents .faq-a .a {
+  display: flex;
+  width: 100px;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  align-self: stretch;
+  font-weight: 700;
+}
+.main-contents .faq-a .a-contents {
+  width: 100%;
+  height: auto;
+  padding: 20px 0px;
+  align-items: flex-start;
+  flex: 1 0 0;
+  font-size: 16px;
+  line-height: 150%; /* 24px */
+}

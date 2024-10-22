@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- 리소스관련처리 -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/download/**" location="file:///D:/uploads/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="kr.kh.smeg" />
+	
+	<!-- 타일즈 설정 -->
+	<beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+	    <beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+	    <beans:property name="order" value="1" /><!-- 순서를 우선으로 지정 -->
+	</beans:bean>
+	     
+	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+	    <beans:property name="definitions">
+	        <beans:list>
+	            <beans:value>/WEB-INF/spring/tiles-def.xml</beans:value>
+	        </beans:list>
+	    </beans:property>
+	</beans:bean>
+	
+	<!-- 로그인 인터셉터 등록 -->
+	<beans:bean id="loginInterceptor" 
+		class="kr.kh.smeg.interceptor.LoginInterceptor"/>
+	<!-- 자동 로그인 인터셉터 등록 -->
+	<beans:bean id="AutoLoginInterceptor" 
+		class="kr.kh.smeg.interceptor.AutoLoginInterceptor"/>
+	<!-- GuestInterceptor 등록 -->
+	<beans:bean id="GuestInterceptor" 
+		class="kr.kh.smeg.interceptor.GuestInterceptor"/>
+	<!-- MemberInterceptor 등록 -->
+	<beans:bean id="MemberInterceptor" 
+		class="kr.kh.smeg.interceptor.MemberInterceptor"/>
+	<!-- AdminInterceptor 등록 -->
+	<beans:bean id="AdminInterceptor" 
+		class="kr.kh.smeg.interceptor.AdminInterceptor"/>
+		
+	<!-- 인터셉터 맵핑 -->
+	<interceptors>
+		<!-- 로그인 인터셉터 -->
+		<interceptor>
+			<mapping path="/topnav/login"/>
+			<mapping path="/topnav/id_search_result"/>
+			<beans:ref bean="loginInterceptor"/>
+		</interceptor>
+		
+		<!-- AutoLoginInterceptor가 실행된 URL 지정 -->
+		<interceptor>
+			<mapping path="/*"/>
+			<beans:ref bean="AutoLoginInterceptor"/>
+		</interceptor>
+		
+		<!-- GuestInterceptor가 실행된 URL 지정 -->
+		<interceptor>
+			<mapping path="/topnav/login"/>
+			<mapping path="/topnav/signup"/>
+			<mapping path="/topnav/id_search"/>
+			<mapping path="/topnav/id_search_result"/>
+			<mapping path="/topnav/pw_search"/>
+			<beans:ref bean="GuestInterceptor"/>
+		</interceptor>
+		
+		<!-- MemberInterceptor가 실행된 URL 지정 -->
+		<interceptor>
+			<mapping path="/mypage/personal_info"/>
+			<mapping path="/mypage/personal_info_update"/>
+			<mapping path="/mypage/order"/>
+			<mapping path="/mypage/shopping_list"/>
+			<mapping path="/mypage/user_drop"/>
+			<beans:ref bean="MemberInterceptor"/>
+		</interceptor>
+		
+		<!-- AdminInterceptor가 실행된 URL 지정 -->
+		<interceptor>
+			<mapping path="/admin/user_list"/>
+			<mapping path="/admin/category"/>
+			<mapping path="/admin/insert"/>
+			<mapping path="/admin/update_list"/>
+			<mapping path="/admin/update"/>
+			<mapping path="/admin/delete"/>
+			<mapping path="/admin/order_list"/>
+			<mapping path="/faq/insert"/>
+			<mapping path="/faq/delete"/>
+			<mapping path="/notice/insert"/>
+			<mapping path="/notice/delete"/>
+			<beans:ref bean="AdminInterceptor"/>
+		</interceptor>
+		
+	</interceptors>
+	
+	<!-- 첨부파일 용량 제한 -->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 업로드 최대 크기 50Mb -->
+		<beans:property name="maxUploadSize" value="52428800"/>
+	</beans:bean>
+	<!-- 첨부파일을 업로드할 서버 경로 -->
+	<beans:bean id="uploadPath" class="java.lang.String">
+		<beans:constructor-arg value="D:\\uploads"/>
+	</beans:bean>
+</beans:beans>

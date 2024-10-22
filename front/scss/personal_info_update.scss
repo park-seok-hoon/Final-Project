@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+//변수선언
+$main-color: #1C1C1C;
+$min-width: 1200px;
+
+.sub_contents{
+    padding: 0 50px;
+    margin: 0 auto; //블록요소가 부모영역에서 가로가운데 오게 처리
+    display: flex; //자손요소를 수평나열 처리
+    
+    P{
+        color: #666;
+        font-size: 14px;
+        text-align: right; //글자 오른쪽 정렬
+        margin-bottom: 50px;
+
+        &::before{
+            content: url(../images/sub/signup_dot.svg);
+            margin-right: 10px;
+            position: relative; //현재 위치에서 상대적 이동
+            top: -2px; //top기준으로 위로 올려야 해서 음수처리
+        }
+    }
+
+    .form-row{
+        display: flex; //자손요소를 수평나열 처리
+        align-items: center; // flex 받은 자손들을 세로 가운데 오도록
+        margin-bottom: 20px; // 하단에 20px씩 거리 두기
+        
+        input[type="text"] { // 수정 전 value 기존의 개인정보사항 폰트
+            color: #666;
+            font-size: 18px;
+        }
+
+        &.address-form{ //한 태그가 클래스 2개일때는 붙여서 선택
+            align-items: flex-start; 
+
+           .label-title{
+                height: 40px; line-height: 40px; //높이와 줄간격이 같으면 한줄짜리 텍스트는 세로 가운데 처리
+            }
+        }
+
+        .label-title{
+            width: 160px;
+            color: #666;
+            font-size: 18px;
+
+            &::after{
+                content: url(../images/sub/signup_dot.svg);
+                position: relative; top: -14px;
+            }
+        }
+        input::placeholder{ //입력상자의 예시 텍스트 글자 설정
+            color: #CCC;
+            font-size: 18px;
+        }
+        #signup-name, #signup-pw, #signup-pw2, #signup-phone, #sample2_address, #sample2_detailAddress{
+            width: 640px;
+            height: 40px;
+            padding: 0px 10px;
+            border-radius: 5px;
+            border: 1px solid #CCC;
+            background: #FFF;
+            display: flex;
+        }
+ 
+        input[type="radio"] + label{ //라디오 버튼 바로 뒤의 label태그만 선택
+            color: #666;
+            font-size: 16px;
+            position: relative; //현재 위치에서 상대적 이동
+            top: -1px; //위로 좀 올림
+        }
+        #signup-female{
+            margin-left: 10px;
+        }
+        .birth-wrap{
+            display: flex; //자손요소를 수평나열 처리
+            width: 640px; //이것도 flex받아서 가로폭 없어서 처리
+            justify-content: space-between; //첫번째 요소와 마지막 요소가 양쪽 끝에 붙음
+            align-items: center;
+        }
+        #lunar{
+            margin-left: 10px;
+        }
+
+        .id-wrap{
+            display: flex; //자손요소를 수평나열 처리
+            justify-content: space-between; //첫번째 요소와 마지막 요소를 양쪽 끝에 붙임
+            width: 640px;
+        }
+        #signup-id{
+            width: 530px;
+            height: 40px;
+            padding: 0px 10px;
+            border-radius: 5px;
+            border: 1px solid #CCC;
+            background: #FFF;
+        }
+        #idchk-btn{
+            width: 100px;
+            height: 40px;
+            border-radius: 5px;
+            background: #999;
+            border: none; //테두리가 원래 들어가서 제거
+            color: #FFF;
+            font-size: 18px;
+        }
+
+        select{
+            width: 120px;
+            height: 40px;
+            padding: 0px 10px;
+            border-radius: 5px;
+            border: 1px solid #CCC;
+            background: #FFF;
+            appearance: none; //선택상자가 원래 갖고 있는 기호 제거
+            background-image: url(../images/sub/down_gray.svg);
+            background-repeat: no-repeat; //배경이미지 반복 제거
+            background-position: calc(100% - 10px) center; //x축 y축
+
+            & + label{ //select의 바로 뒤에 있는 label태그만 선택
+                color: #666;
+                margin-right: 5px;
+            }
+        }
+       
+        .email-wrap{
+            width: 640px;
+            display: flex; //자손요소를 수평나열 처리
+            justify-content: space-between; //첫번째와 마지막만 양쪽 끝에 붙이고 균등 배분
+            align-items: center; //세로 가운데 처리
+        }
+
+        #signup-email01, #signup-email02{
+            width: 225px;
+            height: 40px;
+            padding: 0px 10px;
+            border-radius: 5px;
+            border: 1px solid #CCC;
+            background: #FFF;
+        }
+
+        #sample2_postcode{
+            width: 120px;
+            height: 40px;
+            padding: 0px 10px;
+            border-radius: 5px;
+            border: 1px solid #CCC;
+            background: #FFF;
+        }
+
+        #post-btn{
+            width: 140px;
+            height: 40px;
+            border-radius: 5px;
+            background: #999;
+            border: none; //테두리가 기본적으로 있어서 제거
+            color: #FFF;
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative; //현재 위치에서 상대적 이동
+            top: 1px;
+        }
+        .address-wrap{
+            width: 640px;
+        }
+        #sample2_address{
+            margin-bottom: 20px;
+        }
+     
+        #url-select{
+            width: 145px;
+            height: 40px;
+            padding: 0px 10px;
+            border-radius: 5px;
+            border: 1px solid #CCC;
+            background: #FFF;
+            appearance: none; //선택상자가 원래 갖고 있는 기호 제거
+            background-image: url(../images/sub/down_gray.svg);
+            background-repeat: no-repeat; //배경이미지 반복 제거
+            background-position: calc(100% - 10px) center; //x축 y축
+        }
+
+        #sample2_detailAddress{
+            margin-bottom: 100px;
+        }
+
+    }
+    #personal_btn{
+        display: block;
+        margin: 0 auto;
+        width: 265px;
+        height: 70px;
+        justify-content: center;
+        border: 1px solid #1C1C1C;
+        background: #FFF;
+        color: #111;
+        font-size: 18px;
+    }
+
+}

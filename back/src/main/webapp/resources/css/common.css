@@ -1,0 +1,314 @@
+/* base */
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Pretendard";
+  font-size: 16px;
+  color: #1C1C1C;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+label.away {
+  position: absolute;
+  left: -999em;
+}
+
+fieldset {
+  border: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* header */
+header {
+  width: 100%;
+  min-width: 1200px;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+header .black {
+  display: none;
+}
+
+header h1 {
+  padding: 0 30px;
+}
+
+.gnb > ul {
+  display: flex;
+}
+.gnb > ul > li {
+  padding: 0 32px;
+  position: relative;
+}
+.gnb > ul > li > a {
+  color: #fff;
+  display: block;
+  height: 100px;
+  line-height: 100px;
+}
+
+@media screen and (max-width: 1400px) {
+  .gnb > ul > li {
+    padding: 0 24px;
+  }
+}
+.top-nav {
+  margin-right: 22px;
+}
+.top-nav > ul {
+  display: flex;
+  align-items: center;
+}
+.top-nav > ul > li {
+  margin: 0 8px;
+}
+.top-nav > ul > li > a {
+  color: #fff;
+  font-size: 14px;
+}
+
+.gnb-bg {
+  display: none;
+  width: 100%;
+  min-width: 1200px;
+  background-color: #fff;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 5100;
+  border-bottom: 1px solid #999;
+}
+
+.sub-nav {
+  display: none;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  z-index: 5200;
+  width: 100%;
+  text-align: center;
+  padding: 36px 0;
+}
+.sub-nav li {
+  margin-bottom: 36px;
+}
+.sub-nav li:last-child {
+  margin-bottom: 0;
+}
+.sub-nav a:hover {
+  border-bottom: 1px solid #1C1C1C;
+  padding-bottom: 3px;
+}
+
+/* header active, scroll */
+header.active, header.scroll, header.detail {
+  background-color: #fff;
+  border-bottom: 1px solid #999;
+}
+header.active .gnb > ul > li > a, header.scroll .gnb > ul > li > a, header.detail .gnb > ul > li > a {
+  color: #1C1C1C;
+}
+header.active .top-nav > ul > li > a, header.scroll .top-nav > ul > li > a, header.detail .top-nav > ul > li > a {
+  color: #1C1C1C;
+}
+header.active .black, header.scroll .black, header.detail .black {
+  display: block;
+}
+header.active .white, header.scroll .white, header.detail .white {
+  display: none;
+}
+
+header.detail {
+  position: absolute;
+}
+
+
+/* 에러페이지용 추가 CSS */
+header.error {
+  position: absolute;
+  background-color: #1C1C1C;
+}
+header.error.active .gnb > ul > li > a{
+  color: #fff;
+}
+header.error.active .top-nav > ul > li > a{
+  color: #fff;
+}
+header.error.active .black{
+  display: none;
+}
+header.error.active .white{
+  display: block;
+}
+
+
+/* footer */
+footer {
+  width: 100%;
+  min-width: 1200px;
+  height: 300px;
+  background-color: #1C1C1C;
+  padding: 50px 0;
+}
+
+.inner-wrap {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.footer-top {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sns-box h3 {
+  color: #FFF;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.sns-box ul {
+  display: flex;
+}
+.sns-box li {
+  margin-right: 8px;
+}
+
+.footer-nav ul {
+  display: flex;
+}
+.footer-nav li {
+  margin-left: 16px;
+}
+.footer-nav a {
+  color: #FFF;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  width: 100%;
+  height: 50px;
+  border-top: 2px solid #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.footer-bottom p {
+  color: #FFF;
+  font-size: 14px;
+}
+
+/* search-box */
+.search-box {
+  display: none;
+  width: 100%;
+  min-width: 1200px;
+  height: 100px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6000;
+  padding-top: 25px;
+}
+.search-box a {
+  position: absolute;
+  top: 38px;
+  right: 38px;
+}
+.search-box #search-input {
+  width: 500px;
+  height: 50px;
+  border: 1px solid #1C1C1C;
+  margin: 0 auto;
+  display: block;
+  padding-left: 47px;
+  background-image: url(../images/common/search_icon.svg);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+/* scroll-btn */
+.scroll-btn {
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  z-index: 6000;
+}
+
+/* btn-hover */
+.btn-hover {
+  position: relative;
+}
+.btn-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #1C1C1C;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+.btn-hover:hover::after {
+  transform: scaleX(1);
+}

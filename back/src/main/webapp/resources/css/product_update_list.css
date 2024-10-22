@@ -1,0 +1,128 @@
+.sub_contents {
+  position: relative;
+  padding: 0 20px;
+}
+.sub_contents .product_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.sub_contents .product_title span {
+  color: #1C1C1C;
+  font-size: 20px;
+  font-weight: 400;
+  justify-content: center;
+}
+.sub_contents .product_title span:nth-child(1)::after {
+  content: "|";
+  color: #1C1C1C;
+  padding: 0 16px;
+}
+.sub_contents .product_title #product {
+  width: 200px;
+  height: 50px;
+  align-items: center;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  color: #999;
+  padding: 0 10px;
+  appearance: none;
+  background-image: url(../images/sub/down_gray.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+}
+/* 수정된 CSS - 높이 제거함 */
+.sub_contents table {
+  width: 860px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+.sub_contents th {
+  border-top: 1px solid #1C1C1C;
+  height: 70px;
+}
+/* 수정된 CSS - SMALL PRODUCT일때 두줄로 처리돼서 크기 변경 */
+.sub_contents th:nth-child(1), .sub_contents td:nth-child(1) {
+  width: 120px;
+}
+.sub_contents th:nth-child(2), .sub_contents td:nth-child(2) {
+  width: 170px;
+}
+.sub_contents th:nth-child(3), .sub_contents td:nth-child(3) {
+  width: 140px;
+}
+.sub_contents th:nth-child(4), .sub_contents td:nth-child(4) {
+  width: 300px;
+}
+.sub_contents th:nth-child(5), .sub_contents td:nth-child(5) {
+  width: 130px;
+}
+.sub_contents td:nth-child(4) a:hover{
+	padding-bottom: 5px;
+	border-bottom: 1px solid #1C1C1C;
+}
+/* 수정된 CSS 끝 */
+.sub_contents thead {
+  border-top: 1px solid black;
+  background: #FAFAFA;
+  width: 150px;
+  height: 70px;
+}
+.sub_contents td {
+  text-align: center;
+  height: 90px;
+  padding: 0 5px;
+}
+.sub_contents td:nth-child(4), .sub_contents td:nth-child(7) {
+  text-align: center;
+}
+.sub_contents tbody tr {
+  border-bottom: 1px solid #DFDFDF;
+}
+.sub_contents tbody tr:last-child {
+  border-bottom: 1px solid #1C1C1C;
+}
+.sub_contents .btn-wrap {
+  position: absolute;
+  right: 0px;
+  bottom: 84px;
+}
+.sub_contents .btn-wrap a {
+  padding: 8px 16px;
+  color: #1C1C1C;
+  font-size: 14px;
+  background-color: #FFF;
+  border: 1px solid #1C1C1C;
+}
+.sub_contents .btn-wrap a:first-child {
+  margin-right: 12px;
+}
+.sub_contents form {
+  margin-top: 30px;
+  text-align: center;
+}
+.sub_contents form #search-announce {
+  width: 360px;
+  height: 50px;
+  padding: 0 20px;
+  background-image: url(../images/common/search_black.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: calc(100% - 20px) center;
+  border: 1px solid #999999;
+}
+.sub_contents .sub_contents ul.top-title {
+  display: flex;
+  justify-content: left;
+}
+.sub_contents .sub_contents ul.top-title li {
+  font-size: 20px;
+  position: relative;
+  font-weight: 400;
+  line-height: 60PX;
+}
+.sub_contents .sub_contents ul.top-title li:first-child::after {
+  content: "|";
+  margin: 0 16PX;
+}

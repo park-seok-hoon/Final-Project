@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.kh.smeg.dao.NoticeDAO">
+    <!-- 카테고리 리스트 불러오기 -->
+    <select id="selectNoticeCategoryList" resultType="NoticeCategoryVO">
+        select * from noticecategory
+    </select>
+    
+    <!-- 파일 추가 -->
+    <insert id="insertFile">
+        insert into file(fi_no_num, fi_name, fi_ori_name)
+        values(#{fi.fi_no_num},#{fi.fi_name},#{fi.fi_ori_name})
+    </insert>
+    
+    <!-- 파일 삭제 -->
+    <delete id="deleteFile">
+        delete from file where fi_num = #{fi_num}
+    </delete>
+    
+    <!-- 공지사항 추가 -->
+    <insert id="insertNotice" useGeneratedKeys="true" keyProperty="no.no_num">
+        insert into notice(no_title, no_content, no_nc_num, no_me_id, no_date)
+        values(#{no.no_title},#{no.no_content},#{no.no_nc_num},#{no.no_me_id},now())
+    </insert>
+    
+    <!-- 공지사항 리스트 불러오기-->
+    <select id="selectNoticeList" resultType="NoticeVO">
+	    select 
+	        notice.*,
+	        noticecategory.nc_name as no_nc_name 
+	    from
+	        notice
+	            join
+	            noticecategory on notice.no_nc_num = noticecategory.nc_num 
+	    <where>
+	        <choose>
+	            <when test='cri.type == "all"'>
+	                and (no_title like concat('%', #{cri.search}, '%')
+	                or no_content like concat('%', #{cri.search}, '%'))
+	            </when>
+	            <when test='cri.type == "category"'>
+	                and no_nc_num = #{cri.search} 
+	            </when>
+	        </choose>
+	    </where>
+	    group by no_num
+	    order by no_num desc
+	    limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<!-- 공지사항 리스트 개수처리 -->
+	<select id="selectNoticeTotalCount" resultType="int">
+	    select count(*) from notice
+	    <where>
+	        <choose>
+	            <when test='cri.type == "all"'>
+	                and (no_title like concat('%', #{cri.search}, '%')
+	                or no_content like concat('%', #{cri.search}, '%'))
+	            </when>
+	            <when test='cri.type == "category"'>
+	                and no_nc_num = #{cri.search} 
+	            </when>
+	        </choose>
+	    </where>
+	</select>
+	
+	<!-- 공지사항 삭제 -->
+	<delete id="deleteNotice">
+		delete from notice where no_num = #{no_num}
+	</delete>
+	
+	<!-- 파일 조회 -->
+	<select id="selectFileList" resultType="FileVO">
+		select * from file where fi_no_num = #{no_num}
+	</select>
+	
+	<!-- 공지사항 조회수 증가 -->
+	<update id="updateView">
+		update notice set no_view = no_view + 1 where no_num = #{no_num}
+	</update>
+	
+	<!-- 공지사항가져오기 -->
+	<select id="selectNotice" resultType="NoticeVO">
+		select 
+	        notice.*,
+	        noticecategory.nc_name as no_nc_name 
+	    from
+	        notice
+	            join
+	            noticecategory on notice.no_nc_num = noticecategory.nc_num 
+		WHERE
+			no_num = #{no_num}
+	</select>
+	
+	<!-- 공지사항 다음글 가져오기 -->
+	<select id="selectNoticeNext" parameterType="int" resultType="NoticeVO">
+		<![CDATA[
+	    select 
+	        notice.*,
+	        noticecategory.nc_name as no_nc_name
+	    from 
+	        notice
+	        	join 
+	        	noticecategory on notice.no_nc_num = noticecategory.nc_num
+	    where 
+	        no_num > #{no_num}
+	    order by 
+	        no_num asc
+	    limit 1
+	    ]]>
+	</select>
+	
+	<!-- 공지사항 이전글 가져오기 -->
+	<select id="selectNoticePrev" parameterType="int" resultType="NoticeVO">
+		<![CDATA[
+	    select 
+	        notice.*,
+	        noticecategory.nc_name AS no_nc_name
+	    from 
+	        notice
+	        	join 
+	        	noticecategory on notice.no_nc_num = noticecategory.nc_num
+	    where 
+	        no_num < #{no_num}
+	    order by 
+	        no_num desc
+	    limit 1
+	    ]]>
+	</select>
+</mapper>

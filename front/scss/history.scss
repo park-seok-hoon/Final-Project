@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+//변수선언
+$main-color: #1C1C1C;
+
+.main-contents{
+    background-image: url(../images/smeg/history/center_line.png);
+    background-repeat: repeat-y;
+    background-position: center top;
+    padding-top: 30px;
+}
+.year-box{
+    position: relative;
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+
+    &.to-be{
+        padding: 120px 0 0 0;
+    }
+    &.to-be-last{
+        padding: 120px 0;
+    }
+
+    .year-text{
+        position: absolute;
+        top: 0; left: 50%; transform: translateX(-50%);
+        padding-left: 24px;
+        height: 40px; line-height: 40px;
+        background-image: url(../images/smeg/history/history_icon_black.png);
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-color: #fff;
+
+        &.active{
+            background-image: url(../images/smeg/history/history_icon_red.png);
+        }
+    }
+    .text-wrap{
+        width: 50%;
+        position: relative; top: 100px;
+        opacity: 0;
+        transition: 0.6s;
+    }
+
+    &.active{
+        .text-wrap{
+            top: 0; opacity: 1;
+        }
+    }
+
+    .img-wrap{
+        width: 50%;
+    }
+    .left-box{
+        padding-right: 60px;
+    }
+    .text-wrap.left-box{
+        padding-left: 140px;
+    }
+    .img-wrap.left-box{
+        text-align: right;
+        img{
+            display: inline-block;
+        }
+    }
+    .right-box{
+        padding-left: 60px;
+    }
+    .text-wrap.right-box{
+        padding-right: 140px;
+    }
+
+    img{
+        width: 400px;
+    }
+    h3{
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+    p{
+        color: #666;
+        line-height: 1.5;
+        text-align: justify;
+    }
+}

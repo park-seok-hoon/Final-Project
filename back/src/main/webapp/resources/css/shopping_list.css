@@ -1,0 +1,152 @@
+.sub_contents {
+  padding: 0 20px;
+}
+.sub_contents table {
+  width: 860px;
+  /* 높이 지움 */
+  border: 1px solid black;
+  border-left: none;
+  border-right: none;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.sub_contents table thead {
+  border-top: 1px solid black;
+  background: #FAFAFA;
+  width: 150px;
+  height: 70px;
+}
+.sub_contents table thead th:nth-child(1) {
+  width: 90px;
+}
+.sub_contents table thead th:nth-child(2) {
+  width: 300px;
+}
+.sub_contents table thead th:nth-child(3) {
+  width: 130px;
+}
+.sub_contents table thead th:nth-child(4) {
+  width: 130px;
+}
+.sub_contents table thead th:nth-child(5) {
+  width: 80px;
+}
+.sub_contents table thead th:nth-child(6) {
+  width: 130px;
+}
+.sub_contents table td {
+  height: 100px; /* 변경 */
+  text-align: center;
+  font-size: 16px;
+  color: #1C1C1C;
+}
+.sub_contents table tr td:nth-child(6) a {
+  display: inline-block;
+  width: 80px;
+  height: 33px;
+  line-height: 33px;
+}
+/* CSS 수정 */
+.sub_contents table tbody tr {
+  border-bottom: 1px solid #CCCCCC;
+}
+.sub_contents table tbody tr:last-child{
+	border-bottom: 1px solid #1C1C1C;
+}
+/* CSS 수정 완료 */
+.sub_contents table .direct-buy {
+  margin-bottom: 10px;
+  background-color: #FFF;
+  border: 1px solid black;
+  color: #1C1C1C;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+.sub_contents table .direct-delete {
+  background-color: #FFF;
+  border: 1px solid #999;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+.sub_contents table .basket-pic {
+  display: flex;
+  /* 높이 삭제 */
+  align-items: center;
+}
+.sub_contents table .basket-pic img {
+  /* 추가된 CSS */
+  width: 80px; height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+.sub_contents .delete-select-btn {
+  display: inline-flex;
+  height: 33px;
+  padding: 16px;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #666;
+  border: 1px solid #666;
+  background: #FFF;
+}
+.sub_contents .order-count-btn {
+  display: flex;
+  width: 265px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  margin: 0 auto;
+  color: #1C1C1C;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.sub_contents table .count-box button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  text-indent: -999em;
+}
+.sub_contents table .count-box button.plus-btn {
+  background-image: url(../images/product/plus_btn.svg);
+}
+.sub_contents table .count-box button.minus-btn {
+  background-image: url(../images/product/minus_btn.svg);
+}
+.sub_contents table .count-box .basket-amount{
+	margin: 0 5px;
+}
+
+.sub_title1 {
+  display: flex;
+}
+.sub_title1 .basket-front {
+  color: #1C1C1C;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.sub_title1 .basket-front::after {
+  content: "|";
+  padding: 0 10px;
+}
+.sub_title1 .basket-back {
+  color: #1C1C1C;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 150%;
+}

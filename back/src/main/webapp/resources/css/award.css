@@ -1,0 +1,60 @@
+.main-contents .award_list {
+  position: relative;
+  border-top: 1px solid #1C1C1C;
+  display: flex;
+  padding: 40px 0;
+}
+.main-contents .award_list .left-img {
+  width: 300px;
+}
+.main-contents .award_list .left-img img {
+  width: 106px;
+  height: 106px;
+}
+.main-contents .award_list .left-img #reddot-logo {
+  width: auto;
+}
+.main-contents .award_list .left-img h4 {
+  font-size: 30px;
+}
+.main-contents .award_list .right-content {
+  width: 900px;
+}
+.main-contents .award_list .right-content h4 {
+  color: #1C1C1C;
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.main-contents .award_list .right-content p {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.main-contents .award_list .right-content .prd_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-contents .award_list .right-content .prd_list img {
+  width: 290px;
+}
+.main-contents .award_list table {
+  margin-top: 40px;
+  width: 100%;
+}
+.main-contents .award_list th {
+  height: 55px;
+  border-bottom: 1px solid #1C1C1C;
+  text-align: left;
+}
+.main-contents .award_list .last td {
+  border-bottom: 1px solid #1C1C1C;
+}
+.main-contents .award_list td {
+  height: 55px;
+  text-align: left;
+  border-bottom: 1px dashed #ccc;
+}
+.main-contents .award_list td:last-child {
+  text-align: center;
+}

@@ -1,0 +1,18 @@
+1. 탈퇴 : ADMIN못하게 막기 : drop_user.jsp
+//관리자인 경우 탈퇴 못하게 처리
+			let authority = '${user.me_authority}';
+			if(authority == 'ADMIN'){
+				alert('관리자는 탈퇴할 수 없습니다.');
+				return false;
+			}
+2. 장바구니에서 체크한게 없거나, 0건 주문하기 일때 콘솔창에 에러뜨는 것 없애기
+   shopping_list.jsp 확인
+3. 고객주문내역 0건인 경우 없음 - 아래 코드 추가
+<!-- 주문리스트가 없는 경우 -->
+	                 	 <c:if test="${orderlist.size() == 0}">
+	                 	 	<tr>
+	                 	 		<td colspan="7">고객주문내역이 없습니다.</td>
+	                 	 	</tr>
+	                 	 </c:if>
+4. FAQ선택관련 - 역시 체크한것이 없으면 경고창처리
+5. Notice선택관련 - 역시 체크한것이 없으면 경고창처리

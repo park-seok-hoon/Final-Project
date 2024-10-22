@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+//제품 페이지에만 사용할 CSS
+
+//변수처리
+$main-color: #1C1C1C;
+$min-width: 1200px;
+
+//body배경색 변경
+body.product{ //다른데 클래스와 겹칠까봐 붙여서 쓰기
+    background-color: #ededed;
+}
+
+.products{
+    width: 100%;
+    display: flex; // 무조건 수평처리
+    flex-wrap: wrap; //자손들이 내 영역을 넘어가면 줄바꿈 처리하라는 뜻
+    margin-bottom: 10px;
+
+    li{
+        width: 285px;
+        margin-right: 20px;
+        margin-bottom: 40px;
+
+        &:nth-child(4n){ //4의 배수번째들을 선택
+            margin-right: 0;
+        }
+
+        img{
+            margin-bottom: 20px;
+        }
+        h3{
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .code{
+            color: #666;
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .price{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .sold-out{
+            padding: 8px 16px;
+            border: 1px solid $main-color;
+            position: absolute; //절대적 위치 처리 - 기본 기준이 body
+            right: 0; bottom: 0;
+        }
+        .text-wrap{
+            position: relative; //앱솔루트받은 자손의 위치기준은 현재 요소로 변경
+        }
+    }
+}

@@ -1,0 +1,136 @@
+/* CSS추가 */
+.right_contents .sub_contents {
+  padding: 0 20px;
+  margin: 38px auto;
+  position: relative; /* CSS추가 */
+}
+.right_contents .sub_contents p {
+  margin-bottom: 10px;
+}
+.right_contents .sub_contents p .orderlist {
+  color: #1C1C1C;
+  font-size: 20px;
+  line-height: 150%;
+}
+.right_contents .sub_contents p .orderlist::after {
+  content: "|";
+  position: relative;
+  left: 8px;
+}
+.right_contents .sub_contents p .orderlist-amount {
+  color: #1C1C1C;
+  font-size: 20px;
+  line-height: 150%;
+  padding-left: 16px;
+}
+.right_contents .sub_contents table {
+  width: 860px;
+  margin-bottom: 30px;
+}
+.right_contents .sub_contents table th {
+  border-top: 1px solid #1C1C1C;
+  height: 70px;
+}
+/* 선택상자때문에 테이블 폭들도 변경 */
+.right_contents .sub_contents table th:nth-child(1) {
+  width: 100px;
+}
+.right_contents .sub_contents table th:nth-child(2) {
+  width: 120px;
+}
+.right_contents .sub_contents table th:nth-child(3) {
+  width: 230px;
+}
+.right_contents .sub_contents table th:nth-child(4) {
+  width: 65px;
+}
+.right_contents .sub_contents table th:nth-child(5) {
+  width: 75px;
+}
+.right_contents .sub_contents table th:nth-child(6) {
+  width: 120px;
+}
+.right_contents .sub_contents table th:nth-child(7) {
+  width: 150px;
+}
+.right_contents .sub_contents table thead {
+  border-top: 1px solid #1C1C1C;
+  background: #FAFAFA;
+  width: 150px;
+  height: 70px;
+  color: #1C1C1C;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+.right_contents .sub_contents table td {
+  height: 70px;
+  text-align: center;
+}
+.right_contents .sub_contents table td:nth-child(3) {
+  display: flex; width: 230px; align-items: center;
+  line-height: 70px;
+}
+.right_contents .sub_contents table .merge td:nth-child(1) {
+  display: flex; width: 230px;  align-items: center;
+  line-height: 70px;
+}
+.right_contents .sub_contents table tbody tr {
+  border-bottom: 1px solid #DFDFDF;
+}
+.right_contents .sub_contents table tbody tr:last-child {
+  border-bottom: 1px solid #1C1C1C;
+}
+.right_contents .sub_contents table img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin: 10px;
+}
+.right_contents .sub_contents table .name-text{
+	width: 160px; height: 20px;
+	line-height: 20px; text-align: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/* 주문상태 변경 선택상자 관련 CSS */
+.right_contents .sub_contents select{
+  width: 130px;
+  height: 36px;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #999;
+  color: #666;
+  padding: 0 10px;
+  appearance: none;
+  background-image: url(../images/sub/down_gray.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+}
+/* 주문상태 변경 state-update-btn CSS */
+.sub_contents .state-update-btn {
+  position: absolute; 
+  right: 30px; bottom: 70px;
+  width: 130px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1C1C1C;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+}
+.right_contents form {
+  margin-top: 30px;
+  text-align: center;
+}
+.right_contents form #search-announce {
+  width: 360px;
+  height: 50px;
+  padding: 0 20px;
+  background-image: url(../images/common/search_black.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: calc(100% - 20px) center;
+  border: 1px solid #1C1C1C;
+}

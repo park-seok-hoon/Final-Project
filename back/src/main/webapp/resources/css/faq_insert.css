@@ -1,0 +1,36 @@
+.main-contents {
+  display: flex;
+  justify-content: center;
+}
+.main-contents *::placeholer{ color: #999; }
+.main-contents form #insert-q {
+  display: flex;
+  width: 1200px;
+  height: 50px;
+  padding: 0px 20px;
+  align-items: center;
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.main-contents form #insert-a {
+  display: flex;
+  width: 1200px;
+  height: 600px;
+  padding: 20px;
+  align-items: center;
+  flex-shrink: 0;
+  color: #666;
+  font-size: 16px;
+}
+.main-contents form #insert-qa {
+  display: flex;
+  width: 150px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  margin: auto;
+  margin-top: 50px;
+}

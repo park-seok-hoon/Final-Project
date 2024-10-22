@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.kh.smeg.dao.AdminDAO">
+	<resultMap id="ProductMap" type="ProductVO">
+	    <id property="pr_code" column="pr_code" />
+	    <result property="pr_name" column="pr_name" />
+	    <result property="pr_price" column="pr_price" />
+	    <result property="pr_explain" column="pr_explain" />
+	    <result property="pr_pic" column="pr_pic" />
+	    <result property="pr_pic_ori_name" column="pr_pic_ori_name" />
+	    <result property="pr_kc" column="pr_kc" />
+	    <result property="pr_elec" column="pr_elec" />
+	    <result property="pr_energy" column="pr_energy" />
+	    <result property="pr_date" column="pr_date" />
+	    <result property="pr_maker" column="pr_maker" />
+	    <result property="pr_nation" column="pr_nation" />
+	    <result property="pr_size" column="pr_size" />
+	    <result property="pr_guarantee" column="pr_guarantee" />
+	    <result property="pr_AS" column="pr_AS" />
+	    <result property="pr_extraprice" column="pr_extraprice" />
+	    <result property="pr_ca_num" column="pr_ca_num" />
+	    <result property="pr_ps_state" column="pr_ps_state" />
+	    <result property="pr_ca_name" column="pr_ca_name" />
+	    <result property="pr_gr_name" column="pr_gr_name" />
+	    <result property="pr_gr_num" column="pr_gr_num" />
+	    <collection property="slidelist" ofType="Slide_picsVO" column="pr_code" select="selectSlidesByProductCode"/>
+	</resultMap>
+	
+	<!-- 리절트맵과 같이 사용할 슬라이드 파일 조회 -->
+	<select id="selectSlidesByProductCode" resultType="Slide_picsVO">
+	    select * from slide_pics where sp_pr_code = #{pr_code}
+	</select>
+
+	<!-- 그룹정보가져오기 -->
+	<select id="selectGroupList" resultType="GroupVO">
+	    select * from `group`
+	</select>
+	
+	<!-- 그룹에 맞는 카테고리 가져오기 -->
+	<select id="selectCategoriesByGroupNum" resultType="CategoryVO">
+	    select * from category where ca_gr_num = #{gr_num}
+	</select>
+	
+	<!-- 코드 중복검사를 위한 상품정보가져오기 -->
+	<select id="selectProduct" resultType="ProductVO">
+		select * from product where pr_code = #{pr_code}
+	</select>
+	
+	<!-- 상품등록 -->
+	<insert id="insertProduct">
+		insert into product values(#{pr.pr_code},#{pr.pr_name},#{pr.pr_price},#{pr.pr_explain},#{pr.pr_pic},#{pr.pr_pic_ori_name},
+		#{pr.pr_kc},#{pr.pr_elec},#{pr.pr_energy},#{pr.pr_date},#{pr.pr_maker},#{pr.pr_nation},
+		#{pr.pr_size},#{pr.pr_guarantee},#{pr.pr_AS},#{pr.pr_extraprice},#{pr.pr_ca_num},#{pr.pr_ps_state})
+	</insert>
+	
+	<!-- 상품과 관련된 슬라이드 정보 처리 -->
+	<insert id="insertSlidePictures">
+		insert into slide_pics(sp_name,sp_ori_name,sp_pr_code) values(#{sp.sp_name},#{sp.sp_ori_name},#{sp.sp_pr_code})
+	</insert>
+	
+	
+	<!-- 상품수정에서 사용할 검색가능한 상품리스트 조회 -->
+	<select id="selectProductList" resultType="ProductVO">
+	    select 
+	        product.*,
+	        category.ca_name as pr_ca_name,
+	        `group`.gr_name as pr_gr_name,
+	        `group`.gr_num as pr_gr_num
+	    from
+	        product
+	            join
+	            category on product.pr_ca_num = category.ca_num 
+	            join
+	            `group` on category.ca_gr_num = `group`.gr_num
+	    <where>
+	        <choose>
+	            <when test='cri.type == "all"'>
+	                and (pr_name like concat('%', #{cri.search}, '%')
+	                or pr_code like concat('%', #{cri.search}, '%'))
+	            </when>
+	            <when test='cri.type == "group"'>
+	            	 and (pr_name like concat('%', #{cri.search}, '%')
+	                 or pr_code like concat('%', #{cri.search}, '%'))
+	                 and `group`.gr_num = #{cri.group} 
+	            </when>
+	        </choose>
+	    </where>
+	    order by pr_ca_num
+	    limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<!-- 상품 리스트 개수처리 -->
+	<select id="selectProductTotalCount" resultType="int">
+	    select 
+	        count(*)
+	    from 
+	        product
+	            join
+	            category on product.pr_ca_num = category.ca_num 
+	            join
+	            `group` on category.ca_gr_num = `group`.gr_num
+	    <where>
+	        <choose>
+	            <when test='cri.type == "all"'>
+	                and (pr_name like concat('%', #{cri.search}, '%')
+	                or pr_code like concat('%', #{cri.search}, '%'))
+	            </when>
+	            <when test='cri.type == "group"'>
+	            	 and (pr_name like concat('%', #{cri.search}, '%')
+	                 or pr_code like concat('%', #{cri.search}, '%'))
+	                 and `group`.gr_num = #{cri.group} 
+	            </when>
+	        </choose>
+	    </where>
+	</select>
+	
+	<!-- 상품수정에서 리절트맵을 이용하기 위한 상품정보가져오기 -->
+	<select id="selectProductByPrCode" resultMap="ProductMap">
+		select * from product where pr_code = #{pr_code}
+	</select>
+	
+	<!-- 상품수정 -->
+	<update id="updateProduct">
+		update 
+			product 
+		set 			
+			pr_name = #{pr.pr_name}, pr_price = #{pr.pr_price},pr_explain = #{pr.pr_explain},pr_pic = #{pr.pr_pic}, pr_pic_ori_name = #{pr.pr_pic_ori_name}, pr_kc = #{pr.pr_kc},pr_elec = #{pr.pr_elec},pr_energy = #{pr.pr_energy},
+			pr_date = #{pr.pr_date},pr_maker = #{pr.pr_maker},pr_nation = #{pr.pr_nation},pr_size = #{pr.pr_size},pr_guarantee = #{pr.pr_guarantee},pr_AS = #{pr.pr_AS},pr_extraprice = #{pr.pr_extraprice},
+			pr_ps_state = #{pr.pr_ps_state}		
+		where 
+			pr_code = #{pr.pr_code}
+	</update>
+	
+	<!-- 삭제하기 위해 슬라이드리스트 조회 -->
+	<select id="selectSlideList" resultType="Slide_picsVO">
+		select * from slide_pics where sp_pr_code = #{sp_pr_code}
+	</select>
+	
+	<!-- 상품관련 슬라이드 사진 모두 삭제 -->
+	<delete id="deleteSlidePictures">
+		delete from slide_pics where sp_num = #{sp_num}
+	</delete>
+	
+	<!-- 상품관련 슬라이드 사진 삭제 + 수정시 삭제 -->
+	<delete id="deleteSlidePicture">
+		delete from slide_pics where sp_pr_code = #{sp_pr_code} and sp_num = #{sp_num}
+	</delete>
+	
+	<!-- 상품 삭제 -->
+	<delete id="deleteProduct">
+		delete from product where pr_code = #{pr_code}
+	</delete>
+	
+	<!-- 카테고리 추가 -->
+	<insert id="insertCategory">
+		insert into category(ca_gr_num, ca_name, ca_explain, ca_pic_name, ca_pic_ori_name) values(#{ca.ca_gr_num}, #{ca.ca_name}, #{ca.ca_explain}, #{ca.ca_pic_name}, #{ca.ca_pic_ori_name})
+	</insert>
+	
+	<!-- 카테고리 수정을 위한 해당 번호 카테고리조회 -->
+	<select id="selectCategoryByCaNum" resultType="CategoryVO">
+	    select * from category where ca_num = #{ca_num}
+	</select>
+	
+	<!-- 카테고리 수정 -->
+	<update id="updateCategory">
+		update 
+			category 
+		set 			
+			ca_name = #{ca.ca_name}, ca_explain = #{ca.ca_explain}, ca_pic_name = #{ca.ca_pic_name}, ca_pic_ori_name = #{ca.ca_pic_ori_name}
+		where 
+			ca_num  = #{ca.ca_num}
+	</update>
+	
+	<!-- 카테고리 삭제 -->
+	<delete id="deleteCategory">
+		delete from category where ca_num = #{ca_num}
+	</delete>
+	
+	<!-- 삭제시 필요한 카테고리 리스트 -->
+	<select id="selectProductByCaNum" resultType="ProductVO">
+		select * from product where pr_ca_num = #{pr_ca_num}
+	</select>
+	
+	
+	<!-- 고객주문내역관련 리절트맵 -->
+	<resultMap id="OrderResultMap" type="OrderVO">
+	    <id property="or_num" column="or_num"/>
+	    <result property="or_date" column="or_date"/>
+	    <result property="or_total_price" column="or_total_price"/>
+	    <result property="or_os_state" column="or_os_state"/>
+	    <result property="or_me_id" column="or_me_id"/>
+	    <!-- OrderlistVO에 대한 컬렉션 추가 -->
+	    <collection property="orderlistlist" ofType="OrderlistVO" column="or_num" select="selectOrderListByOrNum" />
+	</resultMap>
+	
+	<!-- 주문번호별 주문리스트 조회 -->
+	<select id="selectOrderListByOrNum" resultType="OrderlistVO">
+		select 
+		    orderlist.*,
+		    (select slide_pics.sp_name from slide_pics where slide_pics.sp_pr_code = product.pr_code limit 1) as sp_name,
+		    product.pr_name,
+		    product.pr_price
+		from 
+		    orderlist
+		join 
+		    product on orderlist.ol_pr_code = product.pr_code
+		where 
+		    ol_or_num = #{or_num}
+		order by 
+		    orderlist.ol_or_num desc
+	</select>
+	
+	<!-- 리절트맵을 받을 조회문 : 조건에 id제거 - 모든 주문 -->
+	<select id="selectOrder" resultMap="OrderResultMap">
+		select
+			`order`.or_num,
+	        `order`.or_date,
+	        `order`.or_total_price,
+	        `order`.or_os_state,
+	        `order`.or_me_id,
+	        member.me_name as or_me_name
+		from 
+			`order`
+		inner join 
+	        orderlist on `order`.or_num = orderlist.ol_or_num
+	    inner join 
+	        product on orderlist.ol_pr_code = product.pr_code
+	    inner join 
+        	member on `order`.or_me_id = member.me_id  <!-- 멤버 테이블 조인 -->
+		<choose>
+			<when test='cri.type == "all"'>
+				and (`order`.or_date like concat('%', #{cri.search}, '%') or 
+	            product.pr_name like concat('%', #{cri.search}, '%') or
+	            member.me_name like concat('%', #{cri.search}, '%'))
+			</when>
+		</choose>
+		group by 
+			`order`.or_num,
+	        `order`.or_date,
+	        `order`.or_total_price,
+	        `order`.or_os_state,
+	        `order`.or_me_id
+		order by 
+			`order`.or_num desc
+		limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<!-- 주문개수 반환 : 조건에 id제거 - 모든 주문  -->
+	<select id="selectOrderCount" resultType="int">
+	    select
+	        count(distinct `order`.or_num)
+	    from
+	        `order`
+	    inner join
+	        orderlist on `order`.or_num = orderlist.ol_or_num
+	    inner join
+	        product on orderlist.ol_pr_code = product.pr_code
+	    inner join 
+        	member on `order`.or_me_id = member.me_id  <!-- 멤버 테이블 조인 -->
+	    <choose>
+	        <when test='cri.type == "all"'>
+	            and (`order`.or_date like concat('%', #{cri.search}, '%') or 
+	            product.pr_name like concat('%', #{cri.search}, '%') or
+	            member.me_name like concat('%', #{cri.search}, '%'))
+	        </when>
+	    </choose>
+	</select>
+	
+	<!-- 주문 상태 조회 -->
+	<select id="selectOrderState" resultType="OrderStateVO">
+		select * from order_state
+	</select>
+	
+	<!-- 주문상태변경 -->
+	<!-- 카테고리 수정 -->
+	<update id="orderStateUpdate">
+		update 
+			`order`
+		set 			
+			or_os_state = #{or_os_state}
+		where 
+			or_num  = #{or_num}
+	</update>
+	
+	<!-- 회원정보 가져오기 : ADMIN빼고 -->
+	<select id="selectMemberList" resultType="MemberVO">
+		select 
+			* 
+		from 
+			member 
+		where 
+			me_authority not in('ADMIN')
+		<choose>
+			<when test='cri.type == "all"'>
+				and (me_name like concat('%', #{cri.search}, '%') or 
+	            me_phone like concat('%', #{cri.search}, '%'))
+			</when>
+		</choose>
+		order by me_name
+		limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<select id="selectMemberTotalCount" resultType="int">
+		select
+			count(*)
+		from 
+			member 
+		where 
+			me_authority not in('ADMIN')
+		<choose>
+			<when test='cri.type == "all"'>
+				and (me_name like concat('%', #{cri.search}, '%') or 
+	            me_phone like concat('%', #{cri.search}, '%'))
+			</when>
+		</choose>
+	</select>
+	
+	<!-- 회원강퇴 -->
+	<delete id="deleteMemberByChk">
+		delete from member where me_id = #{me_id}
+	</delete>
+</mapper>

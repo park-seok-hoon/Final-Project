@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.kh.smeg.dao.MainDAO">
+	<resultMap type="GroupVO" id="GroupMap">
+	    <id property="gr_num" column="gr_num"/>
+	    <result property="gr_name" column="gr_name"/>
+	    <collection property="categorylist" ofType="CategoryVO" column="gr_num" select="selectCategoriesByGroupId"/>
+	</resultMap>
+	<resultMap type="NoticeVO" id="NoticeMap">
+	    <id property="no_num" column="no_num"/>
+	    <result property="no_title" column="no_title"/>
+	    <result property="no_content" column="no_content"/>
+	    <result property="no_date" column="no_date"/>
+	    <result property="no_view" column="no_view"/>
+	    <result property="no_me_id" column="no_me_id"/>
+	    <result property="no_nc_num" column="no_nc_num"/>
+	    <collection property="filelist" ofType="FileVO" column="no_num" select="selectFilesByNoticeId"/>
+	</resultMap>
+
+	<select id="selectGrouplist" resultMap="GroupMap">
+	    select * from `group`
+	</select>
+	
+	<select id="selectCategoriesByGroupId" resultType="CategoryVO">
+	    select * from category where ca_gr_num = #{groupId}
+	</select>
+	
+	<select id="selectNoticelist" resultMap="NoticeMap">
+	    select notice.*, file.*
+	    from notice
+	    left join file on notice.no_num = file.fi_no_num
+	    order by notice.no_num desc
+	    limit 4
+	</select>
+	
+	<select id="selectFilesByNoticeId" resultType="FileVO">
+	    select * from file where fi_no_num = #{noticeId}
+	</select>
+</mapper>

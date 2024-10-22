@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.kh.smeg.dao.MemberDAO">
+	<!-- 회원등록 -->
+	<insert id="insertMember">
+	 	insert into member(me_id,me_pw,me_gender,me_birth,me_email,me_detail_address,
+	 					   me_postcode,me_address,me_phone,me_name,me_calendar)
+	 	values(#{member.me_id},#{member.me_pw},#{member.me_gender},#{member.me_birth},#{member.me_email},#{member.me_detail_address},
+	 		  #{member.me_postcode},#{member.me_address},#{member.me_phone},#{member.me_name},#{member.me_calendar})
+	</insert>
+	 
+	<!-- 아이디중복검사시 사용 -->
+	<select id="selectMember" resultType="MemberVO">
+		select * from member where me_id=#{id}
+	</select>
+	
+	<!-- 아이디찾기 -->
+	<select id="findID" resultType="MemberVO">
+		select * from member where me_name=#{me.me_name} and me_email=#{me.me_email}
+	</select>
+	
+	<!-- 비밀번호찾기를 이용한 비밀번호 변경 -->
+	<update id="updatePassword">
+		update member set me_pw = #{pw} where me_id = #{id}
+	</update>
+	
+	<!-- 자동 로그인 -->
+ 	<update id="updateMemberCookie">
+ 		update member set
+ 			me_cookie = #{user.me_cookie},
+ 			me_cookie_limit = #{user.me_cookie_limit}
+ 		where
+ 			me_id = #{user.me_id}
+ 	</update>
+ 	
+ 	<select id="selectMemberByCookie" resultType="MemberVO">
+ 		<![CDATA[
+	 		select * from member
+ 		    where 
+	 			 me_cookie = #{session_id} and me_cookie_limit >= now()
+ 		]]>
+ 	</select>
+ 	
+ 	<!-- 개인정보 수정 관련 -->
+ 	<update id="updateMember">
+ 		update member set
+ 			me_pw = #{me.me_pw},
+ 			me_gender = #{me.me_gender},
+ 			me_birth = #{me.me_birth},
+ 			me_calendar = #{me.me_calendar},
+ 			me_postcode = #{me.me_postcode},
+ 			me_address = #{me.me_address},
+ 			me_detail_address = #{me.me_detail_address},
+ 			me_phone = #{me.me_phone},
+ 			me_name = #{me.me_name},
+ 			me_email = #{me.me_email}
+ 		where
+ 			me_id = #{me.me_id}
+ 	</update>
+ 	
+ 	<!-- 회원 삭제 -->
+	<delete id="deleteMemberById">
+		delete from member where me_id = #{me_id}
+	</delete>
+</mapper>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <!--구글검색 X-->
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMEG - 3차프로젝트</title>
+    <!--파비콘: 홈페이지 title옆에 붙는 아이콘-->
+    <link rel="icon" type="image/x-icon" href="/images/common/favicon.ico" />
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/index.html">
+                <img src="/images/common/logo.svg" alt="스메그로고" class="white">
+                <img src="/images/common/logo_black.svg" alt="스메그로고" class="black">
+            </a>
+        </h1>
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="/smeg/history.html">SMEG</a>
+                    <ul class="sub-nav">
+                        <li><a href="/smeg/history.html">연혁</a></li>
+                        <li><a href="/smeg/story.html">스토리</a></li>
+                        <li><a href="/smeg/award.html">수상내역</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/special/dng.html">SPECIAL</a>
+                    <ul class="sub-nav">
+                        <li><a href="/special/dng.html">D&G</a></li>
+                        <li><a href="/special/fiat.html">FIAT</a></li>
+                        <li><a href="/special/disney.html">DISNEY</a></li>
+                        <li><a href="/special/cocacola.html">COCACOLA</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/big/refrigerator.html">BIG PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/big/refrigerator.html">냉장고</a></li>
+                        <li><a href="/big/wineseller.html">와인셀러</a></li>
+                        <li><a href="/big/dishwasher.html">식기세척기</a></li>
+                        <li><a href="/big/oven.html">오븐/인덕션</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/small/electricpot.html">SMALL PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/small/electricpot.html">전기포트</a></li>
+                        <li><a href="/small/toaster.html">토스트기</a></li>
+                        <li><a href="/small/mixer.html">믹서기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/service/notice.html">SERVICE</a>
+                    <ul class="sub-nav">
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/store.html">매장 안내</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- 하위메뉴 뒤에 깔릴 배경 -->
+        <div class="gnb-bg"></div>
+        <div class="top-nav">
+            <ul>
+                <li>
+                    <a href="#" class="search-btn">
+                        <img src="/images/common/search.svg" alt="검색아이콘" class="white">
+                        <img src="/images/common/search_black.svg" alt="검색아이콘" class="black">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/common/shop.svg" alt="장바구니아이콘" class="white">
+                        <img src="/images/common/shop_black.svg" alt="장바구니아이콘" class="black">
+                    </a>
+                </li>
+                <li><a href="/topnav/login.html">로그인</a></li>
+                <li><a href="/topnav/signup.html">회원가입</a></li>
+                <li><a href="/mypage/personal_info.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="search-box">
+        <form action="#">
+            <!-- label의 for와 id의 속성값이 같아야 스크린리더기가 읽어줌 -->
+            <!-- 앞으로 label에 class를 away로 붙이면 이건 화면에서 안보이게 하겠다는 뜻! -->
+            <label for="search-input" class="away">검색입력창</label>
+            <input type="text" id="search-input" placeholder="검색어를 입력해주세요." />
+        </form>
+        <!-- 닫기버튼 : a 혹은 button 중 선택가능 -->
+        <!-- a태그로 쓸 경우는 임시링크 #을 쓰면 클릭시 자꾸 상단이동하므로 뒤에 의미없는 영문 붙이기(id로 안쓰는)-->
+        <a href="#close"><img src="/images/common/close_icon.svg" alt="닫기버튼"></a>
+    </div>
+    <div class="popup">
+        <div class="popup-wrap">
+            <div class="popup-img">
+                <img src="/images/main/popup_top_img.png" alt="팝업상단이미지">
+            </div>
+            <div class="popup-text">
+                <h3>NOTICE</h3>
+                <p class="first-text">
+                    본 사이트는 상업적 목적이 아닌 개인 포트폴리오 용도로 만들어 졌습니다. 홈페이지의 일부 내용과 이미지 등은 그 출처가 따로 있음을 밝힙니다.<br>
+                    본 사이트는 스프링과 JSP를 이용한 백엔드 작업을 하기 위한 전단계 프론트 작업입니다. 반응형웹과 모바일웹은 지원하지 않습니다.<br>
+                    <br>
+                    <strong>TEAM : PSH, SGJ, OSN, LSJ</strong>
+                </p>
+                <h3>SMEG SITE</h3>
+                <p>
+                    QR코드를 스캔하면 실제 SMEG사이트로<br>
+                    이동하실 수 있습니다.
+                </p>
+                <img src="/images/main/qrcode.jpg" alt="스메그큐알코드" class="qr-code">
+            </div>
+            <ul class="btn">
+                <li><a href="#" class="today-btn">오늘 하루 안보기</a></li>
+                <li><a href="#" class="close-btn">닫기</a></li>
+            </ul>
+        </div>
+    </div>
+    <main>
+        <div class="swiper"><!--스와이퍼의 모든 것을 담는 태그-->
+            <div class="swiper-wrapper"><!--슬라이드 전체를 묶는 태그-->
+                <div class="swiper-slide"><!--슬라이드 한개한개-->
+                    <img src="/images/main/main01.jpg" alt="메인이미지">
+                    <div class="main-text-wrap">
+                        <p>그레이 컬러, 심플한 디자인과 다양한 기능 리니아 인덕션</p>
+                        <h3>Linea Induction</h3>
+                        <!--jsp에서 페이지이동처리-->
+                        <a href="#">자세히보기</a>
+                    </div>
+                </div>
+                <div class="swiper-slide"><!--슬라이드 한개한개-->
+                    <img src="/images/main/main02.jpg" alt="메인이미지">
+                    <div class="main-text-wrap">
+                        <p>와인셀러를 더한 프리미엄 냉장고</p>
+                        <h3>The New FAB Series</h3>
+                        <!--jsp에서 페이지이동처리-->
+                        <a href="#">자세히보기</a>
+                    </div>
+                </div>
+                <div class="swiper-slide"><!--슬라이드 한개한개-->
+                    <img src="/images/main/main03.jpg" alt="메인이미지">
+                    <div class="main-text-wrap">
+                        <p>스매그와 미드 센추리 모던</p>
+                        <h3>Mid - Century Modern</h3>
+                        <!--jsp에서 페이지이동처리-->
+                        <a href="#">자세히보기</a>
+                    </div>
+                </div>
+            </div>
+            <!--버튼-->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </main>
+    <div class="smeg-intro">
+        <div class="inner-wrap">
+            <h2>SMEG, 기술에 ITALY 스타일을 더하다</h2>
+            <p>
+                스메그는 이탈리아에 4개의 공장을 가지고 있습니다. 이곳의 검증된 연구실들은 소재에 대한 깊은 이해와 예술의 경지에 이른 최첨단 기술력으로 현대 생활에서 필요한 것들을 분석하고 내구성, 안전성, 편의성 및 에너지 효율 그리고 사용자가 즐거움을 느낄 수 있는 감정을 제품에 표현합니다.<br>
+                전체 생산 공정에서 반복적으로 진행되는 엄격한 품질 테스트는 고객과의 신뢰를 절대적으로 생각하는 스메그의 마음가짐을 잘 보여줍니다. 더 나아가, 스메그의 모든 제품은 최신 인터페이스와 다양한 프로그래밍 솔루션을 도입하여 보다 쉽고 단순하게 사용자의 다양한 니즈를 충족시켜줍니다.
+            </p>
+            <a href="/smeg/story.html">View More</a>
+        </div>
+    </div>
+    <div class="smeg-special">
+        <div class="tab-contents"><!--탭컨텐츠들을 묶을 태그-->
+            <div class="dng"><img src="/images/main/special_banner01.jpg" alt="스페셜배너"></div>
+            <div class="fiat"><img src="/images/main/special_banner02.jpg" alt="스페셜배너"></div>
+            <div class="disney"><img src="/images/main/special_banner03.jpg" alt="스페셜배너"></div>
+            <div class="cocacola"><img src="/images/main/special_banner04.jpg" alt="스페셜배너"></div>
+        </div>
+        <ul class="tab-btn"><!--탭버튼들을 묶을 태그-->
+            <li>
+                <div class="btn active">
+                    <h3>D&G</h3>
+                    <p>SMEG와 D&G, 서로의 감성과 크리에이티브를 결합하다.</p>
+                    <a href="/special/dng.html" class="arrow">View More</a>
+                </div>
+            </li>
+            <li>
+                <div class="btn">
+                    <h3>FIAT</h3>
+                    <p>스메그와 피아트는 이탈리아 인디펜던트 그룹와 함께 이 프로젝트를 완성하다.</p>
+                    <a href="/special/fiat.html" class="arrow">View More</a>
+                </div>
+            </li>
+            <li>
+                <div class="btn">
+                    <h3>DISNEY</h3>
+                    <p>스메그와 디즈니가 콜라보레이션을 통해 가족에 대한 사랑을 전하다.</p>
+                    <a href="/special//disney.html" class="arrow">View More</a>
+                </div>
+            </li>
+            <li>
+                <div class="btn">
+                    <h3>COCACOLA</h3>
+                    <p>시간이 흘러도 변함 없이 사랑받는 클래식, 아이코닉한 아이템으로 대표되는 두 브랜드의 만남.</p>
+                    <a href="/special/cocacola.html" class="arrow">View More</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="best-product">
+        <h2>SMEG BEST PRODUCT</h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="img-wrap"><img src="/images/main/best_banner01.jpg" alt="베스트상품이미지"></div>
+                    <div class="text-wrap">
+                        <h3>대형가전</h3>
+                        <h4>냉장고 유니언잭</h4>
+                        <p>세계적으로 사랑받는 스테디셀러 50’s Retro Style 냉장고는 다채로운 컬러와 광택, 부드러운 곡선 디자인으로 컬러 냉장고의 시대를 열었습니다.</p>
+                        <a href="#">View More</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-wrap"><img src="/images/main/best_banner02.jpg" alt="베스트상품이미지"></div>
+                    <div class="text-wrap">
+                        <h3>소형가전</h3>
+                        <h4>핸드믹서 레드</h4>
+                        <p>9단계의 속도 조절과 강력한 터보 기능,<br>
+                            LED 디스플레이가 적용되어 더욱 편리한 베이킹 필수품</p>
+                        <a href="#">View More</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-wrap"><img src="/images/main/best_banner03.jpg" alt="베스트상품이미지"></div>
+                    <div class="text-wrap">
+                        <h3>소형가전</h3>
+                        <h4>토스트기 파스텔그린</h4>
+                        <p>4구의 빵 투입구로 한 번에 4장의 식빵 등을 구워 낼 수 있습니다. 다인 가구 뿐만 아니라 게스트하우스, 카페 등에서 폭 넓은 활용이 가능합니다. </p>
+                        <a href="#">View More</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img-wrap"><img src="/images/main/best_banner04.jpg" alt="베스트상품이미지"></div>
+                    <div class="text-wrap">
+                        <h3>대형가전</h3>
+                        <h4>빅토리아 인덕션 실버</h4>
+                        <p>빅토리아 인덕션은 내구성이 강하고 70년의 빌트인 기술력을 바탕으로 뛰어난 품질과 제품 안정성을 자랑합니다. 빅토리아 라인의 특징적인 디테일이 돋보이는 모델입니다.</p>
+                        <a href="#">View More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <div class="smeg-notice">
+        <h2>SMEG NOTICE</h2>
+        <a href="/service/notice.html" class="more">View More</a>
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="/images/main/notice01.jpg" alt="공지사항01">
+                    <h3>스메그 앰버서더 미니 : 2기 모집(02/08~25)</h3>
+                    <p>
+                        더욱 풍성해진 체험 제품과 리워드, 스메그 앰버서더 미니 2기 모집. 더욱 풍성해진 체험제품 1차 BBC
+                    </p>
+                    <span class="date">2024-02-14</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/images/main/notice02.jpg" alt="공지사항02">
+                    <h3>스메그코리아 설 연휴 택배 마감 안내</h3>
+                    <p>
+                        안녕하세요. 스메그코리아입니다. 2024년 설 연휴 택배 마감 안내드립니다.  2월 5일(월) 주문 건 ▶ 2월 6일(화) 출고 후 택배 마감
+                        2월 6일(화) 주문 건 ▶ 2월 13일 (화)부터 순차 출고
+                    </p>
+                    <span class="date">2024-02-02</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/images/main/notice03.jpg" alt="공지사항03">
+                    <h3>스탠드믹서(SMF03) 구매 고객 순차출고 안내</h3>
+                    <p>스탠드믹서 반죽기(SMF03) 예약구매 고객님, 기다려 주셔서 감사합니다. 구매해주신 제품은 익일부터 출고될 예정이며, 주문 물량이 많아 입고일정에 따라 순차적으로 배송될 예정이므로 고객님들의 너른 양해 부탁드립니다 :)</p>
+                    <span class="date">2024-01-18</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="/images/main/notice04.jpg" alt="공지사항04">
+                    <h3>[신제품] SMEG X D&G COLLECTION</h3>
+                    <p>돌체앤가바나와 함께하는 콜라보레이션, 시칠리아 예울가와 공예 디자인들의 손길로 일탈리아의</p>
+                    <span class="date">2024-01-15</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <div class="inner-wrap">
+            <div class="footer-top">
+                <div class="sns-box">
+                    <h3>SMEG SNS</h3>
+                    <ul>
+                        <!--
+                            a태그의 target속성 : 열릴 페이지가 어디에 뜰지 지정해주는 속성
+                            기본값(작성안한다는 뜻)은 _self로 현재 창에서 변경
+                            새창이나 새탭에서 처리하려면 _blank로 처리
+                        -->
+                        <li><a href="https://www.facebook.com/smegkorea" target="_blank"><img src="/images/common/sns01.svg" alt="페이스북아이콘"></a></li>
+                        <li><a href="https://www.instagram.com/smegkorea/" target="_blank"><img src="/images/common/sns02.svg" alt="인스타그램아이콘"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCCwqSNH1-AN1C-AwWhZnKHw?reload=9" target="_blank"><img src="/images/common/sns03.svg" alt="유튜브아이콘"></a></li>
+                        <li><a href="https://cafe.naver.com/smegcafe" target="_blank"><img src="/images/common/sns04.svg" alt="네이버카페아이콘"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/smeg/history.html">스메그소개</a></li>
+                        <li><a href="/service/store.html">매장안내</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/admin/user_list.html">관리자</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright Ⓒ SMEGKOREA Co., Ltd. All Right Reserved.</p>
+                <h1><img src="/images/common/logo.svg" alt="스메그로고"></h1>
+            </div>
+        </div>
+    </footer>
+    <!--스크롤탑버튼-->
+    <a href="#top" class="scroll-btn">
+        <img src="/images/common/top_anchor.png" alt="상단으로 가기">
+    </a>
+</body>
+</html>

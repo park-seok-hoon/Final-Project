@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMEG - 회원리스트 보기/강퇴 - 3차프로젝트</title>
+    <!--파비콘: 홈페이지 title옆에 붙는 아이콘-->
+    <link rel="icon" type="image/x-icon" href="/images/common/favicon.ico" />
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/sub-common.css">
+    <link rel="stylesheet" href="/css/myadmin-common.css">
+    <link rel="stylesheet" href="/css/myadmin-userlist.css">
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/sub.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/index.html">
+                <img src="/images/common/logo.svg" alt="스메그로고" class="white">
+                <img src="/images/common/logo_black.svg" alt="스메그로고" class="black">
+            </a>
+        </h1>
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="/smeg/history.html">SMEG</a>
+                    <ul class="sub-nav">
+                        <li><a href="/smeg/history.html">연혁</a></li>
+                        <li><a href="/smeg/story.html">스토리</a></li>
+                        <li><a href="/smeg/award.html">수상내역</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/special/dng.html">SPECIAL</a>
+                    <ul class="sub-nav">
+                        <li><a href="/special/dng.html">D&G</a></li>
+                        <li><a href="/special/fiat.html">FIAT</a></li>
+                        <li><a href="/special/disney.html">DISNEY</a></li>
+                        <li><a href="/special/cocacola.html">COCACOLA</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/big/refrigerator.html">BIG PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/big/refrigerator.html">냉장고</a></li>
+                        <li><a href="/big/wineseller.html">와인셀러</a></li>
+                        <li><a href="/big/dishwasher.html">식기세척기</a></li>
+                        <li><a href="/big/oven.html">오븐/인덕션</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/small/electricpot.html">SMALL PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/small/electricpot.html">전기포트</a></li>
+                        <li><a href="/small/toaster.html">토스트기</a></li>
+                        <li><a href="/small/mixer.html">믹서기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/service/notice.html">SERVICE</a>
+                    <ul class="sub-nav">
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/store.html">매장 안내</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- 하위메뉴 뒤에 깔릴 배경 -->
+        <div class="gnb-bg"></div>
+        <div class="top-nav">
+            <ul>
+                <li>
+                    <a href="#" class="search-btn">
+                        <img src="/images/common/search.svg" alt="검색아이콘" class="white">
+                        <img src="/images/common/search_black.svg" alt="검색아이콘" class="black">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/common/shop.svg" alt="장바구니아이콘" class="white">
+                        <img src="/images/common/shop_black.svg" alt="장바구니아이콘" class="black">
+                    </a>
+                </li>
+                <li><a href="/topnav/login.html">로그인</a></li>
+                <li><a href="/topnav/signup.html">회원가입</a></li>
+                <li><a href="/mypage/personal_info.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="search-box">
+        <form action="#">
+            <!-- label의 for와 id의 속성값이 같아야 스크린리더기가 읽어줌 -->
+            <!-- 앞으로 label에 class를 away로 붙이면 이건 화면에서 안보이게 하겠다는 뜻! -->
+            <label for="search-input" class="away">검색입력창</label>
+            <input type="text" id="search-input" placeholder="검색어를 입력해주세요." />
+        </form>
+        <!-- 닫기버튼 : a 혹은 button 중 선택가능 -->
+        <!-- a태그로 쓸 경우는 임시링크 #을 쓰면 클릭시 자꾸 상단이동하므로 뒤에 의미없는 영문 붙이기(id로 안쓰는)-->
+        <a href="#close"><img src="/images/common/close_icon.svg" alt="닫기버튼"></a>
+    </div>
+    <main class="main-banner09">
+        <h2>회원리스트 보기/강퇴</h2>
+        <div class="indicator">
+            <ul>
+                <li><a href="/index.html"><img src="/images/sub/home.svg" alt="홈 아이콘"></a></li>
+                <li><a href="/admin/user_list.html">관리자</a></li>
+                <li><a href="/admin/user_list.html">회원리스트 보기/강퇴</a></li>
+            </ul>
+        </div>
+    </main>
+    <div class="myadmin-contents">
+        <div class="left_contents">
+            <div class="profile">
+                <div class="first-name">관리자</div>
+                <div class="profile_text">
+                    <p class="user-name">관리자님</p>
+                </div>
+            </div>
+            <div class="sub-gnb02">
+                <ul>
+                    <li><a href="/admin/user_list.html" class="active">회원리스트 보기/강퇴</a></li>
+                    <li><a href="/admin/category.html">카테고리 관리</a></li>
+                    <li><a href="/admin/product_insert.html">상품등록</a></li>
+                    <li><a href="/admin/product_update_list.html">상품수정</a></li>
+                    <li><a href="/admin/product_delete.html">상품삭제</a></li>
+                    <li><a href="/admin/order_list.html">고객주문내역</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_contents">
+            <h2>회원리스트 보기/강퇴</h2>
+            <div class="sub_contents">
+                <ul class="top-title">
+                    <li>스메그 회원</li>
+                    <li>총 500명의 회원이 있습니다.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="all-check"></th>
+                            <th>아이디</th>
+                            <th>회원명</th>
+                            <th>이메일</th>
+                            <th>전화번호</th>
+                            <th>생년월일</th>
+                            <th>주소</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox" id="chk01"></td>
+                            <td>gildonghong</td>
+                            <td>관리자</td>
+                            <td>admin@smegkorea.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>서울특별시 종로구 종로 33</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk02"></td>
+                            <td>admin</td>
+                            <td>홍길동</td>
+                            <td>aaaa@naver.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>강원도 춘천시 영서로 105</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk03"></td>
+                            <td>saraminjoa</td>
+                            <td>김지안</td>
+                            <td>hong@gmail.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>대전광역시 중구 대종로 35</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk04"></td>
+                            <td>supergogo</td>
+                            <td>윤시우</td>
+                            <td>yoon123@kakao.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>경기도 의정부시 행복로 66</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk05"></td>
+                            <td>rian104</td>
+                            <td>오지윤</td>
+                            <td>kim123@naver.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>경기도 안성시 중앙로 102</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk06"></td>
+                            <td>hongu90</td>
+                            <td>김지안</td>
+                            <td>choi789@gmail.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>대구광역시 동구 동북로 101</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk07"></td>
+                            <td>oceanwave72</td>
+                            <td>김서윤</td>
+                            <td>seo567@gmail.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>경기도 시흥시 중심상가로 77</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk08"></td>
+                            <td>leechunsik</td>
+                            <td>박서아</td>
+                            <td>song345@gmail.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>인천광역시 남동구 인하로 22</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk09"></td>
+                            <td>dokbokki</td>
+                            <td>신서윤</td>
+                            <td>baek789@naver.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>경기도 평택시 서정로 67</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chk10"></td>
+                            <td>banjjak</td>
+                            <td>강서윤</td>
+                            <td>choi789@gmail.com</td>
+                            <td>010-0000-0000</td>
+                            <td>2001-01-01</td>
+                            <td>경상북도 경주시 진평로 54</td>
+                        </tr>
+                    </tbody>		
+                </table>
+                <div class="pagination">
+                    <ul>
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><img src="/images/product/pagination_next.svg" alt="다음으로"></a></li>
+                    </ul>
+                </div>
+                <div class="btn-wrap">
+                    <a href="notice_insert.html" class="btn-hover">회원강퇴</a>
+                    <a href="#" class="btn-hover">선택 삭제</a>
+                </div>    
+                <form action="#">
+                    <!-- label의 for와 id의 속성값이 같아야 스크린리더기가 읽어줌 -->
+                    <!-- 앞으로 label에 class를 away로 붙이면 이건 화면에서 안보이게 하겠다는 뜻! -->
+                    <label for="search-announce" class="away">검색입력창</label>
+                    <input type="text" id="search-announce" placeholder="회원명 혹은 전화번호를 입력하세요.">
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="inner-wrap">
+            <div class="footer-top">
+                <div class="sns-box">
+                    <h3>SMEG SNS</h3>
+                    <ul>
+                        <!--
+                            a태그의 target속성 : 열릴 페이지가 어디에 뜰지 지정해주는 속성
+                            기본값(작성안한다는 뜻)은 _self로 현재 창에서 변경
+                            새창이나 새탭에서 처리하려면 _blank로 처리
+                        -->
+                        <li><a href="https://www.facebook.com/smegkorea" target="_blank"><img src="/images/common/sns01.svg" alt="페이스북아이콘"></a></li>
+                        <li><a href="https://www.instagram.com/smegkorea/" target="_blank"><img src="/images/common/sns02.svg" alt="인스타그램아이콘"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCCwqSNH1-AN1C-AwWhZnKHw?reload=9" target="_blank"><img src="/images/common/sns03.svg" alt="유튜브아이콘"></a></li>
+                        <li><a href="https://cafe.naver.com/smegcafe" target="_blank"><img src="/images/common/sns04.svg" alt="네이버카페아이콘"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/smeg/history.html">스메그소개</a></li>
+                        <li><a href="/service/store.html">매장안내</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/admin/user_list.html">관리자</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright Ⓒ SMEGKOREA Co., Ltd. All Right Reserved.</p>
+                <h1><img src="/images/common/logo.svg" alt="스메그로고"></h1>
+            </div>
+        </div>
+    </footer>
+    <!--스크롤탑버튼-->
+    <a href="#top" class="scroll-btn">
+        <img src="/images/common/top_anchor.png" alt="상단으로 가기">
+    </a>
+</body>
+</html>

@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+//변수선언
+$min-width: 1200px;
+$main-color: #1C1C1C;
+
+.sub_contents{
+	padding: 0 20px;
+
+	.title-wrap{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+		h3{
+			font-size: 24px;
+			font-weight: 700;
+		}
+		p{
+			font-size: 14px;
+			color: #666;
+
+			&::before{
+				content: url(../images/sub/signup_dot.svg);
+				position: relative; top: -2px;
+				margin-right: 10px;
+			}
+		}
+	}
+	legend{ //화면 밖으로 날림
+		position: absolute; left: -999em;
+	}
+	fieldset{
+		margin-bottom: 40px;
+	}
+	.form-row{
+		display: flex; align-items: center;
+		padding: 16px 20px;
+		border-bottom: 1px solid #DFDFDF;
+
+		&.form-top{
+			border-top: 1px solid $main-color;
+		}
+		&.form-bottom{
+			border-bottom: 1px solid $main-color;
+		}
+		&.form-row4{
+			justify-content: space-between;
+		}
+		&.form-none{
+			border-bottom: none;
+		}
+		.title{
+			width: 160px;
+			color: #666; font-size: 18px;
+			height: 40px; line-height: 40px;
+		}
+		.title2{
+			width: 70px;
+			color: #666; font-size: 18px;
+			height: 40px; line-height: 40px;
+		}
+		label[for="state-chk"]{
+			position: relative; top: -1px;
+			color: #666; margin-left: 5px;
+		}
+		input[type="text"]{
+			width: 240px; height: 40px;
+			padding: 0px 10px;
+			border-radius: 5px;
+			border: 1px solid #CCC;
+			margin-right: 10px;
+		}
+		input.right[type="text"]{
+			margin-right: 0;
+		}
+		input.notification[type="text"]{
+			margin-right: 0; width: 660px;
+		}
+		input::placeholder, textarea::placeholder{
+			color: #ccc;
+		}
+		.input-box{
+			display: flex;
+		}
+		.error-text{
+			color: #FF0000;
+		}
+		select{
+			width: 160px;
+			height: 40px;
+			align-items: center;
+			border-radius: 5px;
+			border: 1px solid #CCC;
+			margin-right: 10px;
+			color: #999;
+			padding: 0 10px;
+			appearance: none;
+			background-image: url(../images/sub/down_gray.svg);
+			background-repeat: no-repeat;
+			background-position: calc(100% - 10px) center;
+		}
+		textarea{
+			width: 660px; padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #CCC;
+		}
+		input[type="file"]{
+			position: absolute;
+			left: -999em;
+		}
+		input[type="file"] + label{
+			width: 100px;
+			height: 40px;
+			text-align: center; line-height: 38px;
+			border: 1px solid $main-color;
+			background: #FFF;
+			cursor: pointer;
+		}
+	}
+	#product-insert-btn{
+		display: block;
+		margin: 0 auto; //블록요소가 부모영역에서 가로 가운데 오게 하는 공식
+		width: 265px;
+		height: 70px;
+		background-color: #fff;
+		border: 1px solid $main-color;
+	}
+	#product-update-btn{
+		display: block;
+		margin: 0 auto; //블록요소가 부모영역에서 가로 가운데 오게 하는 공식
+		width: 265px;
+		height: 70px;
+		background-color: #fff;
+		border: 1px solid $main-color;
+	}
+}
+

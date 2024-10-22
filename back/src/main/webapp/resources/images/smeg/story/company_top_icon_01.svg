@@ -1,0 +1,19 @@
+<svg id="그룹_7457" data-name="그룹 7457" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_3513" data-name="사각형 3513" width="60" height="60" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_7456" data-name="그룹 7456" clip-path="url(#clip-path)">
+    <circle id="타원_794" data-name="타원 794" cx="27" cy="27" r="27" transform="translate(3 3)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_1240" data-name="패스 1240" d="M29.994,3.163a38.514,38.514,0,0,0,0,53.506" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_1241" data-name="패스 1241" d="M29.994,3.163a38.514,38.514,0,0,1,0,53.506" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_1242" data-name="패스 1242" d="M49.048,11.357a27.142,27.142,0,0,1-38.384,0" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_1243" data-name="패스 1243" d="M49.048,48.488a27.141,27.141,0,0,0-38.383,0h0" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <line id="선_1194" data-name="선 1194" x2="52.887" transform="translate(3.391 29.917)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="패스_1244" data-name="패스 1244" d="M45.225,12.51c0,4.942-6.354,9.178-6.354,9.178s-6.353-4.232-6.353-9.178a6.354,6.354,0,0,1,12.707,0"/>
+    <path id="패스_1245" data-name="패스 1245" d="M40.989,12.51a2.118,2.118,0,1,1-2.118-2.118,2.118,2.118,0,0,1,2.118,2.118" fill="#fc1a1a"/>
+    <path id="패스_1246" data-name="패스 1246" d="M25.006,39.752c0,3.239-4.165,6.016-4.165,6.016s-4.165-2.781-4.165-6.016a4.165,4.165,0,0,1,8.33,0"/>
+    <path id="패스_1247" data-name="패스 1247" d="M22.229,39.751a1.388,1.388,0,1,1-1.389-1.388,1.387,1.387,0,0,1,1.389,1.388Z" fill="#fc1a1a"/>
+  </g>
+</svg>

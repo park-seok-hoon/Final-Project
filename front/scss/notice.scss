@@ -1,0 +1,92 @@
+@charset "utf-8";
+@import "_notice_detail";
+@import "_notice_insert";
+
+.main-banner04{
+	background-image: url(../images/sub/main_banner04.jpg);
+}
+.main-contents{
+	position:relative;
+	table{
+		width: 1200px;
+		height: 800px;
+		margin-bottom: 30px;
+	}
+	th{
+		border-top: 1px solid #1C1C1C;
+		height: 70px;
+	} 
+	th:nth-child(1){ 
+		width:100px;
+	}
+	th:nth-child(2){
+		width:100px;
+	}
+	th:nth-child(3){
+		width:225px;
+	}
+	th:nth-child(4){
+		width:500px;
+	}
+	th:nth-child(5){
+		width:175px;
+	}
+	th:nth-child(6){
+		width:100px;
+	}
+	thead{
+		border-top: 1px solid black;
+		background: #FAFAFA;
+		width: 150px;
+		height: 70px;
+	}
+	td{
+		text-align: center;
+		height:70px;
+	}
+	td:nth-child(4){
+		text-align: left;
+	}
+	tbody{
+		tr{
+			border-bottom: 1px solid #DFDFDF;
+
+			&:last-child{ //마지막 tr만 색상 검게 처리
+				border-bottom: 1px solid #1C1C1C;
+			}
+		}
+	} 
+	.btn-wrap{
+		position:absolute;
+		right:0px;
+		bottom:84px;
+		a{
+			padding: 8px 16px;
+			color: #1C1C1C;
+			font-size: 14px;
+			background-color: #FFF;
+			border: 1px solid #1C1C1C;
+
+			&:first-child{
+				margin-right: 12px;
+			}
+		}
+	}
+	form{
+		margin-top: 30px;
+		text-align: center;
+		#search-announce{
+			width: 360px;
+			height: 50px;
+			padding: 0 20px;
+			background-image: url(../images/common/search_black.svg);	//박스 안에 이미지를 넣고 싶을때 사용
+			background-repeat: no-repeat;	//기본값은 이미지가 반복이 되기 때문에 반복이 안되게 막음
+			background-size: 24px 24px;	// 상하 24px, 좌우 24px로 설정한다는 의미
+			background-position: calc(100% - 20px) center;	
+			//x축 기준왼쪽에서 오른쪽으로 100% 붙인다. 왼쪽으로 보내면 -, 오른쪽으로 보내고 싶으면 + 
+			border: 1px solid #1C1C1C;
+		}
+	}
+}
+
+

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.kh.smeg.dao.ProductDAO">
+	<!-- 선택상자를 위한 리절트맵 처리 -->
+	<resultMap type="GroupVO" id="GroupMap">
+	    <id property="gr_num" column="gr_num"/>
+	    <result property="gr_name" column="gr_name"/>
+	    <collection property="categorylist" ofType="CategoryVO" column="gr_num" select="selectCategoriesByGroupId"/>
+	</resultMap>
+	<select id="selectGrouplist" resultMap="GroupMap">
+	    select * from `group`
+	</select>
+	<select id="selectCategoriesByGroupId" resultType="CategoryVO">
+	    select * from category where ca_gr_num = #{groupId}
+	</select>
+	
+	<!-- 상품이미지 선택을 위한 리절트맵 처리 -->
+	<resultMap id="ProductMap" type="ProductVO">
+	    <id property="pr_code" column="pr_code" />
+	    <result property="pr_name" column="pr_name" />
+	    <result property="pr_price" column="pr_price" />
+	    <result property="pr_explain" column="pr_explain" />
+	    <result property="pr_pic" column="pr_pic" />
+	    <result property="pr_pic_ori_name" column="pr_pic_ori_name" />
+	    <result property="pr_kc" column="pr_kc" />
+	    <result property="pr_elec" column="pr_elec" />
+	    <result property="pr_energy" column="pr_energy" />
+	    <result property="pr_date" column="pr_date" />
+	    <result property="pr_maker" column="pr_maker" />
+	    <result property="pr_nation" column="pr_nation" />
+	    <result property="pr_size" column="pr_size" />
+	    <result property="pr_guarantee" column="pr_guarantee" />
+	    <result property="pr_AS" column="pr_AS" />
+	    <result property="pr_extraprice" column="pr_extraprice" />
+	    <result property="pr_ca_num" column="pr_ca_num" />
+	    <result property="pr_ps_state" column="pr_ps_state" />
+	    <result property="pr_ca_name" column="pr_ca_name" />
+	    <result property="pr_gr_name" column="pr_gr_name" />
+	    <result property="pr_gr_num" column="pr_gr_num" />
+	    <collection property="slidelist" ofType="Slide_picsVO" column="pr_code" select="selectSlidesByProductCode"/>
+	</resultMap>
+	
+	<!-- 리절트맵과 같이 사용할 슬라이드 파일 조회 -->
+	<select id="selectSlidesByProductCode" resultType="Slide_picsVO">
+	    select * from slide_pics where sp_pr_code = #{pr_code}
+	</select>
+	<!-- 리절트맵 끝 -->
+
+	<!-- 페이지에 맞는 카테고리 불러오기 -->
+    <select id="selectCategoryByCaNum" resultType="CategoryVO">
+        select * from category where ca_num = #{ca_num}
+    </select>
+    
+    <!-- 페이지에 맞는 그룹 불러오기 -->
+    <select id="selectGroupByCaGrNum" resultType="GroupVO">
+        select * from `group` where gr_num = #{ca_gr_num}
+    </select>
+    
+    <!-- 같은 그룹에서 가장 작은 카테고리 번호를 갖는 카테고리조회 -->
+    <select id="selectCategoryByGroupMin" resultType="CategoryVO">
+        select * from category where ca_gr_num = #{ca_gr_num}  order by ca_num asc limit 1
+    </select>
+    
+    <!-- 그룹에 맞는 카테고리 가져오기 -->
+	<select id="selectCategoriesByGroupNum" resultType="CategoryVO">
+	    select * from category where ca_gr_num = #{gr_num}
+	</select>
+	
+	<!-- 상품리스트 가져오기 -->
+	<select id="selectProductList" resultMap="ProductMap">
+		select * from product where pr_ca_num = #{cri.type} limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<!-- 상품리스트 개수 가져오기 -->
+	<select id="selectProductTotalCount" resultType="int">
+		select count(*) from product where pr_ca_num = #{cri.type} 
+	</select>
+	
+	<select id="selectProductCode" resultMap="ProductMap">
+		select * from product where pr_code = #{pr_code}
+	</select>
+	
+	<!-- 장바구니 추가 -->
+	<insert id="insertBasket">
+		insert into basket(ba_amount, ba_me_id, ba_pr_code) values(#{ba_amount}, #{ba_me_id}, #{ba_pr_code})
+	</insert>
+	
+	<!-- 주문 추가 -->
+	<insert id="insertOrder">
+		insert into `order`(or_date, or_total_price, or_me_id) values(now(), #{or_total_price}, #{or_me_id})
+	</insert>
+	
+	<!-- 주문 중 가장 최근 조회 -->
+	<select id="selectOrderById" resultType="OrderVO">
+		select * from `order` where or_me_id = #{or_me_id} order by or_num desc limit 1
+	</select>
+		
+	<!-- 주문리스트 추가 -->
+	<insert id="insertOrderlist">
+		insert into orderlist(or_num, pr_code, orlist_amount) values(#{or_num}, #{pr_code}, #{orlist_amount})
+	</insert>
+	
+	<!-- 제품검색관련 조회 -->
+    <select id="selectproductListByName" resultMap="ProductMap">
+	    select * from product 
+	    <where>
+	        <choose>
+	            <when test='cri.type == "all"'>
+	                and pr_name like concat('%', #{cri.search}, '%')
+	            </when>
+	        </choose>
+	    </where>
+	    order by pr_name
+	    limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<!-- 제품검색개수 조회 -->
+	<select id="selectTotalCountByName" resultType="int">
+		select count(*) from product 
+		<where>
+	        <choose>
+	            <when test='cri.type == "all"'>
+	                and pr_name like concat('%', #{cri.search}, '%')
+	            </when>
+	        </choose>
+	    </where>
+	</select>
+</mapper>

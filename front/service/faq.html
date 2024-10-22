@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMEG - faq - 3차프로젝트</title>
+    <!--파비콘: 홈페이지 title옆에 붙는 아이콘-->
+    <link rel="icon" type="image/x-icon" href="/images/common/favicon.ico" />
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/sub-common.css">
+    <link rel="stylesheet" href="/css/notice.css">
+    <link rel="stylesheet" href="/css/faq.css">
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/sub.js"></script>
+    <script src="/js/faq.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/index.html">
+                <img src="/images/common/logo.svg" alt="스메그로고" class="white">
+                <img src="/images/common/logo_black.svg" alt="스메그로고" class="black">
+            </a>
+        </h1>
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="/smeg/history.html">SMEG</a>
+                    <ul class="sub-nav">
+                        <li><a href="/smeg/history.html">연혁</a></li>
+                        <li><a href="/smeg/story.html">스토리</a></li>
+                        <li><a href="/smeg/award.html">수상내역</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/special/dng.html">SPECIAL</a>
+                    <ul class="sub-nav">
+                        <li><a href="/special/dng.html">D&G</a></li>
+                        <li><a href="/special/fiat.html">FIAT</a></li>
+                        <li><a href="/special/disney.html">DISNEY</a></li>
+                        <li><a href="/special/cocacola.html">COCACOLA</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/big/refrigerator.html">BIG PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/big/refrigerator.html">냉장고</a></li>
+                        <li><a href="/big/wineseller.html">와인셀러</a></li>
+                        <li><a href="/big/dishwasher.html">식기세척기</a></li>
+                        <li><a href="/big/oven.html">오븐/인덕션</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/small/electricpot.html">SMALL PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/small/electricpot.html">전기포트</a></li>
+                        <li><a href="/small/toaster.html">토스트기</a></li>
+                        <li><a href="/small/mixer.html">믹서기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/service/notice.html">SERVICE</a>
+                    <ul class="sub-nav">
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/store.html">매장 안내</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- 하위메뉴 뒤에 깔릴 배경 -->
+        <div class="gnb-bg"></div>
+        <div class="top-nav">
+            <ul>
+                <li>
+                    <a href="#" class="search-btn">
+                        <img src="/images/common/search.svg" alt="검색아이콘" class="white">
+                        <img src="/images/common/search_black.svg" alt="검색아이콘" class="black">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/common/shop.svg" alt="장바구니아이콘" class="white">
+                        <img src="/images/common/shop_black.svg" alt="장바구니아이콘" class="black">
+                    </a>
+                </li>
+                <li><a href="/topnav/login.html">로그인</a></li>
+                <li><a href="/topnav/signup.html">회원가입</a></li>
+                <li><a href="/mypage/personal_info.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="search-box">
+        <form action="#">
+            <!-- label의 for와 id의 속성값이 같아야 스크린리더기가 읽어줌 -->
+            <!-- 앞으로 label에 class를 away로 붙이면 이건 화면에서 안보이게 하겠다는 뜻! -->
+            <label for="search-input" class="away">검색입력창</label>
+            <input type="text" id="search-input" placeholder="검색어를 입력해주세요." />
+        </form>
+        <!-- 닫기버튼 : a 혹은 button 중 선택가능 -->
+        <!-- a태그로 쓸 경우는 임시링크 #을 쓰면 클릭시 자꾸 상단이동하므로 뒤에 의미없는 영문 붙이기(id로 안쓰는)-->
+        <a href="#close"><img src="/images/common/close_icon.svg" alt="닫기버튼"></a>
+    </div>
+    <main class="main-banner04">
+        <h2>FAQ</h2>
+        <div class="indicator">
+            <ul>
+                <li><a href="/index.html"><img src="/images/sub/home.svg" alt="홈 아이콘"></a></li>
+                <li><a href="/service/notice.html">SERVICE</a></li>
+                <li><a href="/service/notice.html">FAQ</a></li>
+            </ul>
+        </div>
+    </main>
+    <div class="title-box">
+        <h2>FAQ</h2>
+        <p>
+			스메그의 자주 묻는 질문 페이지입니다.<br>
+            평소 고객님들이 자주하는 질문을 정리해놓았습니다.
+        </p>
+    </div>
+    <div class="main-contents">
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk01"></div>
+            <div class="q">Q</div>
+            <p class="q-title">현금영수증 발급은 어떻게 하나요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                2020년 1월 1일부터 가전제품 소매업의 경우 현금영수증 의무발급 업종에 추가되어 건당 거래금액 10만원 이상 현금거래시 소비자 요구가 없더라도
+                현금영수증을 의무적으로 발급하게 되어 있습니다.(현금을 받은 날부터 5일 이내 국세청 지정 코드 010-000-1234 로 자진발급-소득세법시행령 별표3의3)
+                현금영수증 발급은 가상계좌 결제시만 가능하며 주문결제창에서 소득증빙과 지출증빙 선택이 가능합니다.<br>
+                소득증빙시 휴대폰번호, 지출증빙시 사업자번호로 발급이 가능합니다.
+                현금영수증 발급여부는 국세청 홈텍스 사이트에서 직접 확인이 가능합니다<br>
+                단, 신용카드 결제시 카드매출전표가 증빙처리로 자동발급 되며  현금영수증 또는 세금계산서는 발급되지 않는 점 참고바랍니다.
+            </p>
+            <div class="blank2"></div>
+        </div> 
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk02"></div>
+            <div class="q">Q</div>
+            <p class="q-title">세금계산서 발행 가능한가요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                현금영수증 의무발급 소득세법 시행령에 따르며 당사 결제대행사인 "KCP"에서는 원칙적으로
+                세금계산서 발행이 되지 않아 당사 스메그코리아에서 역시 세금계산서 발행은 되지 않습니다.<br>
+                결제 진행시 현금영수증 신청 > 지출증빙용으로 발행 신청 하시기 바랍니다.<br>
+                지출 증빙용 현금영수증은 세금계산서와 동일한 효력이 있습니다.
+            </p>
+            <div class="blank2"></div>
+        </div> 
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk03"></div>
+            <div class="q">Q</div>
+            <p class="q-title">다른데서 구입한 스메그 제품도 A/S 가능한가요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                당사는 SMEG 의 한국지사가 아닌 한국 공식수입사입니다.
+                당사 구입내역 확인 및 제품 S/N 가 출고조회 되지 않을 경우 A/S 불가합니다.<br>
+                해외에서 구매한 제품, 해외직구 및 다른 수입유통사를 통한 국내 온/오프라인 오픈마켓등에 공식 판매점 제품이 아닌 경우도 불가하며
+                당사에서 확인되지 않는 제품의 경우는 구매처로 문의주시기 바랍니다.
+            </p>
+            <div class="blank2"></div>
+        </div> 
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk04"></div>
+            <div class="q">Q</div>
+            <p class="q-title">냉장고 문을 세게 열어야 열리는데 왜 그런가요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                냉동실 및 냉장실의 문을 닫은 후에 바로 열 때에는 따뜻한 외부 공기가 고내로서 냉각되어
+                수축이 발생하므로 잘 열리지 않는 경우가 있습니다. 이럴 경우는 5초 정도 경과 후 다시 열면 수월하게 열 수 있습니다.<br>
+                특히 새상품의 경우 압착력이 더 높아 세게 힘을 줘야 열리는 경우가 있으며 사용중 
+                불편하실 경우는 방문하여 완화 작업도 가능합니다. (방문시 유무상 AS 적용)
+            </p>
+            <div class="blank2"></div>
+        </div> 
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk05"></div>
+            <div class="q">Q</div>
+            <p class="q-title">간냉식과 직냉식이 뭐가 다른가요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                간냉식의 경우는 간접냉각방식으로 나오는 냉기를 간접적으로(팬) 전달하는 방식으로 음식이 빨리 건조해질수 있는 반면 냉장고가 빨리 차가워지고 식는 특징이 있습니다.<br>
+                직냉식은 직접냉각방식으로 벽면에 직접적으로 냉기가 나오는 방식이기 때문에 처음엔 안 차갑게 느껴질 수 있지만
+                냉각판이 차가워진 이후부터는 냉기 보존 능력이 좋아 쉽게 식지 않습니다.<br>
+                간냉식에 비해 음식물이 건조해지지 않아 야채나 과일을 더 오래 보관할 수 있는 반면,
+                도어를 자주 열거나 뜨거운 음식을 바로 넣으면 냉장고 내부에 습기가 많아져 성에가 생길 수 있는 가능성이 많아집니다.
+             </p>
+             <div class="blank2"></div>
+        </div> 
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk06"></div>
+            <div class="q">Q</div>
+            <p class="q-title">냉장고에서 '똑똑!','딱딱!' 소리가 들리는 건 무엇인가요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                냉매가스를 압축해 주는 압축기와 팬이 작동하면서 나타날 수 소리로 냉장고 내부의 온도 변화에 따라서 똑똑 거리는 소리가 들릴 수 있습니다.<br>
+                똑똑 거리는 소리는 냉장고의 냉각 작용으로 냉장고 내부의 각종 부품(냉장고 캐비닛, 각종 선반)이 수축하고 팽창하면서
+                들리는 소리이며 냉장고의 압축기가 정지할 때 물 흐르는 소리가 날 수 있으며  정상적인 소음입니다.<br>
+                냉매는 충전 방식이 아니므로 냉매 부족에 따른 충전이 필요하지는 않습니다.
+             </p>
+             <div class="blank2"></div>
+        </div> 
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk07"></div>
+            <div class="q">Q</div>
+            <p class="q-title">온도조절 전기포트 알람소리 안나는데 어떻게 켜나요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                온도조절 전기포트라면 알람과 같은 소리는 보온버튼으로 설정하게 됩니다.
+                보온버튼을 5초~10초가량 눌렀다 떼신후 사용해보시면 됩니다.<br>
+                만약, 설정을 여러 번 다시 해보셨는데도 동일하게 소리가 나지 않을 경우는 입고 AS가 필요할 수 있습니다.
+             </p>
+             <div class="blank2"></div>
+        </div> 
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk08"></div>
+            <div class="q">Q</div>
+            <p class="q-title">오븐 작동 시 자꾸 붕~ 거리는 소리가 나는데 왜그런가요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                디지털 스팀 컨벡션(ALFA43XEH)의 경우 START 버튼이  스팀을 수동으로 작동 시키는 기능도 하는데
+                예열하고 나면 온도가 다 올라가 있기 때문에 자동으로 스타트 버튼을 길게 누르면 작동을 할때 나는 소리가 붕~하는 큰 굉음같은 소리가 날 수 있습니다.<br>
+                이는 제품의 이상이 아니며 AS가 필요한 증상은 아닙니다.<br>
+                다만, 그 소리를 ON/OFF 할 수 기능은 포함되어 있지 않은 점 참고바랍니다. ( 스팀설정메뉴를 H0으로 설정해도 동일함)
+             </p>
+             <div class="blank2"></div>
+        </div> 
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk09"></div>
+            <div class="q">Q</div>
+            <p class="q-title">오븐의 고무패킹은 4면 모서리에만 고정되어 있는게 맞나요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                스메그 컨벡션 오븐의 도어를 열고 앞의 네 면을 보면 고무패킹이 부착되어 있는 것을 확인하실 수 있습니다.<br>
+                그런데 스메그 컨벡션 오븐의 네 면에 부착되어 있는 고무패킹은 네 면에 부착된 것이 아닌
+                네 모서리에만 고정이 가능하도록 설계되었습니다.<br>
+                이것은 오븐 가동 시 높은 온도에 도달하게 되면 고열로 인한 고무패킹에 변형이 올 수 있는 부분을 방지하기 위함입니다.<br>
+                고무라는 소재는 고열에 의해 수축, 팽창, 변형될 수 있으며 팽창과 이완을 반복하게 되는데요.<br>
+                오븐의 네 면에 고무패킹을 틈새없이 전체에 부착시키는 경우에 고무패킹의 변형으로 틈새가 벌어져 열기가 빠지는 현상이 발생할 수 있으며
+                이러한 증상을 미연에 방지하기 위해 과학적인 원리를 이용해 제작된 것이랍니다.<br>
+                또한 현재 네 모서리만 고정된 상태에서 오븐 도어를 닫았을 때 열기가 전혀 새어 나가지 않고
+                충분히 밀착되는 역할을 해주고 있으니 스메그 컨벡션 오븐을 사용 중인 고객님들께서는 안심하고 사용하셔도 됩니다.
+            </p>
+             <div class="blank2"></div>
+        </div> 
+        <div class="faq-q">
+            <div class="q-check"><input type="checkbox" id="chk10"></div>
+            <div class="q">Q</div>
+            <p class="q-title">스메그 제품은 어디서 제작이 되나요?</p>
+            <a href="#" class="active"></a>
+        </div>
+        <div class="faq-a">
+            <div class="blank1"></div>
+            <div class="a">A</div>
+            <p class="a-contents">
+                오븐, 냉장고와 같은 대형가전 제품은 이태리 현지에서 제작, 검수한 완제품이 패킹된 상태로 국내로 입고되게 되며
+                일반 소형가전의 경우는 SMEG의 OEM 방식으로 Assembled in China, Designed by SMEG ITALY 제품입니다.<br>
+                그 외 오븐랙/액세서리/기프트 제품은 국내에서 제작한 제품으로 판매되고 있습니다.(상품페이지 참고요망)
+            </p>
+             <div class="blank2"></div>
+        </div> 
+        <ul class="pagination">
+            <!--백엔드에서 주소를 통해서 active를 변경시킴-->
+            <li><a href="#" class="active">1</a></li>
+            <li><a href="#" >2</a></li>
+            <li><a href="#" >3</a></li>
+            <li><a href="#" >4</a></li>
+            <li><a href="#" >5</a></li>
+            <li><a href="#"><img src="/images/product/pagination_next.svg" alt="다음으로"></a></li>
+        </ul>
+        <div class="btn-wrap">
+            <a href="faq_insert.html" class="btn-hover">FAQ 등록</a>
+            <a href="#" class="btn-hover">선택 삭제</a>
+        </div>    
+        <form action="#">
+            <!-- label의 for와 id의 속성값이 같아야 스크린리더기가 읽어줌 -->
+            <!-- 앞으로 label에 class를 away로 붙이면 이건 화면에서 안보이게 하겠다는 뜻! -->
+            <label for="search-announce" class="away">검색입력창</label>
+            <input type="text" id="search-announce" placeholder="검색어를 입력해주세요.">
+        </form>
+    </div>
+    <footer>
+        <div class="inner-wrap">
+            <div class="footer-top">
+                <div class="sns-box">
+                    <h3>SMEG  SNS</h3>  
+                    <ul>
+                        <!--
+                            a태그의 target속성 : 열릴 페이지가 어디에 뜰지 지정해주는 속성
+                            기본값(작성안한다는 뜻)은 _self로 현재 창에서 변경
+                            새창이나 새탭에서 처리하려면 _blank로 처리
+                        -->
+                        <li><a href="https://www.facebook.com/smegkorea" target="_blank"><img src="/images/common/sns01.svg" alt="페이스북아이콘"></a></li>
+                        <li><a href="https://www.instagram.com/smegkorea/" target="_blank"><img src="/images/common/sns02.svg" alt="인스타그램아이콘"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCCwqSNH1-AN1C-AwWhZnKHw?reload=9" target="_blank"><img src="/images/common/sns03.svg" alt="유튜브아이콘"></a></li>
+                        <li><a href="https://cafe.naver.com/smegcafe" target="_blank"><img src="/images/common/sns04.svg" alt="네이버카페아이콘"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/smeg/history.html">스메그소개</a></li>
+                        <li><a href="/service/store.html">매장안내</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/admin/user_list.html">관리자</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright Ⓒ SMEGKOREA Co., Ltd. All Right Reserved.</p>
+                <h1><img src="/images/common/logo.svg" alt="스메그로고"></h1>
+            </div>
+        </div>
+    </footer>
+    <!--스크롤탑버튼-->
+    <a href="#top" class="scroll-btn">
+        <img src="/images/common/top_anchor.png" alt="상단으로 가기">
+    </a>
+</html>

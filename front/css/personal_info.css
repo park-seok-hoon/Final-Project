@@ -1,0 +1,43 @@
+.right_contents .insert-pw-box {
+  display: flex;
+  height: 200px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: #F6F6F6;
+}
+.right_contents .insert-pw-box p {
+  color: #000;
+  font-size: 24px;
+  padding-top: 50px;
+}
+.right_contents .insert-pw-box #insert-pw-input {
+  width: 500px;
+  height: 50px;
+  border: 1px solid #DFDFDF;
+  background: #FFF;
+  margin-bottom: 50px;
+  background-image: url(../images/topnav/login_pw.svg);
+  background-repeat: no-repeat;
+  background-position: 20px;
+  padding: 0px 45px;
+}
+.right_contents .insert-pw-box #insert-pw-input::-moz-placeholder {
+  color: #CCCCCC;
+  font-size: 14px;
+}
+.right_contents .insert-pw-box #insert-pw-input::placeholder {
+  color: #CCCCCC;
+  font-size: 14px;
+}
+.right_contents #personal_btn {
+  display: flex;
+  width: 265px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  margin: auto;
+  margin-top: 43px;
+}

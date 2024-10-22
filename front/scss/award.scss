@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+//변수선언
+$main-color: #1C1C1C;
+
+.main-contents{
+    .award_list{
+        position: relative;
+        border-top: 1px solid $main-color;
+        display: flex; padding: 40px 0;
+
+        .left-img{
+            width: 300px;
+            
+            img{
+                width: 106px; height: 106px;
+            }
+            #reddot-logo{
+                width: auto;
+            }
+            h4{
+                font-size: 30px;
+            }
+          
+        }
+        .right-content{
+            width: 900px;
+
+            h4{
+                color: $main-color;
+                font-size: 19px;
+                font-weight: 500;
+                margin-bottom: 6px;
+            }
+            p{
+                color: #666;
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+            .prd_list{
+                display: flex;
+                flex-wrap: wrap;
+                img{
+                    width: 290px;
+                }
+            }
+        }
+
+        table{
+            margin-top: 40px;
+            width: 100%;
+        }
+        th{
+            height: 55px;
+            border-bottom: 1px solid $main-color;
+            text-align: left;
+        }
+        .last{
+            td{
+                border-bottom: 1px solid $main-color;
+            }
+        }
+        td{
+            height: 55px;
+            text-align: left;
+            border-bottom: 1px dashed #ccc;
+
+            &:last-child{
+                text-align: center;
+            }
+        }
+       
+    }
+
+}

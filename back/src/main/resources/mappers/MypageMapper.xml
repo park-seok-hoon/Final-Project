@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.kh.smeg.dao.MypageDAO">
+	<!-- 장바구니와 상품정보+슬라이드사진을 같이 가져오기 위한 리절트맵 -->
+	<resultMap type="BasketVO" id="basketMap">
+		<id column="ba_num" property="ba_num"/>
+		<result column="ba_pr_code" property="ba_pr_code" />
+		<result column="ba_amount" property="ba_amount" />
+		<result column="ba_me_id" property="ba_me_id" />
+		<collection property="productlist" ofType="ProductVO" column="ba_pr_code" select="selectProductListByPrCode" />
+	</resultMap>
+	<select id="selectProductListByPrCode" resultType="ProductVO">
+	    select 
+	        product.*, 
+	        slide_pics.sp_name as pr_sp_name
+	    from 
+	        product
+	    inner join (
+	        select 
+	            sp.*,
+	            row_number() over (partition by sp_pr_code order by sp_num) as row_num
+	        from 
+	            slide_pics sp
+	    ) as slide_pics on product.pr_code = slide_pics.sp_pr_code
+	    where 
+	        product.pr_code = #{pr_code}
+	        and slide_pics.row_num = 1
+	</select>
+	<select id="selectBasketById" resultMap="basketMap">
+		select * from basket where ba_me_id = #{ba_me_id} order by ba_num desc
+	</select>
+	
+	<!-- 장바구니 번호에 해당하는 것 삭제 -->
+	<delete id="deleteBasketByNum">
+		delete from basket where ba_num = #{ba_num}
+	</delete>
+	
+	<!-- 주문리스트 추가 : 여러개 주문용 -->
+	<insert id="insertOrderlist">
+		insert into orderlist(or_num, pr_code, orlist_amount) values(#{or_num}, #{pr_code}, #{orlist_amount})
+	</insert>
+	
+	
+	<!-- 아이디별 주문리스트 조회를 위한 리절트맵 -->
+	<resultMap id="OrderResultMap" type="OrderVO">
+	    <id property="or_num" column="or_num"/>
+	    <result property="or_date" column="or_date"/>
+	    <result property="or_total_price" column="or_total_price"/>
+	    <result property="or_os_state" column="or_os_state"/>
+	    <result property="or_me_id" column="or_me_id"/>
+	    <!-- OrderlistVO에 대한 컬렉션 추가 -->
+	    <collection property="orderlistlist" ofType="OrderlistVO" column="or_num" select="selectOrderListByOrNum" />
+	</resultMap>
+	
+	<!-- 주문번호별 주문리스트 조회 -->
+	<select id="selectOrderListByOrNum" resultType="OrderlistVO">
+		select 
+		    orderlist.*,
+		    (select slide_pics.sp_name from slide_pics where slide_pics.sp_pr_code = product.pr_code limit 1) as sp_name,
+		    product.pr_name,
+		    product.pr_price
+		from 
+		    orderlist
+		join 
+		    product on orderlist.pr_code = product.pr_code
+		where 
+		    orderlist.or_num = #{or_num}
+		order by 
+		    orderlist.or_num desc
+	</select>
+	
+	<!-- 리절트맵을 받을 조회문 -->
+	<select id="selectOrderById" resultMap="OrderResultMap">
+		select
+			`order`.or_num,
+	        `order`.or_date,
+	        `order`.or_total_price,
+	        `order`.or_os_state,
+	        `order`.or_me_id
+		from 
+			`order`
+		inner join 
+	        orderlist on `order`.or_num = orderlist.or_num
+	    inner join 
+	        product on orderlist.pr_code = product.pr_code
+		where 
+			or_me_id = #{or_me_id}
+		<choose>
+			<when test='cri.type == "all"'>
+				and (`order`.or_date like concat('%', #{cri.search}, '%') or 
+	            product.pr_name like concat('%', #{cri.search}, '%'))
+			</when>
+		</choose>
+		group by 
+			`order`.or_num,
+	        `order`.or_date,
+	        `order`.or_total_price,
+	        `order`.or_os_state,
+	        `order`.or_me_id
+		order by 
+			`order`.or_num desc
+		limit #{cri.pageStart}, #{cri.perPageNum}
+	</select>
+	
+	<!-- 주문개수 반환 -->
+	<select id="selectOrderCountById" resultType="int">
+	    select
+	        count(distinct `order`.or_num)
+	    from
+	        `order`
+	    inner join
+	        orderlist on `order`.or_num = orderlist.or_num
+	    inner join
+	        product on orderlist.pr_code = product.pr_code
+	    where
+	        `order`.or_me_id = #{or_me_id}
+	    <choose>
+	        <when test='cri.type == "all"'>
+	            and (`order`.or_date like concat('%', #{cri.search}, '%') or 
+	            product.pr_name like concat('%', #{cri.search}, '%'))
+	        </when>
+	    </choose>
+	</select>
+	
+	<!-- deleteMemberById 메서드에 대한 매핑 -->
+    <delete id="deleteMemberById">
+        delete from member where me_id = #{me_id}
+    </delete>
+</mapper>

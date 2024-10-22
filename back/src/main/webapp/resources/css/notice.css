@@ -1,0 +1,331 @@
+.h3title-wrap {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #1C1C1C;
+  background: #FAFAFA;
+  text-align: center;
+  align-items: center;
+  height: 70px;
+}
+
+/* 추가된 CSS 시작 */
+.h3title-wrap h3 {
+  width: 800px; height: 36px;
+  color: #1C1C1C;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 150%; /* 36px */
+  padding-left: 20px;
+  text-align: left;
+  
+  /* 글자 줄임 처리 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 추가된 CSS 완료 */
+.h3title-wrap p {
+  color: #666;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0px 20px;
+  text-align: center;
+}
+
+.prev-box {
+  display: flex;
+  padding: 0px 20px;
+  border-top: 1px solid #1C1C1C;
+}
+.prev-box .left {
+  display: flex;
+  height: 70px;
+  padding: 0px 20px;
+  align-items: center;
+}
+.prev-box .right {
+  display: flex;
+  width: 720px; height: 70px;
+  padding: 0px 20px;
+  align-items: center;
+}
+.prev-box .right a{
+  width: 680px; height: 70px;
+  line-height: 70px;
+  /* 글자 줄임 처리 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.next-box {
+  display: flex;
+  padding: 0px 20px;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  margin-bottom: 40px;
+}
+.next-box .left {
+  display: flex;
+  padding: 0px 20px;
+  align-items: center;
+}
+.next-box .right {
+  display: flex;
+  width: 720px; height: 70px;
+  padding: 0px 20px;
+  align-items: center;
+}
+.next-box .right a{
+  width: 680px; height: 70px;
+  line-height: 70px;
+  /* 글자 줄임 처리 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-btn {
+  padding: 16px 48px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  display: block;
+  margin: 0 auto;
+  width: 154px;
+}
+
+/* 추가된 CSS 시작 */
+.main-contents .content{
+	padding: 50px 30px;
+	line-height: 1.8;
+}
+.main-contents .content h3{
+	font-size: 20px;
+}
+.main-contents .content img{
+	max-width: 1140px; /* 이미지 가로폭이 1140이상인게 들어와도 1140으로 처리되게 작성 */
+	margin: 30px auto 50px;
+}
+/* 추가된 CSS 완료 */
+
+.main-contents .insert-title-wrap {
+  margin-bottom: 20px;
+  display: flex;
+}
+.main-contents .insert-title-wrap #category-nav {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  padding: 0px 10px;
+  justify-content: space-between;
+  color: #666;
+  font-size: 16px;
+  appearance: none;
+  background-image: url(../images/sub/down_gray.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  margin-right: 20px;
+  border: 1px solid #1C1C1C;
+}
+.main-contents .insert-title-wrap #title-input {
+  display: inline-block;
+  width: 980px;
+  height: 50px;
+  padding: 0px 20px;
+  color: #666;
+  font-size: 16px;
+  border: 1px solid #1C1C1C;
+}
+.main-contents .summernote {
+  margin-top: 20px;
+  width: 1200px;
+}
+.main-contents .insert-btn {
+  margin: 50px auto 0;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  display: block;
+  padding: 16px 48px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.note-editor.note-airframe, .note-editor.note-frame {
+  border: 1px solid #1C1C1C;
+}
+
+.main-banner04 {
+  background-image: url(../images/sub/main_banner04.jpg);
+}
+
+.main-contents {
+  position: relative;
+}
+.main-contents table {
+  width: 1200px;
+  margin-bottom: 30px;
+}
+.main-contents th {
+  border-top: 1px solid #1C1C1C;
+  height: 70px;
+}
+/* 추가된 CSS 시작 */
+.main-contents th:nth-child(1), .main-contents td:nth-child(1){
+  width: 100px;
+}
+.main-contents th:nth-child(2), .main-contents td:nth-child(2){
+  width: 100px;
+}
+.main-contents th:nth-child(3), .main-contents td:nth-child(3){
+  width: 225px;
+}
+.main-contents th:nth-child(4), .main-contents td:nth-child(4){
+  width: 500px;
+}
+.main-contents th:nth-child(5), .main-contents td:nth-child(5){
+  width: 175px;
+}
+.main-contents th:nth-child(6), .main-contents td:nth-child(6){
+  width: 100px;
+}
+
+.main-contents .user th:nth-child(1), .main-contents .user td:nth-child(1){
+  width: 100px;
+}
+.main-contents .user th:nth-child(2), .main-contents .user td:nth-child(2){
+  width: 275px;
+}
+.main-contents .user th:nth-child(3), .main-contents .user td:nth-child(3){
+  width: 600px;
+}
+.main-contents .user th:nth-child(4), .main-contents .user td:nth-child(4){
+  width: 225px;
+}
+/* 추가된 CSS 완료 */
+
+.main-contents thead {
+  border-top: 1px solid black;
+  background: #FAFAFA;
+  width: 150px;
+  height: 70px;
+}
+.main-contents td {
+  text-align: center;
+  height: 70px;
+}
+
+/* 추가된 CSS 시작 */
+.main-contents td:nth-child(4) {
+  text-align: left;
+}
+.main-contents td:nth-child(4) a{
+	display: block;
+	width: 500px; height: 30px;
+	line-height: 30px;
+	padding-right: 50px;
+	
+	/* 글자 줄임 처리 */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.main-contents .user td:nth-child(3) {
+  text-align: left;
+}
+.main-contents .user td:nth-child(3) a{
+	display: block;
+	width: 600px; height: 30px;
+	line-height: 30px;
+	padding-right: 50px;
+	
+	/* 글자 줄임 처리 */
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.main-contents .user td:nth-child(4) {
+  text-align: center;
+}
+.main-contents .user td:nth-child(4) a{
+	display: inline;
+	width: auto; height: auto;
+	line-height: 30px;
+	padding-right:0;
+	
+	/* 글자 줄임 처리 없앰 */
+	white-space: wrap;
+	overflow: visible;
+	text-overflow: clip;
+}
+/* 추가된 CSS 완료 */
+
+.main-contents tbody tr {
+  border-bottom: 1px solid #DFDFDF;
+}
+.main-contents tbody tr:last-child {
+  border-bottom: 1px solid #1C1C1C;
+}
+.main-contents .btn-wrap {
+  position: absolute;
+  right: 0px;
+  bottom: 84px;
+}
+/* 추가된 CSS - 게시글 없을 때 처리 */
+.main-contents .btn-wrap.empty {
+  position: absolute;
+  right: 0px;
+  bottom: 54px;
+}
+.main-contents .btn-wrap a {
+  padding: 8px 16px;
+  color: #1C1C1C;
+  font-size: 14px;
+  background-color: #FFF;
+  border: 1px solid #1C1C1C;
+}
+.main-contents .btn-wrap a:first-child {
+  margin-right: 12px;
+}
+.main-contents form {
+  margin-top: 30px;
+  text-align: center;
+}
+.main-contents form #search-announce {
+  width: 360px;
+  height: 50px;
+  padding: 0 20px;
+  background-image: url(../images/common/search_black.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: calc(100% - 20px) center;
+  border: 1px solid #1C1C1C;
+}
+.main-contents form input, .main-contents form textarea{
+	color: #666;
+}
+.main-contents form input::placeholder, .main-contents form textarea::placeholder{
+	color: #999;
+}
+
+/* 썸머노트 이미지 추가 창 위치 변경 */
+.note-modal-content{ /* 팝업창 */
+	/* 정가운데 오게 처리 */
+	position: absolute;
+	left: 50%; top: 50%; 
+	transform: translate(-50%,-50%);
+	text-align: left;
+}
+.note-btn-primary{ /* 버튼 */
+	background: #1C1C1C;
+	position: absolute;
+	right: 30px; bottom: 15px;
+}
+.note-toolbar{ /* 썸머노트 정렬 */
+	display: flex;
+}
+.note-codable, .note-editable{ /* 입력창 */
+	text-align: left;
+}

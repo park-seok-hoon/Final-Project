@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+//변수선언
+$main-color: #1C1C1C;
+.main-contents{
+    display: flex; //자손요소를 수평나열 처리
+    justify-content: center;
+
+    form{
+        #insert-q{
+            display: flex;
+            width: 1200px;
+            height: 50px;
+            padding: 0px 20px;
+            align-items: center;
+            color: #999;
+            font-size: 16px;
+            margin-bottom: 20px;
+            
+        }
+        #insert-a{
+            display: flex;
+            width: 1200px;
+            height: 600px;
+            padding: 0px 20px;
+            align-items: center;
+            flex-shrink: 0;
+            color: #999;
+            font-size: 16px;
+            
+        }
+        #insert-qa{
+            display: flex;
+            width: 150px;
+            height: 50px;
+            justify-content: center; // 세로줄 가운데 정렬
+            align-items: center; // 가로줄 가운데 정렬
+            border: 1px solid #1C1C1C;
+            background: #FFF;
+            margin: auto;
+            margin-top: 50px;
+        }
+    }
+}

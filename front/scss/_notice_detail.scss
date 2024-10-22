@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+//변수선언
+$min-width: 1200px;
+$main-color: #1C1C1C;
+
+
+
+.h3title-wrap{
+	display: flex;
+	justify-content: space-between;
+	border-top: 1px solid #1C1C1C;
+	background: #FAFAFA;
+	text-align: center;
+	align-items: center;
+	height: 70px;
+	h3{
+		color: #1C1C1C;
+		font-size: 24px;
+		font-weight: 500;
+		line-height: 150%; /* 36px */
+		padding-left: 20px;
+	}
+	p{
+		color: #666;
+		font-size: 16px;
+		font-weight: 400;
+		padding: 0px 20px;
+		text-align: center;	
+	}
+}
+
+.prev-box{
+	display: flex;
+	padding: 0px 20px;
+	border-top: 1px solid #1C1C1C;
+
+	.left{
+		display: flex;
+		height: 70px;
+		padding: 0px 20px;
+		align-items: center;
+	}
+	.right{
+		display: flex;
+		height: 70px;
+		padding: 0px 20px;
+		align-items: center;
+		}
+}
+.next-box{
+	display: flex;
+	padding: 0px 20px;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	margin-bottom: 40px;
+
+	.left{
+		display: flex;
+		padding: 0px 20px;
+		align-items: center;
+		
+	}
+	.right{
+	display: flex;
+	height: 70px;
+	padding: 0px 20px;
+	align-items: center;
+	}
+}
+
+.btn{
+	padding: 16px 48px;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #1C1C1C;
+	background: #FFF;
+	display: block; margin: 0 auto;
+	width: 154px;
+}
+//수진씨가 쓸 SCSS

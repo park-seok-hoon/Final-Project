@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex,nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>매장찾기</title>
+	<style>
+		/* base */
+		* {
+				padding: 0; margin: 0;
+				font-family: "Pretendard"; font-size: 16px;
+				color: #1C1C1C; box-sizing: border-box;
+		}
+
+		li { list-style: none; }
+		a { text-decoration: none; }
+
+		html{ overflow: hidden; }
+		
+		.store-box{
+			width: 580px; height: 200px;
+			border: 1px solid #999;
+			padding: 20px 40px;
+		}
+		.store-box h3{
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+		.store-box p{
+				line-height: 1.5;
+				margin-bottom: 5px;
+				display: flex;
+		}
+		.store-box .title{
+				width: 100px;
+		}
+		#map{
+			width: 580px; height: 580px;
+			border: 1px solid #999;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<!-- 지도가 들어갈 영역  -id를 카카오에서 주는대로 처리해야 함-->
+	<div id="map">
+
+	</div>
+	<script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=688d236ee27d356d5d1ff7050394a757"></script>
+    <script src="/js/store08.js"></script>
+	<div class="store-box">
+			<h3>부산 : 신세계백화점 센텀시티점</h3>
+			<p class="phone">
+				<span class="title">전화번호</span>
+				<span class="data">051-745-2576</span>
+			</p>
+			<p class="address">
+				<span class="title">주소</span>
+				<span class="data">부산광역시 해운대구 센텀남대로 35</span>
+			</p>
+			<p class="time">
+				<span class="title">영업시간</span>
+				<span class="data">월~목요일 (10:30~20:00),
+					금~일요일 (10:30~20:30)</span>
+			</p>
+			<p class="product">
+				<span class="title">전시품목</span>
+				<span class="data">냉장고, 빌트인, 소형가전, 프로페셔널 일부 등</span>
+			</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMEG - 수상내역 - 3차프로젝트</title>
+    <!--파비콘: 홈페이지 title옆에 붙는 아이콘-->
+    <link rel="icon" type="image/x-icon" href="/images/common/favicon.ico" />
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/sub-common.css">
+    <link rel="stylesheet" href="/css/award.css">
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/common.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="/index.html">
+                <img src="/images/common/logo.svg" alt="스메그로고" class="white">
+                <img src="/images/common/logo_black.svg" alt="스메그로고" class="black">
+            </a>
+        </h1>
+        <nav class="gnb">
+            <ul>
+                <li>
+                    <a href="/smeg/history.html">SMEG</a>
+                    <ul class="sub-nav">
+                        <li><a href="/smeg/history.html">연혁</a></li>
+                        <li><a href="/smeg/story.html">스토리</a></li>
+                        <li><a href="/smeg/award.html">수상내역</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/special/dng.html">SPECIAL</a>
+                    <ul class="sub-nav">
+                        <li><a href="/special/dng.html">D&G</a></li>
+                        <li><a href="/special/fiat.html">FIAT</a></li>
+                        <li><a href="/special/disney.html">DISNEY</a></li>
+                        <li><a href="/special/cocacola.html">COCACOLA</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/big/refrigerator.html">BIG PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/big/refrigerator.html">냉장고</a></li>
+                        <li><a href="/big/wineseller.html">와인셀러</a></li>
+                        <li><a href="/big/dishwasher.html">식기세척기</a></li>
+                        <li><a href="/big/oven.html">오븐/인덕션</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/small/electricpot.html">SMALL PRODUCT</a>
+                    <ul class="sub-nav">
+                        <li><a href="/small/electricpot.html">전기포트</a></li>
+                        <li><a href="/small/toaster.html">토스트기</a></li>
+                        <li><a href="/small/mixer.html">믹서기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/service/notice.html">SERVICE</a>
+                    <ul class="sub-nav">
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/store.html">매장 안내</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- 하위메뉴 뒤에 깔릴 배경 -->
+        <div class="gnb-bg"></div>
+        <div class="top-nav">
+            <ul>
+                <li>
+                    <a href="#" class="search-btn">
+                        <img src="/images/common/search.svg" alt="검색아이콘" class="white">
+                        <img src="/images/common/search_black.svg" alt="검색아이콘" class="black">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="/images/common/shop.svg" alt="장바구니아이콘" class="white">
+                        <img src="/images/common/shop_black.svg" alt="장바구니아이콘" class="black">
+                    </a>
+                </li>
+                <li><a href="/topnav/login.html">로그인</a></li>
+                <li><a href="/topnav/signup.html">회원가입</a></li>
+                <li><a href="/mypage/personal_info.html">마이페이지</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="search-box">
+        <form action="#">
+            <!-- label의 for와 id의 속성값이 같아야 스크린리더기가 읽어줌 -->
+            <!-- 앞으로 label에 class를 away로 붙이면 이건 화면에서 안보이게 하겠다는 뜻! -->
+            <label for="search-input" class="away">검색입력창</label>
+            <input type="text" id="search-input" placeholder="검색어를 입력해주세요." />
+        </form>
+        <!-- 닫기버튼 : a 혹은 button 중 선택가능 -->
+        <!-- a태그로 쓸 경우는 임시링크 #을 쓰면 클릭시 자꾸 상단이동하므로 뒤에 의미없는 영문 붙이기(id로 안쓰는)-->
+        <a href="#close"><img src="/images/common/close_icon.svg" alt="닫기버튼"></a>
+    </div>
+    <main class="main-banner03">
+        <h2>Prizes and awards</h2>
+        <div class="indicator">
+            <ul>
+                <li><a href="/index.html"><img src="/images/sub/home.svg" alt="홈 아이콘"></a></li>
+                <li><a href="/smeg/history.html">SMEG</a></li>
+                <li><a href="/smeg/award.html">수상내역</a></li>
+            </ul>
+        </div>
+    </main>
+    <div class="title-box">
+        <h2>수상내역</h2>
+        <p>
+            스메그는 70년이 넘는 시간 동안 미적 감각과 기술을 결합하여 스타일과 기능을 모두 갖춘 가전을 만들어왔습니다. <br>
+            이러한 인식 덕분에 스메그는 영향력 있는 기관과 단체로부터 일류로 인정받아, 글로벌 리더로서의 면모를 견고히 했습니다. <br>
+            이러한 수상경력은 키친 인테리어를 선도하려는 스메그의 야심찬 도전의 기반인 고유한 디자인, 기술, 그리고 연구 및 품질 개발의 우수성을 증명합니다.
+        </p>
+    </div>
+    <div class="main-contents">
+        <div class="award_list">
+            <div class="left-img">
+                <img src="/images/smeg/award/logo01.jpg" alt="로고사진">
+            </div>
+            <div class="right-content">
+                <h4>GOOD DESIGN AWARD</h4>
+                <P>
+                    GOOD DESIGN AWARD는 시카고 아테네움 건축 디자인 박물관에서 매해 수여되는 국제 산업 디자인 상입니다. 이 상은 그 해의 가장 혁신적인<br>
+                    제품들에 부여되어 최첨단 산업 디자인 창조라는 과제를 수행한 전세계 디자이너와 회사의 작업에 대한 가치를 인정하고 있습니다.
+                </P>
+                <ul class="prd_list">
+                    <li><img src="/images/smeg/award/good01.jpg" alt="good award 제품 이미지"></li>
+                    <li><img src="/images/smeg/award/good02.jpg" alt="good award 제품 이미지"></li>
+                    <li><img src="/images/smeg/award/good03.jpg" alt="good award 제품 이미지"></li>
+                    <li><img src="/images/smeg/award/good04.jpg" alt="good award 제품 이미지"></li>
+                    <li><img src="/images/smeg/award/good05.jpg" alt="good award 제품 이미지"></li>
+                    <li><img src="/images/smeg/award/good06.jpg" alt="good award 제품 이미지"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="award_list">
+            <div class="left-img">
+                <img src="/images/smeg/award/logo02.jpg" alt="로고사진">
+            </div>
+            <div class="right-content">
+                <h5>IF DESIGN AWARD</h5>
+                <P>
+                    IF DESIGN AWARD는 1954년에 만들어졌으며 하노버 기반 국제 포럼 디자인에 의해 부여되는 상입니다.<br>
+                    이 상은 가장 권위있는 국제 제품 디자인상 중 하나이기도 합니다. 매년 37개국, 2000개 이상의 제품들이 국제 전문가에 의해 평가되어 그 중 가장 뛰어난 제품을 선정합니다.
+                </P>
+                <ul class="prd_list">
+                    <li><img src="/images/smeg/award/if01.jpg" alt="good award 제품 이미지"></li>
+                    <li><img src="/images/smeg/award/if02.jpg" alt="good award 제품 이미지"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="award_list">
+            <div class="left-img">
+                <img src="/images/smeg/award/logo03.jpg" alt="로고사진" id="reddot-logo">
+            </div>
+            <div class="right-content">
+                <h5>Red Dot Design Award</h5>
+                <P>
+                    Red Dot Design Award는 전 세계에서 가장 규모가 크고 권위있는 디자인상 중 하나로, 국제 시상식은 독일에서 개최됩니다.<br>
+                    심사위원단은 디자인 분야의 글로벌 전문가들로 구성되며 수장작이 담고 있는 문화에 대한 광범위한 의미를 평가합니다.
+                </P>
+                <ul class="prd_list">
+                    <li><img src="/images/smeg/award/reddot01.jpg" alt="good award 제품 이미지"></li>
+                    <li><img src="/images/smeg/award/reddot02.jpg" alt="good award 제품 이미지"></li>
+                    <li><img src="/images/smeg/award/reddot03.jpg" alt="good award 제품 이미지"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="award_list">
+            <div class="left-img">
+                <h4>GREEN STARS OF<br>ITALY</h4>
+            </div>
+            <div class="right-content">
+                <P>
+                    스메그는 이탈리아에서 가장 우수한 지속 가능한 기업 중 하나로 선정되어 100점을 받아 "Durable consumer goods" 부문에서 1위를 차지했습니다. 유럽 조사기관인 ITQF(Institute for Quality & Finance)는 ‘social listening’ 방법으로 ‘The 200 Green Stars of Italy - the ranking of the most sustainable companies, 2021’을 진행하여 2021년 녹색 경제 정책에서 두각을 나타내고 환경과 사회에 좋은 영향을 미치기 위해 노력하는 200개의 이탈리아 회사들을 선정했습니다.
+                </P>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SETTORE</th>
+                            <th>AZIENDA</th>
+                            <th>PUMTEGGIO SOSTENIBILITA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th rowspan="6">ABBIGLIAMENTO E MODA</th>
+                            <td>NIKE</td>
+                            <td class="number">100,0</td>
+                        </tr>
+                        <tr>
+                            <td>GEOX</td>
+                            <td>83,2</td>
+                        </tr>
+                        <tr>
+                            <td>MIROGLIO FROUP</td>
+                            <td>74,8</td>
+                        </tr>
+                        <tr>
+                            <td>BENETTON GROUP</td>
+                            <td>73,5</td>
+                        </tr>
+                        <tr>
+                            <td>CALZEDONIA</td>
+                            <td>70,8</td>
+                        </tr>
+                        <tr class="last">
+                            <td>PRIMARK ITALY</td>
+                            <td>61,3</td>
+                        </tr>
+                        <tr class="last">
+                            <th>ABBIGLIAMENTO E MODA</th>
+                            <td>IKEA ITALIA</td>
+                            <td>100,0</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="5">BENI DI CONSUMO DUREVOLI</th>
+                            <td>SMEG</td>
+                            <td>100,0</td>
+                        </tr>
+                        <tr>
+                            <td>DE' LONGHI</td>
+                            <td>95,1</td>
+                        </tr>
+                        <tr>
+                            <td>CAFFITALY SYSTEM</td>
+                            <td>93,4</td>
+                        </tr>
+                        <tr>
+                            <td>ELECTROLUX ITALY</td>
+                            <td>85,5</td>
+                        </tr>
+                        <tr class="last">
+                            <td>BIALETTI</td>
+                            <td>64,1</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="3">BENI DI CONSUMO</th>
+                            <td>L'OREAL</td>
+                            <td>100,0</td>
+                        </tr>
+                        <tr>
+                            <td>LUSH ITALY</td>
+                            <td>79,6</td>
+                        </tr>
+                        <tr class="last">
+                            <td>ARISTON THERMO</td>
+                            <td>77,8</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="inner-wrap">
+            <div class="footer-top">
+                <div class="sns-box">
+                    <h3>SMEG SNS</h3>
+                    <ul>
+                        <!--
+                            a태그의 target속성 : 열릴 페이지가 어디에 뜰지 지정해주는 속성
+                            기본값(작성안한다는 뜻)은 _self로 현재 창에서 변경
+                            새창이나 새탭에서 처리하려면 _blank로 처리
+                        -->
+                        <li><a href="https://www.facebook.com/smegkorea" target="_blank"><img src="/images/common/sns01.svg" alt="페이스북아이콘"></a></li>
+                        <li><a href="https://www.instagram.com/smegkorea/" target="_blank"><img src="/images/common/sns02.svg" alt="인스타그램아이콘"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCCwqSNH1-AN1C-AwWhZnKHw?reload=9" target="_blank"><img src="/images/common/sns03.svg" alt="유튜브아이콘"></a></li>
+                        <li><a href="https://cafe.naver.com/smegcafe" target="_blank"><img src="/images/common/sns04.svg" alt="네이버카페아이콘"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav">
+                    <ul>
+                        <li><a href="/smeg/history.html">스메그소개</a></li>
+                        <li><a href="/service/store.html">매장안내</a></li>
+                        <li><a href="/service/faq.html">FAQ</a></li>
+                        <li><a href="/service/notice.html">공지사항</a></li>
+                        <li><a href="/admin/user_list.html">관리자</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright Ⓒ SMEGKOREA Co., Ltd. All Right Reserved.</p>
+                <h1><img src="/images/common/logo.svg" alt="스메그로고"></h1>
+            </div>
+        </div>
+    </footer>
+    <!--스크롤탑버튼-->
+    <a href="#top" class="scroll-btn">
+        <img src="/images/common/top_anchor.png" alt="상단으로 가기">
+    </a>
+</body>
+</html>

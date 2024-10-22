@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* top-text-wrap */
+.top-text-wrap{
+	padding-top: 100px;
+	margin-bottom: 20px;
+}
+.top-text-wrap ul{
+	display: flex;
+}
+.top-text-wrap li{
+	font-size: 20px;
+}
+.top-text-wrap li:first-child{
+	margin-right: 32px;
+}
+.top-text-wrap li:first-child::after{
+	content: '|';
+	font-size: 18px;
+	position: relative; left: 16px; top: -1px;
+}

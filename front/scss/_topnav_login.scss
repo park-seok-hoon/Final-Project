@@ -1,0 +1,134 @@
+@charset "utf-8";
+
+//변수선언
+$main-color: #1C1C1C;
+
+.login-wrap{
+    width: 100%;
+    display: flex; //자손요소들을 수평나열 처리
+
+    .login-box{
+        width: 600px; height: 565px;
+        padding-right: 100px;
+
+        #insert_id{
+            width: 500px;
+            height: 50px;
+            border: none;
+            border-bottom: 1px solid #DFDFDF;
+            margin-bottom: 20px;
+            background-image: url(../images/topnav/login_id.svg);
+            background-repeat: no-repeat;
+            background-position: 0% center;
+            padding: 0px 25px;
+
+            &::placeholder {
+                color: #CCCCCC;
+                font-size: 14px;
+            }
+          
+        }
+        #insert_pw{
+            width: 500px;
+            height: 50px;
+            border: none;
+            border-bottom: 1px solid #DFDFDF;
+            margin-bottom: 50px;
+            background-image: url(../images/topnav/login_pw.svg);
+            background-repeat: no-repeat;
+            background-position: 0% center;
+            padding: 0px 25px;
+
+            &::placeholder {
+                color: #CCCCCC;
+                font-size: 14px;
+            }
+        }
+        #login_btn{
+            display: block;
+            width: 500px;
+            height: 60px;
+            border: 1px solid #1C1C1C;
+            background: #FFF;
+            color: #111;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+       
+        .login-box-bottom{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 66px;
+
+            ul{
+                display: flex;
+                
+            }
+
+            li{
+                margin-left: 16px;
+            }
+            
+            .atag_id{
+                &::after{
+                    content: '|';
+                    position: relative; left: 8px;
+                }
+            }
+        }  
+  
+        .p2, .p3{
+            text-align: center;
+            padding-bottom: 16px;
+            background: url(../images/topnav/title_line.png);
+            background-repeat: repeat-x;
+            background-position: left center;
+            padding: 0 25px;
+            margin-bottom: 16px;
+            span{
+                background-color: #fff;
+                padding: 0 10px;
+            }
+
+        }
+        #move_signup{
+            display: block;
+            width: 500px;
+            height: 60px;
+            background: #1C1C1C;
+            color: #FFF;
+            font-size: 18px;
+            line-height: 60px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #kakao_signup{
+            display: block;
+            width: 500px;
+            height: 60px;
+            background: #F7E111;
+            color: #391D1D;
+            font-size: 18px;
+            line-height: 60px;
+            text-align: center;
+            margin-bottom: 50px;
+
+            background-image: url(../images/topnav/login_kakao.png);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+        }
+
+        
+    }
+
+    .video-box{
+        width: 600px; height: 565px;
+        background-color: #000; //검정색 직접 처리
+
+        video{
+            width: 100%; height: 100%; //부모영역 상속
+            object-fit: cover; //영상비율과 안맞으니 꽉채우게 처리하는 속성
+        }
+    }
+
+}

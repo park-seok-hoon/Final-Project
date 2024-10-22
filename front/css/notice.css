@@ -1,0 +1,203 @@
+.h3title-wrap {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #1C1C1C;
+  background: #FAFAFA;
+  text-align: center;
+  align-items: center;
+  height: 70px;
+}
+.h3title-wrap h3 {
+  color: #1C1C1C;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 150%; /* 36px */
+  padding-left: 20px;
+}
+.h3title-wrap p {
+  color: #666;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0px 20px;
+  text-align: center;
+}
+
+.prev-box {
+  display: flex;
+  padding: 0px 20px;
+  border-top: 1px solid #1C1C1C;
+}
+.prev-box .left {
+  display: flex;
+  height: 70px;
+  padding: 0px 20px;
+  align-items: center;
+}
+.prev-box .right {
+  display: flex;
+  height: 70px;
+  padding: 0px 20px;
+  align-items: center;
+}
+
+.next-box {
+  display: flex;
+  padding: 0px 20px;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  margin-bottom: 40px;
+}
+.next-box .left {
+  display: flex;
+  padding: 0px 20px;
+  align-items: center;
+}
+.next-box .right {
+  display: flex;
+  height: 70px;
+  padding: 0px 20px;
+  align-items: center;
+}
+
+.btn {
+  padding: 16px 48px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  display: block;
+  margin: 0 auto;
+  width: 154px;
+}
+
+.main-contents .insert-title-wrap {
+  margin-bottom: 20px;
+  display: flex;
+}
+.main-contents .insert-title-wrap #category-nav {
+  display: inline-block;
+  width: 200px;
+  height: 50px;
+  padding: 0px 10px;
+  justify-content: space-between;
+  color: #999;
+  font-size: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url(../images/sub/down_gray.svg);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  margin-right: 20px;
+  border: 1px solid #1C1C1C;
+}
+.main-contents .insert-title-wrap #title-input {
+  display: inline-block;
+  width: 980px;
+  height: 50px;
+  padding: 0px 20px;
+  color: #999;
+  font-size: 16px;
+  border: 1px solid #1C1C1C;
+}
+.main-contents .summernote {
+  margin-top: 20px;
+  width: 1200px;
+}
+.main-contents .insert-btn {
+  margin: 50px auto 0;
+  border: 1px solid #1C1C1C;
+  background: #FFF;
+  display: block;
+  padding: 16px 48px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.note-editor.note-airframe, .note-editor.note-frame {
+  border: 1px solid #1C1C1C;
+}
+
+.main-banner04 {
+  background-image: url(../images/sub/main_banner04.jpg);
+}
+
+.main-contents {
+  position: relative;
+}
+.main-contents table {
+  width: 1200px;
+  height: 800px;
+  margin-bottom: 30px;
+}
+.main-contents th {
+  border-top: 1px solid #1C1C1C;
+  height: 70px;
+}
+.main-contents th:nth-child(1) {
+  width: 100px;
+}
+.main-contents th:nth-child(2) {
+  width: 100px;
+}
+.main-contents th:nth-child(3) {
+  width: 225px;
+}
+.main-contents th:nth-child(4) {
+  width: 500px;
+}
+.main-contents th:nth-child(5) {
+  width: 175px;
+}
+.main-contents th:nth-child(6) {
+  width: 100px;
+}
+.main-contents thead {
+  border-top: 1px solid black;
+  background: #FAFAFA;
+  width: 150px;
+  height: 70px;
+}
+.main-contents td {
+  text-align: center;
+  height: 70px;
+}
+.main-contents td:nth-child(4) {
+  text-align: left;
+}
+.main-contents tbody tr {
+  border-bottom: 1px solid #DFDFDF;
+}
+.main-contents tbody tr:last-child {
+  border-bottom: 1px solid #1C1C1C;
+}
+.main-contents .btn-wrap {
+  position: absolute;
+  right: 0px;
+  bottom: 84px;
+}
+.main-contents .btn-wrap a {
+  padding: 8px 16px;
+  color: #1C1C1C;
+  font-size: 14px;
+  background-color: #FFF;
+  border: 1px solid #1C1C1C;
+}
+.main-contents .btn-wrap a:first-child {
+  margin-right: 12px;
+}
+.main-contents form {
+  margin-top: 30px;
+  text-align: center;
+}
+.main-contents form #search-announce {
+  width: 360px;
+  height: 50px;
+  padding: 0 20px;
+  background-image: url(../images/common/search_black.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: calc(100% - 20px) center;
+  border: 1px solid #1C1C1C;
+}

@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+//변수선언
+$main-color: #1C1C1C;
+
+.title-box.search-info{
+	display: block;
+	h2{
+		text-align: center;
+		
+	}
+	.find-pw-title{
+		margin-top: 20px;
+		
+		ul{
+			display: flex;
+			justify-content: center;	//자식요소들을 센터로 보내는 방법
+		}
+
+		li{
+			margin: 0 8px;
+
+			&:first-child::after{	//자기 자신 중에 첫번째 요소에 뒤에 글자를 추가
+				content: "|";
+				color:#666666;
+				font-size: 20px;
+				position:relative;
+				left: 8px;
+			}
+		}
+
+		a{
+			line-height: normal;
+			font-size: 24px;
+			font-weight: 400;
+			color:#999999;
+			&.active{
+				color: $main-color;
+			}
+		}
+
+	}
+}
+
+
+
+.login-wrap{
+	margin-top : 50px;
+	width: 100%;
+	display: flex;	//자손요소들을 수평나열 처리
+
+	.login-box{
+		width: 600px;height: 565px;
+		padding-right: 100px;
+	}
+	.video-box{
+		width: 600px; height: 565px;
+		background-color: #000; //검정색 직접 처리
+		video{
+			width: 100%; height: 100%; //부모영역 상속
+			object-fit: cover; //영상비율과 안맞으니 꽉채우게 처리하는 속성
+		}
+	}
+
+	.login-box{
+		justify-content: center;
+
+		#pw-putid{
+			background: url(../images/topnav/id_icon.svg);
+		}
+		#pw-putemail{
+			background: url(../images/topnav/pw_icon.svg);
+		}
+		
+		#pw-putid, #pw-putemail{
+			width: 100%;
+			height: 50px;
+			background-repeat: no-repeat;
+			background-position: left center;
+			padding: 0 25px;
+			border: none;
+			border-bottom: 1px solid #DFDFDF;
+		}
+		#pw-putid{
+			margin-bottom: 20px;
+		}
+
+		.p1, .p2{
+			text-align: center;
+		}
+		
+		.p2{
+			margin-bottom: 16px;
+			background: url(../images/topnav/title_line.svg);
+			background-repeat: repeat-x;
+			background-position: left center;
+			span{
+				background-color: #FFF;
+				padding: 0 10px;
+			}
+		}
+
+		.findpw-btn{
+			margin-top: 50px;
+			width: 500px;
+			height: 60px;	
+			border: 1px solid #1C1C1C;
+			background: #FFF;
+			margin-bottom: 70px;
+		}
+
+		.signup-btn1{
+			display: block;
+			width: 500px;
+			height: 60px;
+			justify-content: center;
+			align-items: center;
+			background: #1C1C1C;
+			color:#FFFFFF;
+			border: none;
+			text-align: center;
+			line-height: 60px;
+		}
+
+	}
+
+
+}

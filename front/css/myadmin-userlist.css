@@ -1,0 +1,98 @@
+.sub_contents {
+  position: relative;
+  padding: 0 20px;
+}
+.sub_contents table {
+  width: 860px;
+  height: 680px;
+  margin-bottom: 30px;
+}
+.sub_contents th {
+  border-top: 1px solid #1C1C1C;
+  height: 20px;
+}
+.sub_contents th:nth-child(1), .sub_contents td:nth-child(1) {
+  width: 60px;
+}
+.sub_contents th:nth-child(2), .sub_contents td:nth-child(2) {
+  width: 140px;
+}
+.sub_contents th:nth-child(3), .sub_contents td:nth-child(3) {
+  width: 80px;
+}
+.sub_contents th:nth-child(4), .sub_contents td:nth-child(4) {
+  width: 140px;
+}
+.sub_contents th:nth-child(5), .sub_contents td:nth-child(5) {
+  width: 130px;
+}
+.sub_contents th:nth-child(6), .sub_contents td:nth-child(6) {
+  width: 110px;
+}
+.sub_contents th:nth-child(7), .sub_contents td:nth-child(7) {
+  width: 200px;
+}
+.sub_contents thead {
+  border-top: 1px solid black;
+  background: #FAFAFA;
+  width: 150px;
+  height: 70px;
+}
+.sub_contents td {
+  text-align: center;
+  height: 90px;
+  padding: 0 5px;
+}
+.sub_contents td:nth-child(4), .sub_contents td:nth-child(7) {
+  text-align: left;
+}
+.sub_contents tbody tr {
+  border-bottom: 1px solid #DFDFDF;
+}
+.sub_contents tbody tr:last-child {
+  border-bottom: 1px solid #1C1C1C;
+}
+.sub_contents .btn-wrap {
+  position: absolute;
+  right: 20px;
+  bottom: 84px;
+}
+.sub_contents .btn-wrap a {
+  padding: 8px 16px;
+  color: #1C1C1C;
+  font-size: 14px;
+  background-color: #FFF;
+  border: 1px solid #1C1C1C;
+}
+.sub_contents .btn-wrap a:first-child {
+  margin-right: 12px;
+}
+.sub_contents form {
+  margin-top: 30px;
+  text-align: center;
+}
+.sub_contents form #search-announce {
+  width: 360px;
+  height: 50px;
+  padding: 0 20px;
+  background-image: url(../images/common/search_black.svg);
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  background-position: calc(100% - 20px) center;
+  border: 1px solid #1C1C1C;
+}
+
+.sub_contents ul.top-title {
+  display: flex;
+  justify-content: left;
+}
+.sub_contents ul.top-title li {
+  font-size: 20px;
+  position: relative;
+  font-weight: 400;
+  line-height: 60PX;
+}
+.sub_contents ul.top-title li:first-child::after {
+  content: "|";
+  margin: 0 16PX;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="kr.kh.smeg.model.vo.MemberVO" alias="MemberVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.CategoryVO" alias="CategoryVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.GroupVO" alias="GroupVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.FaqVO" alias="FaqVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.NoticeVO" alias="NoticeVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.NoticeCategoryVO" alias="NoticeCategoryVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.FileVO" alias="FileVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.ProductVO" alias="ProductVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.Slide_picsVO" alias="Slide_picsVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.OrderVO" alias="OrderVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.OrderlistVO" alias="OrderlistVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.BasketVO" alias="BasketVO"/>
+		<typeAlias type="kr.kh.smeg.model.vo.OrderStateVO" alias="OrderStateVO"/>
+	</typeAliases>
+</configuration>

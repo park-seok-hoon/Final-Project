@@ -1,0 +1,101 @@
+@charset "utf-8";
+
+//변수선언
+$main-color: #1C1C1C;
+
+.title-box.search-info{
+	display: block;
+	h2{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+}
+
+.search-wrap{
+	ul{
+		display: flex;
+		justify-content: center;
+	}
+	li{
+		margin: 0 8px;
+
+		&:first-child::after{
+			content: '|';
+			font-size: 22px;
+			position: relative;
+			left: 9px;
+		}
+	}
+	a{
+		color:#999999;
+		font-size: 24px;
+		font-weight: 400;
+
+		&.active{
+			color:$main-color;
+		}
+		
+	}
+}
+
+.login-box{
+	margin: 0 auto;
+	justify-items: center;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 400;
+		p{
+			margin-bottom: 20px;
+			&.p2{
+				background-image: url(../images/topnav/title_line.svg);
+				background-repeat: repeat-x;
+				background-position: center;
+			}
+			span{
+				background-color: #FFF;
+				padding: 0 10px;
+			}
+		}
+		
+		#search-id, #search-email{
+			width: 500px;
+			height: 50px;
+			padding: 0px 25px;
+			border: none;
+			border-bottom: 1px solid #CCC;
+			background: #FFF;
+			margin-bottom: 20px;
+			background-repeat: no-repeat;
+			background-position: left;
+			
+		}
+
+		input::placeholder{
+			color: #CCC;
+		}
+
+		#search-id{
+			background-image: url(../images/topnav/id_icon.svg);
+		}
+		#search-email{
+			background-image: url(../images/topnav/email_icon.svg);
+			margin-bottom: 50px;
+		}
+
+		#search-btn,#signup-btn{
+			width: 500px;
+			height: 60px;
+			margin-bottom: 70px;
+		}
+		#search-btn{
+			border: 1px solid #1C1C1C;
+			background: #FFF;
+		}
+		#signup-btn{
+			display: block;
+			background: #1C1C1C;
+			color:#FFFFFF;
+			line-height: 60px;
+		}
+	
+}

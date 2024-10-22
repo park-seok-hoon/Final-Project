@@ -1,0 +1,278 @@
+@charset "UTF-8";
+.main-contents {
+  width: 100%;
+  min-width: 1200px;
+  padding: 100px 0 200px;
+}
+
+.product-top {
+  width: 100%;
+  min-width: 1200px;
+  display: flex;
+}
+.product-top .slide-wrap {
+  width: 50%;
+  height: 600px;
+}
+.product-top .slide-wrap .swiper {
+  float: right;
+  width: 600px;
+  height: 600px;
+  position: relative;
+}
+.product-top .slide-wrap .swiper-pagination {
+  height: 12px;
+  bottom: 30px;
+}
+.product-top .slide-wrap .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+.product-top .slide-wrap .swiper-pagination-bullet-active {
+  background-color: #1C1C1C;
+}
+.product-top .text-wrap {
+  width: 50%;
+  height: 600px;
+  background-color: #F6F6F6;
+  padding: 80px 0 80px 40px;
+}
+.product-top .text-wrap h2 {
+  width: 560px;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  margin-bottom: 16px;
+}
+.product-top .text-wrap .product-code {
+  color: #999;
+  font-size: 14px;
+  line-height: 14px;
+  padding-bottom: 16px;
+  width: 560px;
+  border-bottom: 1px solid #DFDFDF;
+}
+.product-top .text-wrap .count-box {
+  width: 560px;
+  padding-top: 20px;
+  display: flex;
+}
+.product-top .text-wrap .delivery-box {
+  width: 560px;
+  padding: 16px 0;
+  display: flex;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #DFDFDF;
+}
+.product-top .text-wrap .title-text {
+  width: 100px;
+}
+.product-top .text-wrap .btn-wrap {
+  display: flex;
+  align-items: center;
+}
+.product-top .text-wrap .btn-wrap button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  text-indent: -999em;
+}
+.product-top .text-wrap .btn-wrap button.plus-btn {
+  background-image: url(../images/product/plus_btn.svg);
+}
+.product-top .text-wrap .btn-wrap button.minus-btn {
+  background-image: url(../images/product/minus_btn.svg);
+}
+.product-top .text-wrap .btn-wrap .count {
+  margin: 0 10px;
+}
+.product-top .text-wrap .price {
+  width: 560px;
+  text-align: right;
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 120px;
+}
+.product-top .text-wrap .btn {
+  width: 560px;
+  display: flex;
+  justify-content: space-between;
+}
+.product-top .text-wrap .btn li {
+  width: 275px;
+  height: 60px;
+}
+.product-top .text-wrap .btn li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #1C1C1C;
+  background-color: #fff;
+  text-align: center;
+  line-height: 58px;
+  font-size: 18px;
+}
+
+.detail-nav {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  min-width: 1200px;
+  height: 70px;
+  background-color: #1C1C1C;
+}
+.detail-nav .inner-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.detail-nav h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.detail-nav h4::after {
+  content: url(../images/product/arrow.svg);
+  position: relative;
+  top: 2px;
+  left: 5px;
+}
+.detail-nav ul {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.detail-nav ul li {
+  margin-left: 50px;
+}
+.detail-nav ul a {
+  color: #fff;
+}
+
+.detail-info {
+  width: 1200px;
+  margin: 0 auto;
+}
+.detail-info > div {
+  padding: 100px 0 150px;
+}
+.detail-info > div:last-child {
+  padding-bottom: 0;
+}
+.detail-info h3 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.product-detail {
+  display: flex;
+  align-items: center;
+}
+.product-detail .text-wrap {
+  width: 600px;
+  padding-right: 40px;
+}
+.product-detail h2 {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+.product-detail p {
+  line-height: 1.6;
+  color: #666;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.product-notification .list {
+  border-top: 1px solid #1C1C1C;
+  border-bottom: 1px solid #1C1C1C;
+}
+.product-notification .list li {
+  height: 100px;
+  padding: 0 40px;
+  border-bottom: 1px solid #d6d6d6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.product-notification .list h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.product-notification .list p {
+  color: #666;
+}
+
+.product-delivery h4, .product-cancel h4, .product-as h4 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.product-delivery ul li, .product-cancel ul li, .product-as ul li {
+  margin-bottom: 24px;
+  color: #666;
+}
+.product-delivery ul li::before, .product-cancel ul li::before, .product-as ul li::before {
+  content: "· ";
+  color: #666;
+}
+.product-delivery ul li:last-child, .product-cancel ul li:last-child, .product-as ul li:last-child {
+  margin-bottom: 60px;
+}
+.product-delivery ol, .product-cancel ol, .product-as ol {
+  counter-reset: number;
+}
+.product-delivery ol > li, .product-cancel ol > li, .product-as ol > li {
+  font-size: 20px;
+}
+.product-delivery ol > li::before, .product-cancel ol > li::before, .product-as ol > li::before {
+  counter-increment: number 1;
+  content: counter(number) ". ";
+}
+.product-delivery ol ul, .product-cancel ol ul, .product-as ol ul {
+  margin-top: 24px;
+}
+.product-delivery ol.as, .product-cancel ol.as, .product-as ol.as {
+  line-height: 2;
+}
+.product-delivery ol.as > li, .product-cancel ol.as > li, .product-as ol.as > li {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+}
+.product-delivery table, .product-cancel table, .product-as table {
+  width: 100%;
+  margin-bottom: 60px;
+}
+.product-delivery table.table01 th, .product-delivery table.table01 td, .product-cancel table.table01 th, .product-cancel table.table01 td, .product-as table.table01 th, .product-as table.table01 td {
+  width: 50%;
+}
+.product-delivery table.table02 tr:first-child td, .product-cancel table.table02 tr:first-child td, .product-as table.table02 tr:first-child td {
+  border-top: 1px solid #1C1C1C;
+}
+.product-delivery table th, .product-cancel table th, .product-as table th {
+  padding: 16px 0;
+  border-top: 1px solid #1C1C1C;
+  border-bottom: 1px solid #d5d5d5;
+  border-right: 1px solid #d5d5d5;
+}
+.product-delivery table th:last-child, .product-cancel table th:last-child, .product-as table th:last-child {
+  border-right: none;
+}
+.product-delivery table td, .product-cancel table td, .product-as table td {
+  padding: 16px 0;
+  border-bottom: 1px solid #d5d5d5;
+  text-align: center;
+  line-height: 1.5;
+  border-right: 1px solid #d5d5d5;
+}
+.product-delivery table td:last-child, .product-cancel table td:last-child, .product-as table td:last-child {
+  border-right: none;
+}

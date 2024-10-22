@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+//변수적용
+$min-width: 1200px;
+$main-color: #1C1C1C;
+
+//서브페이지 공통 CSS작성 구역
+
+/* main */
+main{
+    width: 100%; min-width: $min-width; height: 400px; //구역은 피그마에서 항상 확인
+    background-size: cover; //사이즈와 상관없이 절대 잘리지 않게 커버 처리
+    background-position: center; //배경이미지가 요소의 정가운데 오게 처리 
+    //우리가 600px로 크게했기 때문에 가운데 오게 처리하는 것이 좋음
+    padding-top: 170px; //자손과의 간격 조정
+}
+.main-banner01{ //배경이미지가 달라서 클래스 처리
+    background-image: url(../images/sub/main_banner01.jpg);
+}
+.main-banner02{ //배경이미지가 달라서 클래스 처리
+    background-image: url(../images/sub/main_banner02.jpg);
+}
+.main-banner03{ //배경이미지가 달라서 클래스 처리
+    background-image: url(../images/sub/main_banner03.jpg);
+}
+.main-banner04{
+    background-image: url(../images/sub/main_banner04.jpg);
+}
+.main-banner06{
+    background-image: url(../images/sub/main_banner06.jpg);
+}
+.main-banner07{
+    background-image: url(../images/sub/main_banner07.jpg);
+}
+.main-banner08{
+    background-image: url(../images/sub/main_banner08.jpg);
+}
+.main-banner09{
+    background-image: url(../images/sub/main_banner09.jpg);
+}
+
+
+.product1 {
+background-image: url(../images/sub/product_banner01.jpg);
+}
+
+.product2 {
+background-image: url(../images/sub/product_banner02.jpg);
+}
+
+.product3 {
+background-image: url(../images/sub/product_banner03.jpg);
+}
+
+.product4 {
+background-image: url(../images/sub/product_banner04.jpg);
+}
+.product5 {
+background-image: url(../images/sub/product_banner05.jpg);
+}
+
+.product6 {
+background-image: url(../images/sub/product_banner06.jpg);
+}
+
+.product7 {
+background-image: url(../images/sub/product_banner07.jpg);
+}
+
+.product8 {
+background-image: url(../images/sub/product_banner08.jpg);
+}
+
+.product9 {
+background-image: url(../images/sub/product_banner09.jpg);
+}
+
+.product10 {
+background-image: url(../images/sub/product_banner10.jpg);
+}
+.product11 {
+background-image: url(../images/sub/product_banner11.jpg);
+}
+
+main h2{
+    color: #FFF;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center; //글자를 가로 가운데 처리
+    margin-bottom: 30px; //동위선택자와의 간격 조정
+}
+.indicator{
+    ul{ 
+        display: flex; //자손요소를 수평나열 처리
+        justify-content: center; //flex받은 자손들을 영역의 가로 가운데 처리
+        align-items: center; //이미지랑 글자 크기가 달라서 세로 가운데 처리
+    }
+    li{
+        margin-right: 56px;
+        height: 24px; line-height: 24px;
+        position: relative; //앱솔루트 받은 자손/후손의 기준을 현재 요소로 변경
+
+        &:last-child{ //& : 자기자신 선택 this와 유사 - 그중 마지막 li의 여백은 제거
+            margin-right: 0;
+
+            &::after{ //마지막 > 안보이게 처리
+                display: none;
+            }
+        }
+        &::after{ //li태그 뒤에 컨텐츠를 추가하는 선택자
+            content: url(../images/sub/next.svg);
+            position: absolute; //절대적 위치 - body가 기본 기준
+            right: -40px; top: 0;
+        }
+    }
+    a{
+        color: #FFF;
+        font-size: 18px;
+    }
+}
+
+.title-box{
+    width: $min-width; //이건 첨부터 최소컨텐츠 사이즈
+    margin: 0 auto; //블록요소가 부모영역에서 가로 가운데 오게 처리
+    padding: 100px 0; //앞상하 뒷좌우
+    display: flex; //자손요소를 수평나열 처리
+    justify-content: space-between; //첫번째와 마지막 요소를 양쪽 끝에 붙임
+    align-items: center; //글자 크기가 달라 세로 가운데 처리 위해 사용
+
+    h2{
+        font-size: 48px;
+        font-weight: 700;
+    }
+    p{
+        color: #666;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+.main-contents{
+    width: $min-width; 
+    margin: 0 auto; //블록요소가 부모영역에서 가로 가운데 오게 처리
+    margin-bottom: 200px;
+}
+
+.nav-select{
+    width: 100%; min-width: $min-width; height: 70px;
+    background-color: $main-color;
+    padding: 15px 0; //앞상하 뒷좌우
+
+    select{
+        width: 220px; height: 40px;
+        border-radius: 5px;
+        background-color: rgba(255,255,255,0.1);
+        border: 1px solid #666; //흰색에 투명도 주기 위해 사용
+        padding: 0 10px; //앞상하 뒷좌우
+        appearance: none; //기호 제거를 위해 사용
+        color: #fff;
+        background-image: url(../images/sub/down.svg); //배경이미지는 무조건 반복
+        background-repeat: no-repeat; //반복안함
+        background-position: calc(100% - 10px) center; //x축 y축
+        //calc()는 계산기 함수로 100%로 맨끝 갔다가 거기서 -10px 빼라는 의미
+        //연산자 사이는 띄어쓰기 해야 함
+        margin-right: 20px;
+    }
+}
+
+
+//페이지네이션
+.pagination{
+    display: flex; //자손요소 수평나열 처리
+    justify-content: center; //가로 가운데
+    align-items: center; //세로 가운데
+
+    li{
+        width: 30px; height: 30px;
+        margin-right: 20px;
+
+        &:last-child{ //마지막 li를 선택
+            margin-right: 0;
+        }
+    }
+    a{
+        width: 100%; height: 100%;
+        display: block; //인라인요소여서 영역이 들어가지 않아서 변경
+        text-align: center; //가로가운데
+        line-height: 30px; //한줄텍스트인 경우 height와 line-height가 같으면 세로 가운데 처리
+
+        &.active{ //a태그에 active가 붙으면
+            background-color: $main-color;
+            color: #fff;
+            border-radius: 50%; //모서리둥글기로 원처럼 보이게 처리
+        }
+    }
+}

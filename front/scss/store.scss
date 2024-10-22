@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+//변수선언
+$main-color: #1C1C1C;
+
+.main-contents{
+    display: flex; //자손요소를 수평나열 처리
+    justify-content: space-between; //양쪽 끝으로 붙임
+
+    .map-box{
+        width: 580px; height: 800px;
+        iframe{ border: none; } //아이프레임태그에 자동으로 생기는 선 제거
+    }
+    .store-list{
+        width: 580px; height: 800px;
+
+        ul{
+            width: 100%; height: 100%; //부모영역상속
+            border-top: 1px solid #1C1C1C;
+            border-bottom: 1px solid #1C1C1C;
+        }
+        li{
+            width: 100%; height: 12.5%; //부모의 1/8
+            border-bottom: 1px solid #999;
+        }
+        a{
+            display: block; //영역이 적용되지 않아서 block으로 변경
+            width: 100%; height: 100%;
+            padding: 10px 20px;
+
+            &.active{ //a태그가 active클래스를 받으면
+                background-color: #FAFAFA;
+                background-image: url(../images/service/map_icon.svg);
+                background-repeat: no-repeat; //배경이미지 반복안함
+                background-position: calc(100% - 20px) center;
+            }
+        }
+        h3{
+            line-height: 1.5; //기존 글자크기의 1.5배 줄간격 처리
+            margin-bottom: 10px;
+        }
+        p{
+            color: #666; line-height: 1.5;
+        }
+    }
+}

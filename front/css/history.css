@@ -1,0 +1,80 @@
+.main-contents {
+  background-image: url(../images/smeg/history/center_line.png);
+  background-repeat: repeat-y;
+  background-position: center top;
+  padding-top: 30px;
+}
+
+.year-box {
+  position: relative;
+  padding: 120px 0;
+  display: flex;
+  align-items: center;
+}
+.year-box.to-be {
+  padding: 120px 0 0 0;
+}
+.year-box.to-be-last {
+  padding: 120px 0;
+}
+.year-box .year-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-left: 24px;
+  height: 40px;
+  line-height: 40px;
+  background-image: url(../images/smeg/history/history_icon_black.png);
+  background-size: 16px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-color: #fff;
+}
+.year-box .year-text.active {
+  background-image: url(../images/smeg/history/history_icon_red.png);
+}
+.year-box .text-wrap {
+  width: 50%;
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  transition: 0.6s;
+}
+.year-box.active .text-wrap {
+  top: 0;
+  opacity: 1;
+}
+.year-box .img-wrap {
+  width: 50%;
+}
+.year-box .left-box {
+  padding-right: 60px;
+}
+.year-box .text-wrap.left-box {
+  padding-left: 140px;
+}
+.year-box .img-wrap.left-box {
+  text-align: right;
+}
+.year-box .img-wrap.left-box img {
+  display: inline-block;
+}
+.year-box .right-box {
+  padding-left: 60px;
+}
+.year-box .text-wrap.right-box {
+  padding-right: 140px;
+}
+.year-box img {
+  width: 400px;
+}
+.year-box h3 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+.year-box p {
+  color: #666;
+  line-height: 1.5;
+  text-align: justify;
+}
